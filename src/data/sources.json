@@ -1,0 +1,24 @@
+{
+  "official": [
+    {
+      "id": "gov-immigration",
+      "title": "Romanian Immigration Office",
+      "url": "https://immigration.gov.ro/",
+      "category": "visa"
+    },
+    {
+      "id": "gov-justice",
+      "title": "Romanian Ministry of Justice",
+      "url": "https://www.just.ro/",
+      "category": "business"
+    }
+  ],
+  "travel": [
+    {
+      "id": "romania-tourism",
+      "title": "Romania Tourism Official",
+      "url": "https://www.romania.travel/",
+      "category": "travel"
+    }
+  ]
+}

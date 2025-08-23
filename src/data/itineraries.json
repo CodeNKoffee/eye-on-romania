@@ -1,0 +1,23 @@
+{
+  "itineraries": [
+    {
+      "id": "bucharest-48h",
+      "title": "48h in Bucharest",
+      "days": 2,
+      "summary": "A compact city break with architecture, museums, and local food.",
+      "stops": [
+        "Palace of the Parliament",
+        "Old Town (Lipscani)",
+        "Village Museum",
+        "Cismigiu Gardens"
+      ]
+    },
+    {
+      "id": "cluj-72h",
+      "title": "72h in Cluj-Napoca & surroundings",
+      "days": 3,
+      "summary": "University life, lively cafés, and quick access to Apuseni or Turda.",
+      "stops": ["Unirii Square", "Botanical Garden", "Turda Salt Mine"]
+    }
+  ]
+}
