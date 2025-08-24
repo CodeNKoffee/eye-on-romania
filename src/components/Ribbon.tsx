@@ -20,6 +20,8 @@ export default function Ribbon() {
         <div className="w-40 h-2 bg-tricolor-yellow" />
         <div className="w-40 h-2 bg-tricolor-red" />
       </motion.div>
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </div>
   );
 }
