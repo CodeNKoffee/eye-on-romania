@@ -1,4 +1,8 @@
 {
-  "site.title": "EyeOnRomania",
-  "home.slogan": "A clear, trusted window into Romania"
+  "site": {
+    "title": "EyeOnRomania"
+  },
+  "home": {
+    "slogan": "A clear, trusted window into Romania"
+  }
 }

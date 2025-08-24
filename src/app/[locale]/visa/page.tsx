@@ -4,7 +4,7 @@ import { exportChecklistPDF } from '@/lib/pdf';
 import LastUpdated from '@/components/LastUpdated';
 
 export default function VisaPage() {
-  const [items] = useState([
+  const baseItems = [
     'Passport (valid 6+ months)',
     'Roundtrip reservation',
     'Travel insurance',
@@ -12,8 +12,21 @@ export default function VisaPage() {
     'Financial means evidence',
     'Completed application form',
     'Recent passport photos',
-    'Purpose of visit documentation'
-  ]);
+    'Purpose of visit documentation',
+  ];
+
+  const [selectedCountry, setSelectedCountry] = useState('OTHER');
+
+  const countryRules: Record<string, { visaRequired: boolean; extra?: string[] }> = {
+    'US': { visaRequired: false },
+    'GB': { visaRequired: false },
+    'IN': { visaRequired: true, extra: ['Consular appointment may be required'] },
+    'TR': { visaRequired: true, extra: ['Biometric data may be requested at application'] },
+    'OTHER': { visaRequired: true },
+  };
+
+  const activeRule = countryRules[selectedCountry] ?? countryRules.OTHER;
+  const items = activeRule.visaRequired ? baseItems.concat(activeRule.extra ?? []) : [];
 
   const visaTypes = [
     {
@@ -66,16 +79,32 @@ export default function VisaPage() {
                 </p>
               </div>
               <div className="flex flex-col items-end gap-3">
-                <button
-                  onClick={() => exportChecklistPDF('visa_checklist', items)}
-                  className="inline-flex items-center px-6 py-3 bg-tricolor-blue text-white rounded-lg hover:bg-tricolor-blue/90 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download checklist (PDF)
-                </button>
-                <LastUpdated date={new Date().toISOString()} />
+                <div className="flex items-center gap-3">
+                  <label htmlFor="country" className="text-sm text-transylvanian-stone/80 mr-2">Your country</label>
+                  <select
+                    id="country"
+                    value={selectedCountry}
+                    onChange={(e) => setSelectedCountry(e.target.value)}
+                    className="px-3 py-2 border rounded"
+                    aria-label="Select your country to tailor checklist"
+                  >
+                    <option value="OTHER">Other / Not listed</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="IN">India</option>
+                    <option value="TR">Turkey</option>
+                  </select>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => exportChecklistPDF(`visa_checklist_${selectedCountry}`, items.length ? items : ['No visa required for short stays — check official guidance.'])}
+                    className="inline-flex items-center px-4 py-2 bg-tricolor-blue text-white rounded"
+                  >
+                    Download checklist (PDF)
+                  </button>
+                  <LastUpdated date={new Date().toISOString()} />
+                </div>
               </div>
             </div>
           </div>
