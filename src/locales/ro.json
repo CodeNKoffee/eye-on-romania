@@ -148,7 +148,14 @@
       "linkText": "Ambasada României din Cairo - Portal eVisa"
     },
     "sources": {
-      "title": "Surse oficiale"
+      "title": "Surse oficiale",
+      "items": {
+        "romanianMFA": "Ministerul Afacerilor Externe al României - Informații despre vize",
+        "romanianIGI": "Inspectoratul General pentru Imigrări - Informații despre vize",
+        "euVisaPolicy": "Politica de vize a Uniunii Europene",
+        "romanianConsulates": "Consulatele României",
+        "schengenVisa": "Viza Schengen"
+      }
     },
     "footerCTA": {
       "title": "Gata pentru pasul următor?",

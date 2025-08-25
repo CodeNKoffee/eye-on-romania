@@ -148,7 +148,14 @@
       "notesLabel": "Important Notes:"
     },
     "sources": {
-      "title": "Official Sources"
+      "title": "Official Sources",
+      "items": {
+        "romanianMFA": "Romanian Ministry of Foreign Affairs - Visa Information",
+        "romanianIGI": "Romanian Immigration Office (IGI)",
+        "euVisaPolicy": "EU Visa Policy Guidelines",
+        "romanianConsulates": "Romanian Consulates Worldwide Directory",
+        "schengenVisa": "Schengen Visa Information Portal"
+      }
     },
     "footerCTA": {
       "title": "Ready for Your Next Step?",

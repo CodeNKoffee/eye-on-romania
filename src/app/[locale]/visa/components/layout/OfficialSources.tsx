@@ -1,5 +1,33 @@
 import { useTranslations } from "next-intl";
-import { getOfficialSources } from "../../data/officialSource";
+export interface OfficialSource {
+  titleKey: string; // Change from 'title' to 'titleKey'
+  url: string;
+}
+
+export function getOfficialSources(): OfficialSource[] {
+  return [
+    {
+      titleKey: "romanianMFA",
+      url: "https://www.mae.ro/en/node/2035"
+    },
+    {
+      titleKey: "romanianIGI",
+      url: "https://igi.mai.gov.ro/en/"
+    },
+    {
+      titleKey: "euVisaPolicy",
+      url: "https://ec.europa.eu/home-affairs/what-we-do/policies/borders-and-visas/visa-policy_en"
+    },
+    {
+      titleKey: "romanianConsulates",
+      url: "https://www.mae.ro/en/node/2045"
+    },
+    {
+      titleKey: "schengenVisa",
+      url: "https://ec.europa.eu/home-affairs/what-we-do/policies/borders-and-visas/visa-policy_en"
+    }
+  ];
+}
 
 export default function OfficialSources() {
   const t = useTranslations("visaPage");
@@ -24,7 +52,7 @@ export default function OfficialSources() {
                 rel="noopener noreferrer"
                 className="block text-tricolor-blue hover:underline"
               >
-                {source.title}
+                {t(`sources.items.${source.titleKey}`)}
               </a>
             ))}
           </div>
