@@ -7,15 +7,57 @@ export default function VisaChecklist() {
   const t = useTranslations("visaPage");
   const { requirements, isVisaFree, countryData } = useVisaData();
 
-  // Load Egyptian requirements as an array from translations when available.
-  // next-intl sometimes returns a string (possibly JSON) or an array. Handle both and validate.
+  // Function to translate requirement keys
+  const translateRequirement = (key: string): string => {
+    // If it's already a translated string (not a key), return as-is
+    if (!key.startsWith('requirements.')) {
+      return key;
+    }
+    
+    // Try to get translation for the key
+    const translated = t(`requirements.${key.replace('requirements.', '')}`, { defaultValue: key });
+    
+    // If translation key doesn't exist, return a fallback
+    if (translated === key) {
+      // Map common keys to fallback English text
+      const fallbacks: Record<string, string> = {
+        'requirements.passport': 'Passport (valid 6+ months beyond intended stay)',
+        'requirements.application': 'Completed visa application form (signed and dated)',
+        'requirements.photos': '2 recent passport photos (35x45mm, color, white background)',
+        'requirements.flight': 'Roundtrip flight reservation or travel itinerary',
+        'requirements.insurance': 'Travel insurance (minimum €30,000 coverage)',
+        'requirements.accommodation': 'Proof of accommodation (hotel bookings, invitation letter)',
+        'requirements.financial': 'Financial means evidence (bank statements, employment letter)',
+        'requirements.purpose': 'Purpose of visit documentation',
+        'requirements.invitation': 'Official invitation letter from Romanian cultural institution/event organizer',
+        'requirements.certificate': 'Certificate of individual background/professional status',
+        'requirements.program': 'Detailed program/schedule of cultural activities',
+        'requirements.achievements': 'Proof of previous cultural/professional achievements (portfolio, CV)',
+        'requirements.employment': 'Letter from employer (if employed) or university enrollment certificate (if student)',
+        'requirements.appointment': 'Consular appointment required',
+        'requirements.biometric': 'Biometric data collection required',
+        'requirements.background': 'Additional background verification may apply',
+        'requirements.appointmentMay': 'Consular appointment may be required',
+        'requirements.police': 'Police clearance certificate (if stay > 90 days)',
+        'requirements.biometricMay': 'Biometric data may be requested at application',
+        'requirements.security': 'Additional security clearance may be required',
+        'requirements.yellowFever': 'Yellow fever vaccination certificate required',
+        'requirements.yellowFeverMay': 'Yellow fever vaccination certificate may be required'
+      };
+      return fallbacks[key] || key;
+    }
+    
+    return translated;
+  };
+
+  // Try to load Egyptian requirements from the requirementsList array first
   const rawEgypt: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
   let translatedEgyptian: string[] | undefined;
 
   if (Array.isArray(rawEgypt)) {
     translatedEgyptian = rawEgypt as string[];
   } else if (typeof rawEgypt === 'string') {
-    // Sometimes the serializer stores arrays as JSON strings in messages — attempt to parse.
+    // Sometimes the serializer stores arrays as JSON strings - attempt to parse
     try {
       const parsed = JSON.parse(rawEgypt);
       if (Array.isArray(parsed)) translatedEgyptian = parsed as string[];
@@ -24,30 +66,43 @@ export default function VisaChecklist() {
     }
   }
 
-  // Fallback: individual translated items (keeps translations per-locale). If those also look like untranslated keys,
-  // we'll later detect and fall back to `requirements.items`.
-  const fallbackFromKeys = [
-    t('egypt.requirements.item1'),
-    t('egypt.requirements.item2'),
-    t('egypt.requirements.item3'),
-    t('egypt.requirements.item4'),
-    t('egypt.requirements.item5'),
-    t('egypt.requirements.item6'),
-    t('egypt.requirements.item7'),
-    t('egypt.requirements.item8'),
-    t('egypt.requirements.item9'),
-    t('egypt.requirements.item10'),
-    t('egypt.requirements.item11'),
-    t('egypt.requirements.item12')
-  ];
+  // If requirementsList didn't work, try individual items
+  let fallbackFromKeys: string[] = [];
+  if (!translatedEgyptian) {
+    fallbackFromKeys = [
+      t('egypt.requirements.item1'),
+      t('egypt.requirements.item2'),
+      t('egypt.requirements.item3'),
+      t('egypt.requirements.item4'),
+      t('egypt.requirements.item5'),
+      t('egypt.requirements.item6'),
+      t('egypt.requirements.item7'),
+      t('egypt.requirements.item8'),
+      t('egypt.requirements.item9'),
+      t('egypt.requirements.item10'),
+      t('egypt.requirements.item11'),
+      t('egypt.requirements.item12')
+    ];
+  }
 
   let egyptianRequirements: string[] = translatedEgyptian ?? fallbackFromKeys;
 
-  // If translations are absent and keys are returned literally (e.g., 'egypt.requirements.item1'),
-  // detect that and fall back to the generic requirements from `requirements.items` to avoid showing English hard-coded text.
-  const looksLikeUntranslated = (arr: string[]) => arr.every(i => typeof i === 'string' && i.includes('.') && i.split('.').length >= 2);
-  if (looksLikeUntranslated(egyptianRequirements)) {
-    egyptianRequirements = requirements.items || [];
+  // Better detection of untranslated keys - only fallback if we get literal translation keys back
+  const looksLikeUntranslatedKey = (str: string): boolean => {
+    // Must match exact pattern: "egypt.requirements.item1" etc. AND have no spaces
+    return str.startsWith('egypt.requirements.item') && !str.includes(' ');
+  };
+
+  const allKeysUntranslated = egyptianRequirements.length > 0 &&
+    egyptianRequirements.every(item => looksLikeUntranslatedKey(item));
+
+  // Only use fallback if ALL items look like untranslated keys
+  if (allKeysUntranslated) {
+    console.log('All Egyptian requirements look untranslated, falling back to generic requirements');
+    // Translate the generic requirements
+    egyptianRequirements = requirements.items.map(translateRequirement);
+  } else {
+    console.log('Using translated Egyptian requirements:', egyptianRequirements.slice(0, 2));
   }
 
   if (isVisaFree) {
@@ -83,8 +138,10 @@ export default function VisaChecklist() {
     );
   }
 
-  // Use Egyptian requirements if the selected country is Egypt, otherwise use the original requirements
-  const currentRequirements = countryData?.code === 'EG' ? egyptianRequirements : requirements.items;
+  // Use Egyptian requirements if the selected country is Egypt, otherwise translate generic requirements
+  const currentRequirements = countryData?.code === 'EG' 
+    ? egyptianRequirements 
+    : requirements.items.map(translateRequirement);
 
   return (
     <section className="container mx-auto px-6 py-8">
@@ -97,7 +154,7 @@ export default function VisaChecklist() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-transylvanian-stone">
-              Common Short-stay (C) Checklist
+              {t('checklist.title')}
             </h3>
           </div>
 
@@ -117,7 +174,7 @@ export default function VisaChecklist() {
               </div>
             </div>
           )}
-          
+
           <div className="grid md:grid-cols-1 gap-3">
             {currentRequirements.map((item, index) => (
               <CheckListItem key={index} text={item} />
@@ -157,21 +214,21 @@ export default function VisaChecklist() {
                   <p className="text-sm text-transylvanian-stone/70 mb-2">
                     {t('consulate.submitText')}
                   </p>
-                   <a 
-                     href={requirements.consulateUrl || "https://cairo.mae.ro/"} 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="inline-flex items-center text-tricolor-blue hover:underline text-sm"
-                   >
-                     {t('consulate.linkText')}
-                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                     </svg>
-                   </a>
-                 </div>
-               </div>
-             </div>
-           )}
+                  <a
+                    href={requirements.consulateUrl || "https://cairo.mae.ro/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-tricolor-blue hover:underline text-sm"
+                  >
+                    {t('consulate.linkText')}
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="mt-8 p-4 bg-danube-mist/50 rounded-lg border border-danube-mist">
             <div className="flex items-start gap-3">

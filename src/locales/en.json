@@ -61,6 +61,30 @@
       "preview": "Preview PDF",
       "button": "Download checklist (PDF)"
     },
+    "requirements": {
+      "passport": "Passport (valid 6+ months beyond intended stay)",
+      "application": "Completed visa application form (signed and dated)",
+      "photos": "2 recent passport photos (35x45mm, color, white background)",
+      "flight": "Roundtrip flight reservation or travel itinerary",
+      "insurance": "Travel insurance (minimum €30,000 coverage)",
+      "accommodation": "Proof of accommodation (hotel bookings, invitation letter)",
+      "financial": "Financial means evidence (bank statements, employment letter)",
+      "purpose": "Purpose of visit documentation",
+      "invitation": "Official invitation letter from Romanian cultural institution/event organizer",
+      "certificate": "Certificate of individual background/professional status",
+      "program": "Detailed program/schedule of cultural activities",
+      "achievements": "Proof of previous cultural/professional achievements (portfolio, CV)",
+      "employment": "Letter from employer (if employed) or university enrollment certificate (if student)",
+      "appointment": "Consular appointment required",
+      "biometric": "Biometric data collection required",
+      "background": "Additional background verification may apply",
+      "appointmentMay": "Consular appointment may be required",
+      "police": "Police clearance certificate (if stay > 90 days)",
+      "biometricMay": "Biometric data may be requested at application",
+      "security": "Additional security clearance may be required",
+      "yellowFever": "Yellow fever vaccination certificate required",
+      "yellowFeverMay": "Yellow fever vaccination certificate may be required"
+    },
     "visaTypes": {
       "shortStay": {
         "type": "Short-stay (C)",

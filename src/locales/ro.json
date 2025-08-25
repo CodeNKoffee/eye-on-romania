@@ -61,6 +61,30 @@
       "preview": "Previzualizează PDF",
       "button": "Descarcă lista (PDF)"
     },
+    "requirements": {
+      "passport": "Pașaport (valabil 6+ luni după data șederii)",
+      "application": "Formular de cerere pentru viză completat (semnat și datat)",
+      "photos": "2 fotografii recente tip pașaport (35x45mm, color, fundal alb)",
+      "flight": "Rezervare de zbor dus-întors sau itinerar de călătorie",
+      "insurance": "Asigurare de călătorie (acoperire minimă de 30.000 €)",
+      "accommodation": "Dovada cazării (rezervări de hotel, scrisoare de invitație)",
+      "financial": "Dovada mijloacelor financiare (extrase de cont, scrisoare de angajare)",
+      "purpose": "Documentația privind scopul vizitei",
+      "invitation": "Scrisoare oficială de invitație din partea unei instituții culturale/organizații din România",
+      "certificate": "Certificat de stare civilă/profesională",
+      "program": "Program detaliat/orar al activităților culturale",
+      "achievements": "Dovada realizărilor culturale/profesionale anterioare (portofoliu, CV)",
+      "employment": "Scrisoare de la angajator (dacă este angajat) sau certificat de înmatriculare la universitate (dacă este student)",
+      "appointment": "Programare consulară necesară",
+      "biometric": "Colectarea datelor biometrice necesară",
+      "background": "Verificarea suplimentară a antecedentelor poate fi aplicată",
+      "appointmentMay": "Programare consulară poate fi necesară",
+      "police": "Certificat de cazier judiciar (dacă șederea > 90 de zile)",
+      "biometricMay": "Datele biometrice pot fi solicitate la cerere",
+      "security": "Verificare suplimentară de securitate poate fi necesară",
+      "yellowFever": "Certificat de vaccinare împotriva febrei galbene necesar",
+      "yellowFeverMay": "Certificatul de vaccinare împotriva febrei galbene poate fi necesar"
+    },
     "visaTypes": {
       "shortStay": {
         "type": "Ședere scurtă (C)",

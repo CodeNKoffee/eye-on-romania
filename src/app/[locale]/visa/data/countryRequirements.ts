@@ -4,24 +4,25 @@ export interface CountryRequirements {
   consulateUrl?: string;
 }
 
+// Use translation keys instead of hardcoded English text
 const baseRequirements = [
-  "Passport (valid 6+ months beyond intended stay)",
-  "Completed visa application form (signed and dated)",
-  "2 recent passport photos (35x45mm, color, white background)",
-  "Roundtrip flight reservation or travel itinerary",
-  "Travel insurance (minimum €30,000 coverage)",
-  "Proof of accommodation (hotel bookings, invitation letter)",
-  "Financial means evidence (bank statements, employment letter)",
-  "Purpose of visit documentation"
+  "requirements.passport",
+  "requirements.application",
+  "requirements.photos",
+  "requirements.flight",
+  "requirements.insurance",
+  "requirements.accommodation",
+  "requirements.financial",
+  "requirements.purpose"
 ];
 
 const culturalEventRequirements = [
   ...baseRequirements,
-  "Official invitation letter from Romanian cultural institution/event organizer",
-  "Certificate of individual background/professional status",
-  "Detailed program/schedule of cultural activities",
-  "Proof of previous cultural/professional achievements (portfolio, CV)",
-  "Letter from employer (if employed) or university enrollment certificate (if student)"
+  "requirements.invitation",
+  "requirements.certificate",
+  "requirements.program",
+  "requirements.achievements",
+  "requirements.employment"
 ];
 
 const countrySpecificRequirements: Record<string, CountryRequirements> = {
@@ -93,22 +94,22 @@ const countrySpecificRequirements: Record<string, CountryRequirements> = {
   // Visa-required countries with specific requirements
   'EG': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Consular appointment required'],
+    items: [...culturalEventRequirements, 'requirements.appointment'],
     consulateUrl: 'https://cairo.mae.ro/en'
   },
   'CN': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Biometric data collection required', 'Additional background verification may apply'],
+    items: [...culturalEventRequirements, 'requirements.biometric', 'requirements.background'],
     consulateUrl: 'https://beijing.mae.ro/en'
   },
   'IN': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Consular appointment may be required', 'Police clearance certificate (if stay > 90 days)'],
+    items: [...culturalEventRequirements, 'requirements.appointmentMay', 'requirements.police'],
     consulateUrl: 'https://newdelhi.mae.ro/en'
   },
   'TR': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Biometric data may be requested at application'],
+    items: [...culturalEventRequirements, 'requirements.biometricMay'],
     consulateUrl: 'https://ankara.mae.ro/en'
   },
   'ID': { 
@@ -137,12 +138,12 @@ const countrySpecificRequirements: Record<string, CountryRequirements> = {
   },
   'SA': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Additional security clearance may be required'],
+    items: [...culturalEventRequirements, 'requirements.security'],
     consulateUrl: 'https://riyadh.mae.ro/en'
   },
   'NG': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Yellow fever vaccination certificate required'],
+    items: [...culturalEventRequirements, 'requirements.yellowFever'],
     consulateUrl: 'https://abuja.mae.ro/en'
   },
   'ZA': { 
@@ -152,7 +153,7 @@ const countrySpecificRequirements: Record<string, CountryRequirements> = {
   },
   'KE': { 
     visaRequired: true, 
-    items: [...culturalEventRequirements, 'Yellow fever vaccination certificate may be required'] 
+    items: [...culturalEventRequirements, 'requirements.yellowFeverMay'] 
   },
   'MA': { 
     visaRequired: true, 
