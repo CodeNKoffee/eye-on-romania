@@ -46,5 +46,50 @@
         "title": "For Institutions"
       }
     }
+  },
+  "visaPage": {
+    "title": "Visa & Entry",
+    "subtitle": "Overview",
+    "disclaimer": "Informational guidance only. Not legal advice.",
+    "download": {
+      "title": "Complete Visa Checklist",
+      "description": "Download a comprehensive, printable checklist for your visa application.",
+      "countryLabel": "Your country",
+      "countryOther": "Other / Not listed",
+      "button": "Download checklist (PDF)"
+    },
+    "visaTypes": {
+      "shortStay": {
+        "type": "Short-stay (C)",
+        "duration": "Up to 90 days",
+        "purpose": "Tourism, business visits, family, cultural events"
+      },
+      "longStay": {
+        "type": "Long-stay (D)",
+        "duration": "Over 90 days",
+        "purpose": "Work, study, family reunification"
+      },
+      "transit": {
+        "type": "Transit (A)",
+        "duration": "24-48 hours",
+        "purpose": "Airport/territory transit"
+      }
+    },
+    "checklist": {
+      "title": "Common Short-stay (C) Checklist",
+      "noVisaRequired": "No visa required for short stays — check official guidance for entry requirements.",
+      "note": {
+        "title": "Important Note",
+        "description": "Requirements may vary by nationality and specific circumstances. Always consult the official Romanian consulate or embassy in your country for the most current and specific requirements."
+      }
+    },
+    "sources": {
+      "title": "Official Sources"
+    },
+    "footerCTA": {
+      "title": "Ready for Your Next Step?",
+      "description": "Once your visa is approved, explore work opportunities, study programs, and cultural experiences waiting for you in Romania.",
+      "linkText": "Explore Work Opportunities"
+    }
   }
 }
