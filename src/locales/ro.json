@@ -1,8 +1,159 @@
 {
-  "site": {
-    "title": "EyeOnRomania"
+  "homePage": {
+    "title": "O fereastră clară și de încredere în",
+    "romania": "România",
+    "description": "Ghid practic pentru vizitatori, studenți, profesioniști și parteneri — curatorial, cu surse și imprimabil.",
+    "valuePillars": {
+      "safety": {
+        "title": "Siguranță",
+        "description": "Secur și primitor"
+      },
+      "nature": {
+        "title": "Natură",
+        "description": "Carpați & Dunăre"
+      },
+      "culture": {
+        "title": "Cultură",
+        "description": "Patrimoniu bogat"
+      },
+      "opportunity": {
+        "title": "Oportunitate",
+        "description": "Economia în creștere"
+      }
+    },
+    "navigation": {
+      "visa": {
+        "title": "Viză & Intrare",
+        "description": "Fluxuri pas cu pas și liste verificabile imprimabile pentru proceduri la frontieră." 
+      },
+      "work": {
+        "title": "Muncă & Angajare",
+        "description": "Ghid pentru vize de muncă, piețe de joburi și proceduri de angajare." 
+      },
+      "study": {
+        "title": "Studii & Universități",
+        "description": "Căi universitare, pași de înmatriculare și oportunități educaționale." 
+      },
+      "travel": {
+        "title": "Călătorii & Itinerarii",
+        "description": "Rute selectate și elemente culturale esențiale pentru experiențe memorabile în România." 
+      }
+    },
+    "footerCTA": {
+      "title": "Informații pregătite pentru parteneriat",
+      "description": "Toate ghidurile sunt atent sursate, actualizate regulat și proiectate să se alinieze cu obiectivele de turism, educație și investiții.",
+      "link": {
+        "title": "Pentru instituții"
+      }
+    }
   },
-  "home": {
-    "slogan": "O fereastră clară și de încredere către România"
+  "visaPage": {
+    "title": "Viză & Intrare",
+    "subtitle": "Privire de ansamblu",
+    "disclaimer": "Ghid informativ. Nu reprezintă sfat juridic.",
+    "download": {
+      "title": "Listă completă de verificare pentru viză",
+      "description": "Descarcă o listă completă și imprimabilă pentru cererea ta de viză.",
+      "countryLabel": "Țara ta",
+      "countryOther": "Altă / Nespecificată",
+      "downloadChecklist": "Descarcă lista de verificare",
+      "lastUpdated": "Ultima actualizare",
+      "preview": "Previzualizează PDF",
+      "button": "Descarcă lista (PDF)"
+    },
+    "visaTypes": {
+      "shortStay": {
+        "type": "Ședere scurtă (C)",
+        "duration": "Până la 90 de zile",
+        "purpose": "Turism, vizite de afaceri, familie, evenimente culturale"
+      },
+      "longStay": {
+        "type": "Ședere lungă (D)",
+        "duration": "Peste 90 de zile",
+        "purpose": "Muncă, studii, reîntregire familială"
+      },
+      "transit": {
+        "type": "Tranzit (A)",
+        "duration": "24-48 ore",
+        "purpose": "Tranzit aeroport/teritoriu"
+      }
+    },
+    "checklist": {
+      "title": "Listă comună pentru ședere scurtă (C)",
+      "noVisaRequired": "Nu este necesară viză pentru șederi scurte — verifică ghidurile oficiale pentru cerințe de intrare.",
+      "note": {
+        "title": "Notă importantă",
+        "description": "Cerințele pot varia în funcție de naționalitate și circumstanțe specifice. Consultă întotdeauna consulatul sau ambasada României din țara ta pentru cerințele actualizate și specifice."
+      }
+    },
+    "pdf": {
+      "header": "Listă de verificare pentru vizele României",
+      "subTitle": "Listă comună pentru ședere scurtă (C)",
+      "visaFreeBadge": "INTRARE FĂRĂ VIZĂ",
+      "visaRequiredBadge": "VIZĂ DE ȘEDERE SCURTĂ (C) NECESARĂ",
+      "notesLabel": "Note importante:"
+    },
+    "noVisa": {
+      "title": "Fără viză",
+      "description": "Cetățenii {country} pot intra în România fără viză pentru șederi turistice sau de afaceri de până la 90 de zile într-o perioadă de 180 de zile.",
+      "needs": {
+        "passport": "Pașaport valid (valabilitate +6 luni)",
+        "funds": "Dovada resurselor financiare suficiente",
+        "ticket": "Bilet de întoarcere/continuu",
+        "insurance": "Asigurare de călătorie (recomandată)"
+      }
+    },
+    "egypt": {
+      "confirmedTitle": "Cerințe confirmate pentru cetățenii egipteni",
+      "confirmedDescription": "Bazat pe cereri de viză procesate în iunie 2025. Viza tip C valabilă pentru vizite culturale de 7-8 zile.",
+      "requirements": {
+        "item1": "Scan pașaport (valabil +6 luni după data planificată a șederii)",
+        "item2": "Formular de cerere viză UE (completat automat după finalizarea formularului online la Portalul eVisa al Ambasadei României din Cairo)",
+        "item3": "2 fotografii personale (35x45mm, color, fundal alb)",
+        "item4": "Dovada biletului dus-întors (rezervare zbor)",
+        "item5": "Asigurare de călătorie (acoperire minimă €30.000 pentru spațiul Schengen)",
+        "item6": "Dovada cazării (rezervări hotel, scrisoare de invitație sau aranjamente cu gazda)",
+        "item7": "Extras de cont bancar (sau al părintelui/tutorelui dacă e student) - ultimele 3-6 luni",
+        "item8": "Certificat de înmatriculare la universitate (dacă este student) SAU scrisoare de angajare (dacă este angajat)",
+        "item9": "Certificat de înregistrare individuală",
+        "item10": "Scrisoare de invitație și rambursare (dacă este disponibilă) pentru vizite culturale",
+        "item11": "Certificat de mișcări pentru ultimii 7 ani în și din țara dvs. (necesar dacă nu ați avut anterior viză Schengen)",
+        "item12": "Documentație privind scopul vizitei (activități culturale, întâlniri de afaceri, turism)"
+      },
+      "requirementsList": [
+        "Scan pașaport (valabil cel puțin 6 luni după data plecării planificate)",
+        "Formular de cerere viză UE (completat automat după finalizarea formularului online pe portalul eVisa al Ambasadei României din Cairo)",
+        "2 fotografii personale (35x45 mm, color, fundal alb)",
+        "Dovadă a biletului tur‑retur (rezervare zbor dus‑întors)",
+        "Asigurare de călătorie (acoperire minimă 30.000 € pentru zona Schengen)",
+        "Dovadă a cazării (rezervări la hotel, scrisoare de invitație sau aranjamente cu gazda)",
+        "Extras de cont bancar (sau al părintelui/tutorelui pentru studenți) — ultimele 3–6 luni",
+        "Certificat de înscriere la universitate (dacă este student) SAU adeverință/contract de muncă (dacă este angajat)",
+        "Certificat de înregistrare individuală",
+        "Scrisoare de invitație și declarație de acoperire a cheltuielilor (dacă este disponibilă) pentru vizite culturale",
+        "Certificat de mișcări (intrări/ieșiri) din ultimii 7 ani în/din țara dvs. (cerut dacă nu ați avut anterior viză Schengen)",
+        "Documente care atestă scopul vizitei (activități culturale, întâlniri de afaceri, turism)"
+      ],
+      "importantTitle": "Note importante",
+      "importantList": {
+        "li1": "Certificat de cazier NU este necesar pentru șederi scurte (7-8 zile)",
+        "li2": "Certificatul de mișcări este necesar doar dacă nu ați avut anterior viză Schengen",
+        "li3": "Studenții pot folosi extrasele bancare ale părinților/tutorelui",
+        "li4": "Scrisorile pentru vizite culturale pot include detalii privind rambursarea, dacă este cazul"
+      }
+    },
+    "consulate": {
+      "title": "Ambasada României în Cairo",
+      "submitText": "Pentru cetățenii egipteni, depuneți cererea la:",
+      "linkText": "Ambasada României din Cairo - Portal eVisa"
+    },
+    "sources": {
+      "title": "Surse oficiale"
+    },
+    "footerCTA": {
+      "title": "Gata pentru pasul următor?",
+      "description": "După aprobarea vizei, explorează oportunități de muncă, programe de studii și experiențe culturale în România.",
+      "linkText": "Explorează oportunități de muncă"
+    }
   }
 }

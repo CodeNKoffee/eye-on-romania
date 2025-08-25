@@ -5,10 +5,23 @@ export type PDFOptions = {
   isVisaFree?: boolean;
   disclaimer?: string;
   action?: 'download' | 'preview';
+  strings?: {
+    header?: string;
+    subTitle?: string;
+    visaFreeBadge?: string;
+    visaRequiredBadge?: string;
+    notesLabel?: string;
+  };
 };
 
 export async function exportChecklistPDF(title: string, items: string[], options: PDFOptions = {}) {
   const { countryName = 'your country', isVisaFree = false, disclaimer, action = 'download' } = options;
+  const strings = options.strings || {};
+  const headerText = strings.header || 'Romanian Visa Checklist';
+  const subTitleText = strings.subTitle || title;
+  const visaFreeBadge = strings.visaFreeBadge || 'VISA-FREE ENTRY';
+  const visaRequiredBadge = strings.visaRequiredBadge || 'SHORT-STAY (C) VISA REQUIRED';
+  const notesLabel = strings.notesLabel || 'Important Notes:';
 
   const doc = new jsPDF({ unit: 'pt', format: 'a4' });
   const pageWidth = doc.internal.pageSize.width;
@@ -16,12 +29,12 @@ export async function exportChecklistPDF(title: string, items: string[], options
   // Header
   doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
-  doc.text('Romanian Visa Checklist', 40, 60);
+  doc.text(headerText, 40, 60);
 
   // Subheader / title
   doc.setFontSize(14);
   doc.setFont('helvetica', 'normal');
-  doc.text(title, 40, 82);
+  doc.text(subTitleText, 40, 82);
 
   // Country info
   doc.setFontSize(12);
@@ -31,10 +44,10 @@ export async function exportChecklistPDF(title: string, items: string[], options
   doc.setFont('helvetica', 'bold');
   if (isVisaFree) {
     doc.setTextColor(0, 128, 0);
-    doc.text('VISA-FREE ENTRY', pageWidth - 150, 100, { align: 'right' });
+    doc.text(visaFreeBadge, pageWidth - 150, 100, { align: 'right' });
   } else {
     doc.setTextColor(220, 38, 127);
-    doc.text('SHORT-STAY (C) VISA REQUIRED', pageWidth - 170, 100, { align: 'right' });
+    doc.text(visaRequiredBadge, pageWidth - 170, 100, { align: 'right' });
   }
 
   // Reset color
@@ -101,7 +114,7 @@ export async function exportChecklistPDF(title: string, items: string[], options
 
   doc.setFont('helvetica', 'italic');
   doc.setFontSize(10);
-  doc.text('Important Notes:', left, y + 10);
+  doc.text(notesLabel, left, y + 10);
   notes.forEach((n, i) => {
     const lines = doc.splitTextToSize(`• ${n}`, maxWidth - 20);
     doc.text(lines, left + 6, y + 28 + i * (lineHeight + 2));

@@ -56,6 +56,9 @@
       "description": "Download a comprehensive, printable checklist for your visa application.",
       "countryLabel": "Your country",
       "countryOther": "Other / Not listed",
+      "downloadChecklist": "Download checklist",
+      "lastUpdated": "Last updated",
+      "preview": "Preview PDF",
       "button": "Download checklist (PDF)"
     },
     "visaTypes": {
@@ -82,6 +85,67 @@
         "title": "Important Note",
         "description": "Requirements may vary by nationality and specific circumstances. Always consult the official Romanian consulate or embassy in your country for the most current and specific requirements."
       }
+    },
+    "noVisa": {
+      "title": "No Visa Required",
+      "description": "Citizens of {country} can enter Romania visa-free for tourist or business stays up to 90 days within any 180-day period.",
+      "needs": {
+        "passport": "Valid passport (6+ months remaining validity)",
+        "funds": "Proof of sufficient funds",
+        "ticket": "Return/onward travel ticket",
+        "insurance": "Travel insurance (recommended)"
+      }
+    },
+    "egypt": {
+      "confirmedTitle": "Confirmed Requirements for Egyptian Citizens",
+      "confirmedDescription": "Based on actual visa applications processed in June 2025. Type C visa valid for 7-8 days cultural visits.",
+      "requirements": {
+        "item1": "Passport scan (valid 6+ months beyond intended stay)",
+        "item2": "EU visa application form (filled automatically after completing online form on Romanian Embassy eVisa portal in Cairo)",
+        "item3": "2 personal photos (35x45mm, color, white background)",
+        "item4": "Proof of 2-way go and return ticket (roundtrip flight reservation)",
+        "item5": "Travel insurance (minimum €30,000 coverage for Schengen area)",
+        "item6": "Proof of accommodation (hotel bookings, invitation letter, or host arrangements)",
+        "item7": "Bank account statement (or of parent/guardian if student) - last 3-6 months",
+        "item8": "University registration certificate (if student) OR employment letter (if employed)",
+        "item9": "Individual registration certificate",
+        "item10": "Letter of invitation and reimbursement (if available) for cultural visits",
+        "item11": "Movements certificate of your last 7 years in and out of your country (required if haven't had Schengen visa before)",
+        "item12": "Purpose of visit documentation (cultural activities, business meetings, tourism)"
+      },
+      "requirementsList": [
+        "Passport scan (valid 6+ months beyond intended stay)",
+        "EU visa application form (filled automatically after completing online form on Romanian Embassy eVisa portal in Cairo)",
+        "2 personal photos (35x45mm, color, white background)",
+        "Proof of 2-way go and return ticket (roundtrip flight reservation)",
+        "Travel insurance (minimum €30,000 coverage for Schengen area)",
+        "Proof of accommodation (hotel bookings, invitation letter, or host arrangements)",
+        "Bank account statement (or of parent/guardian if student) - last 3-6 months",
+        "University registration certificate (if student) OR employment letter (if employed)",
+        "Individual registration certificate",
+        "Letter of invitation and reimbursement (if available) for cultural visits",
+        "Movements certificate of your last 7 years in and out of your country (required if haven't had Schengen visa before)",
+        "Purpose of visit documentation (cultural activities, business meetings, tourism)"
+      ],
+      "importantTitle": "Important Notes",
+      "importantList": {
+        "li1": "Criminal record certificate NOT required for short stays (7-8 days)",
+        "li2": "Movements certificate only needed if you haven't had a Schengen visa before",
+        "li3": "Students can use parent/guardian bank statements",
+        "li4": "Cultural visit letters can include reimbursement details if applicable"
+      }
+    },
+    "consulate": {
+      "title": "Romanian Embassy in Cairo",
+      "submitText": "For Egyptian citizens, submit your application at:",
+      "linkText": "Romanian Embassy in Cairo - eVisa Portal"
+    },
+    "pdf": {
+      "header": "Romanian Visa Checklist",
+      "subTitle": "Common Short-stay (C) Checklist",
+      "visaFreeBadge": "VISA-FREE ENTRY",
+      "visaRequiredBadge": "SHORT-STAY (C) VISA REQUIRED",
+      "notesLabel": "Important Notes:"
     },
     "sources": {
       "title": "Official Sources"

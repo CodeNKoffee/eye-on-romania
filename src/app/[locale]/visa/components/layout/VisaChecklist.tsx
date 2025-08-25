@@ -7,21 +7,48 @@ export default function VisaChecklist() {
   const t = useTranslations("visaPage");
   const { requirements, isVisaFree, countryData } = useVisaData();
 
-  // Updated requirements for Egyptian citizens based on actual experience
-  const egyptianRequirements = [
-    "Passport scan (valid 6+ months beyond intended stay)",
-    "EU visa application form (filled automatically after completing online form on Romanian Embassy eVisa portal in Cairo)",
-    "2 personal photos (35x45mm, color, white background)",
-    "Proof of 2-way go and return ticket (roundtrip flight reservation)",
-    "Travel insurance (minimum €30,000 coverage for Schengen area)",
-    "Proof of accommodation (hotel bookings, invitation letter, or host arrangements)",
-    "Bank account statement (or of parent/guardian if student) - last 3-6 months",
-    "University registration certificate (if student) OR employment letter (if employed)",
-    "Individual registration certificate",
-    "Letter of invitation and reimbursement (if available) for cultural visits",
-    "Movements certificate of your last 7 years in and out of your country (required if haven't had Schengen visa before)",
-    "Purpose of visit documentation (cultural activities, business meetings, tourism)"
+  // Load Egyptian requirements as an array from translations when available.
+  // next-intl sometimes returns a string (possibly JSON) or an array. Handle both and validate.
+  const rawEgypt: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
+  let translatedEgyptian: string[] | undefined;
+
+  if (Array.isArray(rawEgypt)) {
+    translatedEgyptian = rawEgypt as string[];
+  } else if (typeof rawEgypt === 'string') {
+    // Sometimes the serializer stores arrays as JSON strings in messages — attempt to parse.
+    try {
+      const parsed = JSON.parse(rawEgypt);
+      if (Array.isArray(parsed)) translatedEgyptian = parsed as string[];
+    } catch (e) {
+      // not JSON, keep undefined
+    }
+  }
+
+  // Fallback: individual translated items (keeps translations per-locale). If those also look like untranslated keys,
+  // we'll later detect and fall back to `requirements.items`.
+  const fallbackFromKeys = [
+    t('egypt.requirements.item1'),
+    t('egypt.requirements.item2'),
+    t('egypt.requirements.item3'),
+    t('egypt.requirements.item4'),
+    t('egypt.requirements.item5'),
+    t('egypt.requirements.item6'),
+    t('egypt.requirements.item7'),
+    t('egypt.requirements.item8'),
+    t('egypt.requirements.item9'),
+    t('egypt.requirements.item10'),
+    t('egypt.requirements.item11'),
+    t('egypt.requirements.item12')
   ];
+
+  let egyptianRequirements: string[] = translatedEgyptian ?? fallbackFromKeys;
+
+  // If translations are absent and keys are returned literally (e.g., 'egypt.requirements.item1'),
+  // detect that and fall back to the generic requirements from `requirements.items` to avoid showing English hard-coded text.
+  const looksLikeUntranslated = (arr: string[]) => arr.every(i => typeof i === 'string' && i.includes('.') && i.split('.').length >= 2);
+  if (looksLikeUntranslated(egyptianRequirements)) {
+    egyptianRequirements = requirements.items || [];
+  }
 
   if (isVisaFree) {
     return (
@@ -35,18 +62,18 @@ export default function VisaChecklist() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-transylvanian-stone mb-2">
-                No Visa Required
+                {t('noVisa.title')}
               </h3>
               <p className="text-transylvanian-stone/70 mb-4">
-                Citizens of {countryData?.name || 'your country'} can enter Romania visa-free for tourist or business stays up to 90 days within any 180-day period.
+                {t('noVisa.description', { country: countryData?.name || t('download.countryOther') })}
               </p>
               <div className="text-sm text-transylvanian-stone/60">
-                <p>You'll still need:</p>
+                <p>{t('noVisa.needs.title', { defaultValue: "You'll still need:" })}</p>
                 <ul className="mt-2 space-y-1">
-                  <li>• Valid passport (6+ months remaining validity)</li>
-                  <li>• Proof of sufficient funds</li>
-                  <li>• Return/onward travel ticket</li>
-                  <li>• Travel insurance (recommended)</li>
+                  <li>• {t('noVisa.needs.passport')}</li>
+                  <li>• {t('noVisa.needs.funds')}</li>
+                  <li>• {t('noVisa.needs.ticket')}</li>
+                  <li>• {t('noVisa.needs.insurance')}</li>
                 </ul>
               </div>
             </div>
@@ -82,9 +109,9 @@ export default function VisaChecklist() {
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h4 className="font-semibold text-amber-800 mb-1">Confirmed Requirements for Egyptian Citizens</h4>
+                  <h4 className="font-semibold text-amber-800 mb-1">{t('egypt.confirmedTitle')}</h4>
                   <p className="text-sm text-amber-700">
-                    Based on actual visa applications processed in June 2025. Type C visa valid for 7-8 days cultural visits.
+                    {t('egypt.confirmedDescription')}
                   </p>
                 </div>
               </div>
@@ -106,12 +133,12 @@ export default function VisaChecklist() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <h4 className="font-semibold text-blue-800 mb-1">Important Notes</h4>
+                    <h4 className="font-semibold text-blue-800 mb-1">{t('egypt.importantTitle')}</h4>
                     <ul className="text-sm text-blue-700 space-y-1">
-                      <li>• Criminal record certificate NOT required for short stays (7-8 days)</li>
-                      <li>• Movements certificate only needed if you haven't had a Schengen visa before</li>
-                      <li>• Students can use parent/guardian bank statements</li>
-                      <li>• Cultural visit letters can include reimbursement details if applicable</li>
+                      <li>• {t('egypt.importantList.li1')}</li>
+                      <li>• {t('egypt.importantList.li2')}</li>
+                      <li>• {t('egypt.importantList.li3')}</li>
+                      <li>• {t('egypt.importantList.li4')}</li>
                     </ul>
                   </div>
                 </div>
@@ -126,25 +153,25 @@ export default function VisaChecklist() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
                 <div>
-                  <h4 className="font-semibold text-transylvanian-stone mb-1">Romanian Embassy in Cairo</h4>
+                  <h4 className="font-semibold text-transylvanian-stone mb-1">{t('consulate.title')}</h4>
                   <p className="text-sm text-transylvanian-stone/70 mb-2">
-                    For Egyptian citizens, submit your application at:
+                    {t('consulate.submitText')}
                   </p>
-                  <a 
-                    href={requirements.consulateUrl || "https://cairo.mae.ro/"} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-tricolor-blue hover:underline text-sm"
-                  >
-                    Romanian Embassy in Cairo - eVisa Portal
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
+                   <a 
+                     href={requirements.consulateUrl || "https://cairo.mae.ro/"} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="inline-flex items-center text-tricolor-blue hover:underline text-sm"
+                   >
+                     {t('consulate.linkText')}
+                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                     </svg>
+                   </a>
+                 </div>
+               </div>
+             </div>
+           )}
 
           <div className="mt-8 p-4 bg-danube-mist/50 rounded-lg border border-danube-mist">
             <div className="flex items-start gap-3">
@@ -152,9 +179,9 @@ export default function VisaChecklist() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <h4 className="font-semibold text-transylvanian-stone mb-1">Disclaimer</h4>
+                <h4 className="font-semibold text-transylvanian-stone mb-1">{t('checklist.note.title')}</h4>
                 <p className="text-sm text-transylvanian-stone/70">
-                  Requirements may vary based on individual circumstances. Always confirm current requirements with the Romanian Embassy before applying. This information is based on successful applications from June 2025.
+                  {t('checklist.note.description')}
                 </p>
               </div>
             </div>

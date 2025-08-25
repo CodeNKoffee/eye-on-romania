@@ -9,8 +9,11 @@ export default function ChecklistDownload() {
   const t = useTranslations("visaPage");
   const { selectedCountry, setSelectedCountry, requirements, isVisaFree, countryData } = useVisaData();
 
-  // Updated requirements for Egyptian citizens based on actual experience
-  const egyptianRequirements = [
+  // Load Egyptian requirements from translations when available; fallback to a hard-coded list
+  // next-intl may return a string for t(...) by default; coerce via unknown and validate with Array.isArray
+  const rawTranslated: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
+  const translatedEgyptRequirements = Array.isArray(rawTranslated) ? (rawTranslated as string[]) : undefined;
+  const fallbackEgyptRequirements = [
     "Passport scan (valid 6+ months beyond intended stay)",
     "EU visa application form (filled automatically after completing online form on Romanian Embassy eVisa portal in Cairo)",
     "2 personal photos (35x45mm, color, white background)",
@@ -36,14 +39,29 @@ export default function ChecklistDownload() {
       ];
     }
     
-    // Use Egyptian requirements if Egypt is selected, otherwise use original requirements
-    return countryData?.code === 'EG' ? egyptianRequirements : requirements.items;
+    // Use translated Egyptian requirements if present, otherwise fallback to the English hard-coded array,
+    // otherwise default to the original requirements from country data
+    if (countryData?.code === 'EG') {
+      return translatedEgyptRequirements && translatedEgyptRequirements.length > 0
+        ? translatedEgyptRequirements
+        : fallbackEgyptRequirements;
+    }
+    return requirements.items;
   };
 
   const items = getRequirementsForDownload();
 
+  // Localized strings for PDF header and labels
+  const pdfStrings = {
+    header: t('pdf.header'),
+    subTitle: t('pdf.subTitle'),
+    visaFreeBadge: t('pdf.visaFreeBadge'),
+    visaRequiredBadge: t('pdf.visaRequiredBadge'),
+    notesLabel: t('pdf.notesLabel')
+  };
+
   // Safely resolve disclaimer translation: avoid passing untranslated key like 'visaPage.checklist.note'
-  const rawDisclaimer = t('checklist.note') as string | undefined;
+  const rawDisclaimer = t('checklist.note.description') as string | undefined;
   const disclaimer = rawDisclaimer && rawDisclaimer.includes('.') ? undefined : rawDisclaimer;
 
   const handleDownload = () => {
@@ -52,6 +70,7 @@ export default function ChecklistDownload() {
       countryName,
       isVisaFree,
       disclaimer,
+      strings: pdfStrings,
       action: 'download'
     });
   };
@@ -63,6 +82,7 @@ export default function ChecklistDownload() {
         countryName,
         isVisaFree,
         disclaimer,
+        strings: pdfStrings,
         action: 'preview'
       }) as string | undefined;
 
@@ -75,6 +95,7 @@ export default function ChecklistDownload() {
         countryName,
         isVisaFree,
         disclaimer,
+        strings: pdfStrings,
         action: 'download'
       });
     }
@@ -110,7 +131,7 @@ export default function ChecklistDownload() {
                 {/* Country Selector Block */}
                 <div className="bg-gray-50/50 rounded-lg p-4 border border-gray-200/50">
                   <label className="block text-sm font-medium text-transylvanian-stone mb-2">
-                    Your country
+                    {t("download.countryLabel")}
                   </label>
                   <div className="relative z-50">
                     <CountrySelector
@@ -124,7 +145,7 @@ export default function ChecklistDownload() {
                 <div className="bg-tricolor-blue/5 rounded-lg p-4 border border-tricolor-blue/10">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm font-medium text-transylvanian-stone">
-                      Download checklist
+                      {t("download.downloadChecklist")}
                     </span>
                     <LastUpdated date={new Date().toISOString()} />
                   </div>
@@ -133,7 +154,7 @@ export default function ChecklistDownload() {
                       onClick={handlePreview}
                       className="flex-1 inline-flex items-center justify-center px-6 py-3 bg-white text-tricolor-blue rounded-lg hover:bg-gray-50 transition-all duration-200 font-medium border border-tricolor-blue/10 shadow-sm relative z-50"
                     >
-                      Preview PDF
+                      {t('download.preview')}
                     </button>
                     <button
                       onClick={handleDownload}
@@ -155,9 +176,9 @@ export default function ChecklistDownload() {
                 <svg className="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
-                <span>Informational guidance only. Not legal advice.</span>
+                <span>{t('disclaimer')}</span>
               </div>
-              <span>Last updated: 8/25/2025</span>
+              <span>{t('download.lastUpdated')}: 8/25/2025</span>
             </div>
           </div>
         </div>
