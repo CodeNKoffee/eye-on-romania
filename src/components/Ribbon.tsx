@@ -1,15 +1,25 @@
 "use client";
 import { motion, useReducedMotion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 export default function Ribbon() {
   const reduce = useReducedMotion();
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
 
   const onLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const locale = e.target.value;
-    // Navigate to the root path with chosen locale
-    router.push(`/${locale}`);
+    const newLocale = e.target.value;
+    
+    // Get the current path without the locale prefix
+    const pathWithoutLocale = pathname.startsWith(`/${locale}`) 
+      ? pathname.slice(`/${locale}`.length) 
+      : pathname;
+    
+    // Navigate to the same path with the new locale
+    const newPath = `/${newLocale}${pathWithoutLocale}` || `/${newLocale}`;
+    router.push(newPath);
   };
 
   return (
@@ -30,7 +40,12 @@ export default function Ribbon() {
       {/* Locale picker (top-right) */}
       <div className="absolute right-6 top-[-6px]">
         <label htmlFor="locale" className="sr-only">Select language</label>
-        <select id="locale" onChange={onLocaleChange} defaultValue="en" className="px-2 py-1 rounded-md border border-danube-mist bg-white text-sm">
+        <select 
+          id="locale" 
+          onChange={onLocaleChange} 
+          value={locale}
+          className="px-2 py-1 rounded-md border border-danube-mist bg-white text-sm focus:outline-none focus:ring-2 focus:ring-tricolor-blue focus:border-transparent"
+        >
           <option value="en">EN</option>
           <option value="ro">RO</option>
         </select>
