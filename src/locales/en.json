@@ -1,8 +1,50 @@
 {
-  "site": {
-    "title": "EyeOnRomania"
-  },
-  "home": {
-    "slogan": "A clear, trusted window into Romania"
+  "homePage": {
+    "title": "A clear, trusted window into",
+    "romania": "Romania",
+    "description": "Practical guidance for visitors, students, professionals, and partners — curated, sourced, and printable.",
+    "valuePillars": {
+      "safety": {
+        "title": "Safety",
+        "description": "Secure & welcoming"
+      },
+      "nature": {
+        "title": "Nature",
+        "description": "Carpathians & Danube"
+      },
+      "culture": {
+        "title": "Culture",
+        "description": "Rich heritage"
+      },
+      "opportunity": {
+        "title": "Opportunity",
+        "description": "Growing economy"
+      }
+    },
+    "navigation": {
+      "visa": {
+        "title": "Visa & Entry",
+        "description": "Step-by-step flows and printable checklists for smooth border procedures."
+      },
+      "work": {
+        "title": "Work & Employment",
+        "description": "Guidance on work visas, job markets, and employment procedures."
+      },
+      "study": {
+        "title": "Study & Universities",
+        "description": "University pathways, enrollment steps, and education opportunities."
+      },
+      "travel": {
+        "title": "Travel & Itineraries",
+        "description": "Curated routes and cultural essentials for memorable Romanian experiences."
+      }
+    },
+    "footerCTA": {
+      "title": "Partnership-Ready Information",
+      "description": "All guidance is carefully sourced, regularly updated, and designed to align with tourism, education, and investment goals.",
+      "link": {
+        "title": "For Institutions"
+      }
+    }
   }
 }
