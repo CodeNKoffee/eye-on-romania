@@ -186,5 +186,61 @@
       "description": "După aprobarea vizei, explorează oportunități de muncă, programe de studii și experiențe culturale în România.",
       "linkText": "Explorează oportunități de muncă"
     }
+  },
+  "travelPage": {
+    "titlePrefix": "Călătorii &",
+    "titleHighlight": "Itinerarii",
+    "description": "Itinerarii curatoriate pentru a inspira scurte excursii și șederi mai lungi în regiunile diverse ale României.",
+    "featuredTitle": "Itinerarii recomandate",
+    "stats": {
+      "unesco": "Situri UNESCO",
+      "nationalParks": "Parcuri naționale",
+      "castles": "Cetăți și castele",
+      "carpathianRange": "Lanțul Carpaților"
+    },
+    "highlightsTitle": "Repere principale:",
+    "viewItinerary": "Vezi itinerariul complet",
+    "essentials": {
+      "title": "Informații esențiale",
+      "languageTitle": "Limbă",
+      "languageDesc": "Româna (oficială), engleza e larg vorbită în orașe",
+      "currencyTitle": "Monedă",
+      "currencyDesc": "Leu românesc (RON), plățile cu cardul sunt acceptate pe scară largă",
+      "safetyTitle": "Securitate",
+      "safetyDesc": "Foarte sigur, standarde UE, Urgență: 112",
+      "connectivityTitle": "Conectivitate",
+      "connectivityDesc": "4G/5G excelente, WiFi gratuit în multe locuri"
+    },
+    "transport": {
+      "title": "Cum te deplasezi în România",
+      "byTrain": { "title": "Cu trenul", "desc": "Rețea extinsă ce leagă orașele principale. Rezervă la CFR Călători." },
+      "byBus": { "title": "Cu autobuzul", "desc": "FlixBus și operatori locali deservesc toate regiunile. Confortabil și accesibil." },
+      "byCar": { "title": "Închirieri auto", "desc": "Permise internaționale acceptate. Ideal pentru explorarea Transilvaniei." }
+    },
+    "notFound": { "title": "Itinerariu negăsit", "back": "Înapoi la toate itinerariile" },
+    "breadcrumb": { "root": "Călătorii & Itinerarii" },
+    "mapPlaceholder": "Hartă în curând",
+    "days": "zile",
+    "details": { "title": "Itinerariu detaliat" },
+    "stopPlaceholder": "Detalii și sfaturi pentru această oprire vor fi adăugate în curând.",
+    "practical": {
+      "gettingThere": "Cum ajungi",
+      "byTrain": { "label": "Cu trenul:", "example": "3-4 ore din București" },
+      "byCar": { "label": "Cu mașina:", "example": "2.5 ore via A1" },
+      "byBus": { "label": "Cu autobuzul:", "example": "FlixBus disponibil" }
+    },
+    "accommodation": {
+      "budget": { "label": "Buget:", "example": "€20-40/noapte" },
+      "mid": { "label": "Mid-range:", "example": "€40-80/noapte" },
+      "lux": { "label": "Lux:", "example": "€80-150/noapte" }
+    },
+    "tips": {
+      "title": "Sfaturi locale",
+      "bestTimeTitle": "Cel mai bun moment pentru vizită",
+      "bestTimeDesc": "Primăvara (mai-iunie) și începutul toamnei (septembrie) oferă vreme plăcută și mai puțini turiști.",
+      "packTitle": "Ce să împachetezi",
+      "packDesc": "Încălțăminte confortabilă, aparat foto și haine în straturi pentru vreme schimbătoare în munți."
+    },
+    "backToAll": "Înapoi la toate itinerariile"
   }
 }

@@ -160,7 +160,7 @@ export default function ChecklistDownload() {
                     className="inline-flex items-center justify-center px-6 py-3 bg-tricolor-blue text-white rounded-lg hover:bg-tricolor-blue/90 transition-all duration-200 font-medium shadow-sm active:scale-[0.98] relative z-50"
                   >
                     <span className="mr-1">{t("download.button")}</span>
-                    <span className="text-xs opacity-80">(PDF)</span>
+                    {/* <span className="text-xs opacity-80">(PDF)</span> */}
                   </button>
                 </div>
               </div>

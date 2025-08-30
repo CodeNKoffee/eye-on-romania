@@ -187,4 +187,61 @@
       "linkText": "Explore Work Opportunities"
     }
   }
+    ,
+    "travelPage": {
+      "titlePrefix": "Travel &",
+      "titleHighlight": "Itineraries",
+      "description": "Curated itineraries to inspire short trips and deeper stays across Romania's diverse regions.",
+      "featuredTitle": "Featured Itineraries",
+      "stats": {
+        "unesco": "UNESCO Sites",
+        "nationalParks": "National Parks",
+        "castles": "Castles",
+        "carpathianRange": "Carpathian Range"
+      },
+      "highlightsTitle": "Key Highlights:",
+      "viewItinerary": "View complete itinerary",
+      "essentials": {
+        "title": "Travel Essentials",
+        "languageTitle": "Language",
+        "languageDesc": "Romanian (official), English widely spoken in cities",
+        "currencyTitle": "Currency",
+        "currencyDesc": "Romanian Leu (RON), Cards accepted everywhere",
+        "safetyTitle": "Safety",
+        "safetyDesc": "Very safe, EU standards, Emergency: 112",
+        "connectivityTitle": "Connectivity",
+        "connectivityDesc": "Excellent 4G/5G, Free WiFi in most venues"
+      },
+      "transport": {
+        "title": "Getting Around Romania",
+        "byTrain": { "title": "By Train", "desc": "Extensive network connecting major cities. Book at CFR Călători." },
+        "byBus": { "title": "By Bus", "desc": "FlixBus and local operators serve all regions. Comfortable and affordable." },
+        "byCar": { "title": "Car Rental", "desc": "International licenses accepted. Great for exploring Transylvania." }
+      },
+      "notFound": { "title": "Itinerary not found", "back": "Back to all itineraries" },
+      "breadcrumb": { "root": "Travel & Itineraries" },
+      "mapPlaceholder": "Map coming soon",
+      "days": "days",
+      "details": { "title": "Detailed Itinerary" },
+      "stopPlaceholder": "Details and tips for this stop will be added soon.",
+      "practical": {
+        "gettingThere": "Getting There",
+        "byTrain": { "label": "By Train:", "example": "3-4 hours from Bucharest" },
+        "byCar": { "label": "By Car:", "example": "2.5 hours via A1" },
+        "byBus": { "label": "By Bus:", "example": "FlixBus available" }
+      },
+      "accommodation": {
+        "budget": { "label": "Budget:", "example": "€20-40/night" },
+        "mid": { "label": "Mid-range:", "example": "€40-80/night" },
+        "lux": { "label": "Luxury:", "example": "€80-150/night" }
+      },
+      "tips": {
+        "title": "Local Tips",
+        "bestTimeTitle": "Best Time to Visit",
+        "bestTimeDesc": "Spring (May-June) and early autumn (September) offer pleasant weather and fewer crowds.",
+        "packTitle": "What to Pack",
+        "packDesc": "Comfortable walking shoes, camera, and layers for changing weather in the mountains."
+      },
+      "backToAll": "Back to all itineraries"
+    }
 }
