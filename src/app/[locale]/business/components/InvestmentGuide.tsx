@@ -59,16 +59,16 @@ export default function InvestmentGuide() {
       
       <div className="grid md:grid-cols-2 gap-6">
         {investmentOpportunities.map((opportunity, index) => (
-          <div key={index} className="flex gap-4 p-4 rounded-lg border border-danube-mist hover:shadow-sm transition-shadow">
+          <div key={index} className="flex gap-4 p-4 rounded-lg border border-danube-mist hover:shadow-sm transition-shadow h-full">
             <div className={`flex-shrink-0 w-12 h-12 ${opportunity.color} bg-current/10 rounded-lg flex items-center justify-center`}>
               <div className={opportunity.color}>
                 {opportunity.icon}
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 flex flex-col h-full">
               <h3 className="font-semibold text-transylvanian-stone mb-2">{opportunity.title}</h3>
-              <p className="text-sm text-transylvanian-stone/70 mb-2">{opportunity.description}</p>
-              <div className="text-xs text-tricolor-blue bg-tricolor-blue/10 px-2 py-1 rounded inline-block">
+              <p className="text-sm text-transylvanian-stone/70 mb-2 flex-grow">{opportunity.description}</p>
+              <div className="text-xs text-tricolor-blue bg-tricolor-blue/10 px-2 py-1 rounded inline-block mt-auto">
                 {opportunity.incentives}
               </div>
             </div>

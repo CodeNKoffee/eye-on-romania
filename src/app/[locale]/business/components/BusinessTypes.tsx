@@ -61,11 +61,11 @@ export default function BusinessTypes() {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-transylvanian-stone/60">Min. Capital:</span>
-                <span className="font-medium text-transylvanian-stone">{type.minCapital}</span>
+                <span className="font-medium text-transylvanian-stone text-right">{type.minCapital}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-transylvanian-stone/60">Setup Time:</span>
-                <span className="font-medium text-transylvanian-stone">{type.timeframe}</span>
+                <span className="font-medium text-transylvanian-stone text-right">{type.timeframe}</span>
               </div>
             </div>
           </div>
