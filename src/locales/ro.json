@@ -615,5 +615,74 @@
         "link": "Vizitează InvestRomania"
       }
     }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politica de Confidențialitate",
+      "overview": {
+        "title": "Prezentare Generală",
+        "description": "Eye on Romania se angajează să vă protejeze confidențialitatea. Această politică de confidențialitate explică cum gestionăm informațiile când vizitați site-ul nostru web."
+      },
+      "dataCollection": {
+        "title": "Informațiile pe care le Colectăm",
+        "description": "Nu colectăm, stocăm sau procesăm date personale. Site-ul nostru web este pur informativ și nu necesită înregistrarea utilizatorului, cookie-uri sau urmărire."
+      },
+      "cookies": {
+        "title": "Cookie-uri și Urmărire",
+        "description": "Site-ul nostru web nu folosește cookie-uri, analize sau tehnologii de urmărire. Nu monitorizăm comportamentul dvs. de navigare și nu colectăm statistici de utilizare."
+      },
+      "thirdParty": {
+        "title": "Linkuri către Terți",
+        "description": "Site-ul nostru web conține linkuri către site-uri web oficiale ale guvernului român și alte resurse externe. Nu suntem responsabili pentru practicile de confidențialitate ale acestor site-uri externe."
+      },
+      "contact": {
+        "title": "Contactați-ne",
+        "description": "Dacă aveți întrebări despre această politică de confidențialitate, vă rugăm să ne contactați prin informațiile furnizate pe site-ul nostru web."
+      },
+      "lastUpdated": "Ultima actualizare"
+    },
+    "terms": {
+      "title": "Termeni și Condiții",
+      "acceptance": {
+        "title": "Acceptarea Termenilor",
+        "description": "Prin accesarea și utilizarea Eye on Romania, acceptați și sunteți de acord să fiți obligat de termenii și prevederile acestui acord."
+      },
+      "purpose": {
+        "title": "Scopul Serviciului",
+        "description": "Eye on Romania oferă conținut informativ despre România în scopuri educaționale și de referință. Toate informațiile sunt compilate din surse disponibile public."
+      },
+      "disclaimer": {
+        "title": "Clauza de Exonerare",
+        "description": "Deși ne străduim să oferim informații precise și actualizate, nu oferim garanții cu privire la completitudinea, fiabilitatea sau acuratețea acestor informații. Utilizatorii ar trebui să verifice toate informațiile cu sursele oficiale."
+      },
+      "intellectual": {
+        "title": "Proprietate Intelectuală",
+        "description": "Conținutul și designul acestui site web sunt deținute de Eye on Romania. Puteți folosi informațiile în scopuri personale, necomerciale, cu atribuire corespunzătoare."
+      },
+      "changes": {
+        "title": "Modificări ale Termenilor",
+        "description": "Ne rezervăm dreptul de a modifica acești termeni în orice moment. Modificările vor intra în vigoare imediat după postarea pe site."
+      },
+      "lastUpdated": "Ultima actualizare"
+    }
+  },
+  "footer": {
+    "description": "Ghidaj practic pentru vizitatori, studenți, profesioniști și parteneri — curatat, sursă și printabil.",
+    "quickLinks": {
+      "title": "Linkuri Rapide",
+      "visa": "Vize și Intrare",
+      "work": "Muncă și Angajare",
+      "business": "Afaceri și Investiții", 
+      "study": "Studii și Universități",
+      "travel": "Călătorii și Itinerarii"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Politica de Confidențialitate",
+      "terms": "Termeni și Condiții"
+    },
+    "disclaimer": "Toate informațiile sunt doar pentru referință. Vă rugăm să verificați cu sursele oficiale.",
+    "copyright": "Toate drepturile rezervate.",
+    "lastUpdated": "Ultima actualizare"
   }
 }

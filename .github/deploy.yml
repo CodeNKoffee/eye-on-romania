@@ -1,0 +1,72 @@
+name: Deploy to Production
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    branches: [main]
+    types: [completed]
+  
+  # Manual deployment trigger
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      
+    - name: Deploy to Vercel
+      id: deploy
+      run: |
+        echo "Deploying to production..."
+        # Uncomment and configure for your hosting provider:
+        
+        # For Vercel:
+        # npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        
+        # For Netlify:
+        # npx netlify-cli deploy --prod --dir=.next --auth=${{ secrets.NETLIFY_AUTH_TOKEN }}
+        
+        # For custom server:
+        # rsync -avz .next/ user@server:/path/to/app/
+        
+        echo "url=https://your-domain.com" >> $GITHUB_OUTPUT
+
+  notify:
+    name: Notify Deployment
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: always()
+    
+    steps:
+    - name: Deployment Success
+      if: needs.deploy.result == 'success'
+      run: |
+        echo "✅ Deployment successful!"
+        # Add notification logic here (Slack, Discord, email, etc.)
+        
+    - name: Deployment Failed
+      if: needs.deploy.result == 'failure'
+      run: |
+        echo "❌ Deployment failed!"
+        # Add failure notification logic here

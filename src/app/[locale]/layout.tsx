@@ -5,6 +5,7 @@ import {routing} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
 import {setRequestLocale} from 'next-intl/server';
 import {getMessages} from 'next-intl/server';
+import Footer from '@/components/Footer';
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -43,6 +44,7 @@ export default async function LocaleLayout({
     <div className={`${notoSans.className} ${inter.className}`}>
       <NextIntlClientProvider messages={messages}>
         {children}
+        <Footer />
       </NextIntlClientProvider>
     </div>
   );
