@@ -771,8 +771,8 @@
         "institutionPlaceholder": "Numele organizației tale",
         "contact": "Contact Principal",
         "contactPlaceholder": "Numele persoanei de contact",
-        "email": "Adresa de Email",
-        "emailPlaceholder": "oficial@institutie.ro",
+        "email": "Adresa de Email de Afaceri",
+        "emailPlaceholder": "contact@organizatia-ta.ro",
         "partnership": "Interesul pentru Parteneriat",
         "partnershipPlaceholder": "Descrie obiectivele tale de colaborare",
         "submit": "Trimite Cererea de Parteneriat",
@@ -785,6 +785,7 @@
         "contactRequired": "Numele persoanei de contact este obligatoriu",
         "emailRequired": "Adresa de email este obligatorie",
         "emailInvalid": "Te rugăm să introduci o adresă de email validă",
+        "emailNotBusiness": "Te rugăm să folosești o adresă de email profesională/de afaceri (nu Gmail, Yahoo, etc.)",
         "partnershipRequired": "Te rugăm să descrii interesul tău pentru parteneriat"
       },
       "response": "De obicei răspundem la cererile de parteneriat în 48 de ore."
