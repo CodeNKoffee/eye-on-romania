@@ -5,7 +5,7 @@ test.describe('Translation Quality & Completeness', () => {
     const pages = [
       '/en',
       '/en/visa',
-      '/en/work', 
+      '/en/work',
       '/en/business',
       '/en/study',
       '/en/travel',
@@ -14,7 +14,7 @@ test.describe('Translation Quality & Completeness', () => {
       '/ro',
       '/ro/visa',
       '/ro/work',
-      '/ro/business', 
+      '/ro/business',
       '/ro/study',
       '/ro/travel',
       '/ro/privacy',
@@ -23,10 +23,10 @@ test.describe('Translation Quality & Completeness', () => {
 
     for (const pagePath of pages) {
       await page.goto(pagePath);
-      
+
       // Check for untranslated keys (should not contain dots indicating nested keys)
       const bodyText = await page.textContent('body');
-      
+
       // Common translation key patterns that should not appear
       const translationKeyPatterns = [
         /\w+\.\w+\.\w+/, // e.g., homePage.title.main
@@ -35,33 +35,33 @@ test.describe('Translation Quality & Completeness', () => {
         /undefined/g, // Undefined values
         /null/g // Null values
       ];
-      
+
       for (const pattern of translationKeyPatterns) {
         const matches = bodyText?.match(pattern);
         if (matches) {
           // Filter out legitimate uses (like URLs, email addresses, etc.)
-          const suspiciousMatches = matches.filter(match => 
-            !match.includes('http') && 
-            !match.includes('@') && 
+          const suspiciousMatches = matches.filter(match =>
+            !match.includes('http') &&
+            !match.includes('@') &&
             !match.includes('www.') &&
             !match.includes('.com') &&
             !match.includes('.ro') &&
             !match.includes('3-4') && // Duration ranges
             !match.includes('1-2')
           );
-          
+
           expect(suspiciousMatches).toHaveLength(0);
         }
       }
-      
+
       // Specific checks for common untranslated areas
       const headings = page.locator('h1, h2, h3');
       const headingCount = await headings.count();
-      
+
       for (let i = 0; i < headingCount; i++) {
         const heading = headings.nth(i);
         const text = await heading.textContent();
-        
+
         // Headings should not contain translation keys
         expect(text).not.toMatch(/^[a-zA-Z]+\.[a-zA-Z]+/);
         expect(text).not.toBe('');
@@ -82,11 +82,11 @@ test.describe('Translation Quality & Completeness', () => {
       // Test EN to RO switching
       await page.goto(en);
       await expect(page.getByText(enText)).toBeVisible();
-      
+
       await page.selectOption('select[id="locale"]', 'ro');
       await page.waitForURL(ro);
       await expect(page.getByText(roText)).toBeVisible();
-      
+
       // Test RO to EN switching  
       await page.selectOption('select[id="locale"]', 'en');
       await page.waitForURL(en);
@@ -99,16 +99,16 @@ test.describe('Translation Quality & Completeness', () => {
     await page.goto('/en/privacy');
     await expect(page.getByText('Privacy Policy')).toBeVisible();
     await expect(page.getByText('Overview')).toBeVisible();
-    
+
     await page.goto('/en/terms');
     await expect(page.getByText('Terms of Service')).toBeVisible();
     await expect(page.getByText('Acceptance of Terms')).toBeVisible();
-    
+
     // Romanian legal pages  
     await page.goto('/ro/privacy');
     await expect(page.getByText('Politica de Confidențialitate')).toBeVisible();
     await expect(page.getByText('Prezentare Generală')).toBeVisible();
-    
+
     await page.goto('/ro/terms');
     await expect(page.getByText('Termeni și Condiții')).toBeVisible();
     await expect(page.getByText('Acceptarea Termenilor')).toBeVisible();
@@ -118,7 +118,7 @@ test.describe('Translation Quality & Completeness', () => {
 test.describe('Error Detection & Console Quality', () => {
   test('no console errors or warnings on any page', async ({ page }) => {
     const consoleMessages: { type: string; text: string; url: string }[] = [];
-    
+
     page.on('console', (msg) => {
       if (msg.type() === 'error' || msg.type() === 'warning') {
         consoleMessages.push({
@@ -133,7 +133,7 @@ test.describe('Error Detection & Console Quality', () => {
       '/en',
       '/en/visa',
       '/en/work',
-      '/en/business', 
+      '/en/business',
       '/en/study',
       '/en/travel',
       '/en/privacy',
@@ -145,28 +145,28 @@ test.describe('Error Detection & Console Quality', () => {
     for (const pagePath of pages) {
       await page.goto(pagePath);
       await page.waitForLoadState('networkidle');
-      
+
       // Wait a bit for any delayed console messages
       await page.waitForTimeout(1000);
     }
-    
+
     // Filter out known acceptable warnings (if any)
-    const criticalMessages = consoleMessages.filter(msg => 
+    const criticalMessages = consoleMessages.filter(msg =>
       !msg.text.includes('favicon') && // Favicon warnings are often acceptable
       !msg.text.includes('Deprecated') && // Deprecation warnings from dependencies
       !msg.text.toLowerCase().includes('third-party') // Third-party script warnings
     );
-    
+
     if (criticalMessages.length > 0) {
       console.log('Console messages found:', criticalMessages);
     }
-    
+
     expect(criticalMessages).toHaveLength(0);
   });
 
   test('no broken images or missing resources', async ({ page }) => {
     const failedRequests: string[] = [];
-    
+
     page.on('response', (response) => {
       if (response.status() >= 400) {
         failedRequests.push(`${response.status()} - ${response.url()}`);
@@ -174,46 +174,46 @@ test.describe('Error Detection & Console Quality', () => {
     });
 
     const pages = ['/en', '/en/business', '/en/study', '/ro'];
-    
+
     for (const pagePath of pages) {
       await page.goto(pagePath);
       await page.waitForLoadState('networkidle');
-      
+
       // Check for broken images specifically
       const images = page.locator('img');
       const imageCount = await images.count();
-      
+
       for (let i = 0; i < imageCount; i++) {
         const img = images.nth(i);
         const naturalWidth = await img.evaluate((el: HTMLImageElement) => el.naturalWidth);
         const naturalHeight = await img.evaluate((el: HTMLImageElement) => el.naturalHeight);
-        
+
         // Image should have loaded (natural dimensions > 0)
         expect(naturalWidth).toBeGreaterThan(0);
         expect(naturalHeight).toBeGreaterThan(0);
       }
     }
-    
+
     // No failed requests should occur
     expect(failedRequests).toHaveLength(0);
   });
 
   test('all pages load without JavaScript errors', async ({ page }) => {
     const jsErrors: string[] = [];
-    
+
     page.on('pageerror', (error) => {
       jsErrors.push(error.message);
     });
 
     const pages = [
-      '/en', '/en/visa', '/en/work', '/en/business', 
+      '/en', '/en/visa', '/en/work', '/en/business',
       '/en/study', '/en/travel', '/en/privacy', '/en/terms'
     ];
 
     for (const pagePath of pages) {
       await page.goto(pagePath);
       await page.waitForLoadState('domcontentloaded');
-      
+
       // Interact with the page to trigger any dynamic errors
       if (pagePath === '/en') {
         // Test navigation on home page
@@ -222,7 +222,7 @@ test.describe('Error Detection & Console Quality', () => {
           await cards.first().hover();
         }
       }
-      
+
       // Test language switching if locale selector exists
       const localeSelector = page.locator('select[id="locale"]');
       if (await localeSelector.count() > 0) {
@@ -231,7 +231,7 @@ test.describe('Error Detection & Console Quality', () => {
         await localeSelector.selectOption('en');
       }
     }
-    
+
     expect(jsErrors).toHaveLength(0);
   });
 });
@@ -239,18 +239,18 @@ test.describe('Error Detection & Console Quality', () => {
 test.describe('Navigation & Interaction Quality', () => {
   test('all footer links work correctly and lead to proper pages', async ({ page }) => {
     await page.goto('/en');
-    
+
     // Privacy link
     const privacyLink = page.getByRole('link', { name: 'Privacy Policy' });
     await expect(privacyLink).toBeVisible();
     await privacyLink.click();
     await expect(page).toHaveURL('/en/privacy');
     await expect(page.getByText('Privacy Policy')).toBeVisible();
-    
+
     // Back to home
     await page.getByRole('button', { name: /Back/ }).click();
     await expect(page).toHaveURL('/en');
-    
+
     // Terms link
     const termsLink = page.getByRole('link', { name: 'Terms of Service' });
     await expect(termsLink).toBeVisible();
@@ -263,7 +263,7 @@ test.describe('Navigation & Interaction Quality', () => {
     const pages = [
       '/en',
       '/en/visa',
-      '/en/work', 
+      '/en/work',
       '/en/business',
       '/en/study',
       '/en/travel',
@@ -273,12 +273,12 @@ test.describe('Navigation & Interaction Quality', () => {
 
     for (const pagePath of pages) {
       await page.goto(pagePath);
-      
+
       // Ribbon should be visible (contains locale selector)
       const ribbon = page.locator('select[id="locale"]');
       await expect(ribbon).toBeVisible();
       await expect(ribbon).toBeInViewport();
-      
+
       // Ribbon should contain both language options
       const enOption = page.locator('option[value="en"]');
       const roOption = page.locator('option[value="ro"]');
@@ -289,7 +289,7 @@ test.describe('Navigation & Interaction Quality', () => {
 
   test('all internal navigation links work properly', async ({ page }) => {
     await page.goto('/en');
-    
+
     const navigationTests = [
       { selector: 'text=Visa & Entry', expectedUrl: '/en/visa' },
       { selector: 'text=Work & Employment', expectedUrl: '/en/work' },
@@ -300,16 +300,16 @@ test.describe('Navigation & Interaction Quality', () => {
 
     for (const { selector, expectedUrl } of navigationTests) {
       await page.goto('/en'); // Reset to home
-      
+
       const link = page.locator(selector).first();
       await expect(link).toBeVisible();
       await link.click();
-      
+
       await expect(page).toHaveURL(expectedUrl);
-      
+
       // Verify page loaded correctly
       await expect(page.locator('h1')).toBeVisible();
-      
+
       // Verify back button works
       const backButton = page.getByRole('button', { name: /Back/ });
       await expect(backButton).toBeVisible();
