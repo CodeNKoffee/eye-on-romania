@@ -1,32 +1,52 @@
-import Link from 'next/link';
+"use client";
+import { useTranslations } from 'next-intl';
+import Ribbon from '@/components/Ribbon';
+import BusinessHero from '@/app/[locale]/business/components/BusinessHero';
+import BusinessTypes from '@/app/[locale]/business/components/BusinessTypes';
+import BusinessSteps from '@/app/[locale]/business/components/BusinessSteps';
+import InvestmentGuide from '@/app/[locale]/business/components/InvestmentGuide';
+import BusinessEssentials from '@/app/[locale]/business/components/BusinessEssentials';
+import BusinessResources from '@/app/[locale]/business/components/BusinessResources';
 
-export default function Business() {
+export default function BusinessPage() {
+  const t = useTranslations('businessPage');
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-paper to-danube-mist">
+      <Ribbon />
       <div className="container mx-auto px-6 py-12">
-        <div className="text-center mb-8 max-w-3xl mx-auto">
-          <h1 className="text-4xl font-light text-transylvanian-stone mb-4">Business & Startups</h1>
-          <p className="text-transylvanian-stone/70">Company setup basics, SRL primer, and ecosystem highlights.</p>
+        <BusinessHero />
+
+        {/* Quick Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-blue mb-1">5-15</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.setupDays')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-carpathian-forest mb-1">16%</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.corporateTax')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-red mb-1">EU</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.marketAccess')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-yellow mb-1">€200</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.minCapital')}</div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <article className="bg-white rounded-xl shadow-sm border border-danube-mist p-6">
-            <h3 className="font-semibold text-xl mb-2">Start an SRL</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-4">Overview of steps, timeline, and typical costs.</p>
-            <Link href="/business" className="text-tricolor-blue hover:underline">Company setup guide</Link>
-          </article>
-
-          <article className="bg-white rounded-xl shadow-sm border border-danube-mist p-6">
-            <h3 className="font-semibold text-xl mb-2">Ecosystem</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-4">Accelerators, coworking spaces, and funding opportunities.</p>
-            <Link href="/travel" className="text-tricolor-blue hover:underline">Ecosystem highlights</Link>
-          </article>
-
-          <article className="bg-white rounded-xl shadow-sm border border-danube-mist p-6">
-            <h3 className="font-semibold text-xl mb-2">Pitch Romania</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-4">Key statistics and sources to include in partner conversations.</p>
-            <Link href="/institutions" className="text-tricolor-blue hover:underline">For institutions</Link>
-          </article>
+        <div className="max-w-6xl mx-auto">
+          <BusinessTypes />
+          
+          <BusinessSteps />
+          
+          <InvestmentGuide />
+          
+          <BusinessEssentials />
+          
+          <BusinessResources />
         </div>
       </div>
     </div>

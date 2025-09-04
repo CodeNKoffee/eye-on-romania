@@ -35,6 +35,11 @@ export default function Hero() {
       href: "/work",
     },
     {
+      title: t("navigation.business.title"),
+      description: t("navigation.business.description"),
+      href: "/business",
+    },
+    {
       title: t("navigation.study.title"),
       description: t("navigation.study.description"),
       href: "/study",
@@ -64,9 +69,11 @@ export default function Hero() {
       <ValuePillars pillars={pillars} />
 
       {/* Main Navigation Cards */}
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="mt-20 flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
         {navigationCards.map((n, i) => (
-          <NavigationCards key={n.title} title={n.title} description={n.description} href={n.href} variant={i} />
+          <div key={n.title} className="flex w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(20%-1.2rem)] min-w-[280px] max-w-[320px]">
+            <NavigationCards title={n.title} description={n.description} href={n.href} variant={i} />
+          </div>
         ))}
       </div>
     </section>

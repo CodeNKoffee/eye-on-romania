@@ -30,6 +30,10 @@
         "title": "Work & Employment",
         "description": "Guidance on work visas, job markets, and employment procedures."
       },
+      "business": {
+        "title": "Business & Investment",
+        "description": "Start a business, investment opportunities and entrepreneurship in Romania."
+      },
       "study": {
         "title": "Study & Universities",
         "description": "University pathways, enrollment steps, and education opportunities."
@@ -332,6 +336,146 @@
         "duration": "3-4 years"
       },
       "visaInfo": "Get Student Visa Info"
+    }
+  },
+  "businessPage": {
+    "title": "Business & Investment",
+    "subtitle": "Romania",
+    "description": "Comprehensive guide to starting a business, investment opportunities, and entrepreneurship in Romania with step-by-step processes.",
+    "stats": {
+      "setupDays": "Setup Days",
+      "corporateTax": "Corporate Tax",
+      "marketAccess": "Market Access",
+      "minCapital": "Min. Capital"
+    },
+    "hero": {
+      "title": "Start Your Business in Romania",
+      "description": "Romania offers a strategic location, EU market access, competitive costs, and growing tech ecosystem. From SRL registration to investment incentives — everything you need to launch successfully."
+    },
+    "types": {
+      "title": "Business Structure Options",
+      "description": "Choose the right legal structure for your business goals and investment capacity.",
+      "srl": {
+        "title": "SRL (Limited Liability Company)",
+        "description": "Most popular choice for SMEs and startups",
+        "minCapital": "€200 minimum capital",
+        "setupTime": "5-15 business days",
+        "liability": "Limited liability protection",
+        "shareholders": "1-50 shareholders allowed"
+      },
+      "pfa": {
+        "title": "PFA (Authorized Natural Person)",
+        "description": "Simple structure for individual entrepreneurs",
+        "minCapital": "No minimum capital required",
+        "setupTime": "1-3 business days",
+        "liability": "Unlimited personal liability",
+        "shareholders": "Single person only"
+      },
+      "sa": {
+        "title": "SA (Joint Stock Company)",
+        "description": "For larger enterprises and public companies",
+        "minCapital": "€25,000 minimum capital",
+        "setupTime": "15-30 business days",
+        "liability": "Limited liability protection",
+        "shareholders": "2+ shareholders required"
+      }
+    },
+    "steps": {
+      "title": "5-Step Business Setup Process",
+      "description": "Streamlined registration process designed for efficiency and transparency.",
+      "step1": {
+        "title": "Company Name Reservation",
+        "description": "Reserve your company name through ONRC (National Trade Register Office). Check availability and reserve for 30 days.",
+        "timeframe": "1-2 days",
+        "cost": "€10-15"
+      },
+      "step2": {
+        "title": "Prepare Documentation",
+        "description": "Prepare articles of incorporation, shareholder agreements, and required legal documents with a notary.",
+        "timeframe": "2-3 days",
+        "cost": "€100-300"
+      },
+      "step3": {
+        "title": "Open Bank Account",
+        "description": "Deposit minimum share capital in a Romanian bank and obtain certificate of deposit for registration.",
+        "timeframe": "1-2 days",
+        "cost": "Bank fees vary"
+      },
+      "step4": {
+        "title": "Register with ONRC",
+        "description": "Submit all documents to the National Trade Register Office for official company registration and tax ID.",
+        "timeframe": "3-5 days",
+        "cost": "€50-100"
+      },
+      "step5": {
+        "title": "Tax & Social Registration",
+        "description": "Register for VAT (if applicable), social security, and other regulatory requirements with ANAF.",
+        "timeframe": "2-3 days",
+        "cost": "Free"
+      }
+    },
+    "investment": {
+      "title": "Investment Opportunities",
+      "description": "Romania offers attractive incentives across key growth sectors with EU market access.",
+      "tech": {
+        "title": "Technology & IT",
+        "description": "Thriving tech ecosystem with skilled workforce and government support",
+        "incentives": "R&D tax credits, IT exemptions, EU funding access"
+      },
+      "manufacturing": {
+        "title": "Manufacturing & Industry",
+        "description": "Strategic location with access to European supply chains",
+        "incentives": "Investment grants, regional aid, infrastructure support"
+      },
+      "energy": {
+        "title": "Renewable Energy",
+        "description": "Growing focus on green energy and sustainability projects",
+        "incentives": "Green certificates, EU climate funds, tax benefits"
+      },
+      "agriculture": {
+        "title": "Agriculture & Food",
+        "description": "Rich agricultural land and growing food processing sector",
+        "incentives": "CAP funding, rural development grants, export support"
+      }
+    },
+    "essentials": {
+      "title": "Business Essentials",
+      "description": "Key information every entrepreneur needs to know about doing business in Romania.",
+      "registration": {
+        "title": "Company Registration",
+        "description": "ONRC handles all business registrations with online and in-person options available."
+      },
+      "taxes": {
+        "title": "Tax & Compliance",
+        "description": "16% corporate tax rate, VAT registration, and monthly/quarterly reporting requirements."
+      },
+      "banking": {
+        "title": "Business Banking",
+        "description": "Romanian and international banks offer business accounts with EU payment integration."
+      },
+      "euAccess": {
+        "title": "EU Market Access",
+        "description": "Full access to European Single Market with freedom of movement for goods and services."
+      }
+    },
+    "resources": {
+      "title": "Official Resources & Support",
+      "description": "Connect with official government agencies and investment promotion organizations.",
+      "onrc": {
+        "title": "ONRC - Trade Register",
+        "description": "National Trade Register Office for all company registrations and official business records.",
+        "link": "Visit ONRC Portal"
+      },
+      "anaf": {
+        "title": "ANAF - Tax Authority",
+        "description": "National Agency for Fiscal Administration for tax registration, compliance, and reporting.",
+        "link": "Visit ANAF Portal"
+      },
+      "investRomania": {
+        "title": "InvestRomania",
+        "description": "Official investment promotion agency providing support for foreign investors and businesses.",
+        "link": "Visit InvestRomania"
+      }
     }
   }
 }

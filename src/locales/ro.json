@@ -30,6 +30,10 @@
         "title": "Muncă & Angajare",
         "description": "Ghid pentru vize de muncă, piețe de joburi și proceduri de angajare." 
       },
+      "business": {
+        "title": "Afaceri & Investiții",
+        "description": "Începe o afacere, oportunități de investiție și antreprenoriat în România."
+      },
       "study": {
         "title": "Studii & Universități",
         "description": "Căi universitare, pași de înmatriculare și oportunități educaționale." 
@@ -331,6 +335,146 @@
         "duration": "3-4 ani"
       },
       "visaInfo": "Obține Informații Viză Student"
+    }
+  },
+  "businessPage": {
+    "title": "Afaceri & Investiții",
+    "subtitle": "România",
+    "description": "Ghid complet pentru înființarea unei afaceri, oportunități de investiție și antreprenoriat în România cu procese pas cu pas.",
+    "stats": {
+      "setupDays": "Zile Înființare",
+      "corporateTax": "Impozit Profit",
+      "marketAccess": "Acces Piață",
+      "minCapital": "Capital Min."
+    },
+    "hero": {
+      "title": "Începe-ți Afacerea în România",
+      "description": "România oferă o locație strategică, acces la piața UE, costuri competitive și un ecosistem tech în creștere. De la înregistrarea SRL până la stimulente pentru investiții — tot ce ai nevoie pentru a lansa cu succes."
+    },
+    "types": {
+      "title": "Opțiuni de Structură de Afaceri",
+      "description": "Alege structura juridică potrivită pentru obiectivele de afaceri și capacitatea de investiție.",
+      "srl": {
+        "title": "SRL (Societate cu Răspundere Limitată)",
+        "description": "Cea mai populară alegere pentru IMM-uri și startup-uri",
+        "minCapital": "€200 capital minim",
+        "setupTime": "5-15 zile lucrătoare",
+        "liability": "Protecție răspundere limitată",
+        "shareholders": "1-50 asociați permis"
+      },
+      "pfa": {
+        "title": "PFA (Persoană Fizică Autorizată)",
+        "description": "Structură simplă pentru antreprenori individuali",
+        "minCapital": "Nu e necesar capital minim",
+        "setupTime": "1-3 zile lucrătoare",
+        "liability": "Răspundere personală nelimitată",
+        "shareholders": "Doar o singură persoană"
+      },
+      "sa": {
+        "title": "SA (Societate pe Acțiuni)",
+        "description": "Pentru întreprinderi mari și companii publice",
+        "minCapital": "€25.000 capital minim",
+        "setupTime": "15-30 zile lucrătoare",
+        "liability": "Protecție răspundere limitată",
+        "shareholders": "2+ asociați necesar"
+      }
+    },
+    "steps": {
+      "title": "Proces de Înființare în 5 Pași",
+      "description": "Proces de înregistrare simplificat conceput pentru eficiență și transparență.",
+      "step1": {
+        "title": "Rezervarea Denumirii",
+        "description": "Rezervă denumirea firmei prin ONRC (Oficiul Național al Registrului Comerțului). Verifică disponibilitatea și rezervă pentru 30 de zile.",
+        "timeframe": "1-2 zile",
+        "cost": "€10-15"
+      },
+      "step2": {
+        "title": "Pregătirea Documentației",
+        "description": "Pregătește actul constitutiv, contractul de societate și documentele juridice necesare la notar.",
+        "timeframe": "2-3 zile",
+        "cost": "€100-300"
+      },
+      "step3": {
+        "title": "Deschiderea Contului Bancar",
+        "description": "Depune capitalul social minim într-o bancă românească și obține certificatul de depozit pentru înregistrare.",
+        "timeframe": "1-2 zile",
+        "cost": "Comisioane bancare variază"
+      },
+      "step4": {
+        "title": "Înregistrarea la ONRC",
+        "description": "Depune toate documentele la Oficiul Național al Registrului Comerțului pentru înregistrarea oficială și obținerea CUI.",
+        "timeframe": "3-5 zile",
+        "cost": "€50-100"
+      },
+      "step5": {
+        "title": "Înregistrarea Fiscală și Socială",
+        "description": "Înregistrează-te pentru TVA (dacă e cazul), asigurări sociale și alte cerințe reglementare la ANAF.",
+        "timeframe": "2-3 zile",
+        "cost": "Gratuit"
+      }
+    },
+    "investment": {
+      "title": "Oportunități de Investiție",
+      "description": "România oferă stimulente atractive pe sectoare cheie de creștere cu acces la piața UE.",
+      "tech": {
+        "title": "Tehnologie & IT",
+        "description": "Ecosistem tech înfloritor cu forță de muncă calificată și sprijin guvernamental",
+        "incentives": "Credite fiscale pentru C&D, scutiri IT, acces la fonduri UE"
+      },
+      "manufacturing": {
+        "title": "Producție & Industrie",
+        "description": "Locație strategică cu acces la lanțurile de aprovizionare europene",
+        "incentives": "Granturi de investiție, ajutor regional, sprijin de infrastructură"
+      },
+      "energy": {
+        "title": "Energie Regenerabilă",
+        "description": "Focus crescând pe energie verde și proiecte de sustenabilitate",
+        "incentives": "Certificate verzi, fonduri climatice UE, beneficii fiscale"
+      },
+      "agriculture": {
+        "title": "Agricultură & Alimentar",
+        "description": "Teren agricol bogat și sector în creștere de procesare alimentară",
+        "incentives": "Finanțare PAC, granturi dezvoltare rurală, sprijin export"
+      }
+    },
+    "essentials": {
+      "title": "Esențiale de Afaceri",
+      "description": "Informații cheie pe care orice antreprenor trebuie să le știe despre a face afaceri în România.",
+      "registration": {
+        "title": "Înregistrarea Companiei",
+        "description": "ONRC gestionează toate înregistrările de afaceri cu opțiuni online și în persoană disponibile."
+      },
+      "taxes": {
+        "title": "Fiscalitate & Conformitate",
+        "description": "Rata impozitului pe profit de 16%, înregistrare TVA și cerințe de raportare lunară/trimestrială."
+      },
+      "banking": {
+        "title": "Banking de Afaceri",
+        "description": "Băncile românești și internaționale oferă conturi de afaceri cu integrare de plăți UE."
+      },
+      "euAccess": {
+        "title": "Acces Piața UE",
+        "description": "Acces complet la Piața Unică Europeană cu libertatea de mișcare pentru bunuri și servicii."
+      }
+    },
+    "resources": {
+      "title": "Resurse Oficiale & Sprijin",
+      "description": "Conectează-te cu agențiile guvernamentale oficiale și organizațiile de promovare a investițiilor.",
+      "onrc": {
+        "title": "ONRC - Registrul Comerțului",
+        "description": "Oficiul Național al Registrului Comerțului pentru toate înregistrările de companii și evidențele oficiale de afaceri.",
+        "link": "Vizitează Portalul ONRC"
+      },
+      "anaf": {
+        "title": "ANAF - Autoritatea Fiscală",
+        "description": "Agenția Națională de Administrare Fiscală pentru înregistrarea fiscală, conformitatea și raportarea.",
+        "link": "Vizitează Portalul ANAF"
+      },
+      "investRomania": {
+        "title": "InvestRomania",
+        "description": "Agenția oficială de promovare a investițiilor care oferă sprijin pentru investitorii străini și afacerile.",
+        "link": "Vizitează InvestRomania"
+      }
     }
   }
 }
