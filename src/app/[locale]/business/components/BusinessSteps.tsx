@@ -4,6 +4,21 @@ import { useTranslations } from 'next-intl';
 export default function BusinessSteps() {
   const t = useTranslations('businessPage');
 
+  const getStepStyles = (color: string) => {
+    switch (color) {
+      case 'tricolor-blue':
+        return 'bg-tricolor-blue/10 text-tricolor-blue';
+      case 'carpathian-forest':
+        return 'bg-carpathian-forest/10 text-carpathian-forest';
+      case 'tricolor-red':
+        return 'bg-tricolor-red/10 text-tricolor-red';
+      case 'tricolor-yellow':
+        return 'bg-tricolor-yellow/20 text-tricolor-yellow';
+      default:
+        return 'bg-tricolor-blue/10 text-tricolor-blue';
+    }
+  };
+
   const steps = [
     {
       number: 1,
@@ -51,7 +66,7 @@ export default function BusinessSteps() {
       <div className="space-y-6">
         {steps.map((step, index) => (
           <div key={index} className="flex gap-4">
-            <div className={`flex-shrink-0 w-12 h-12 bg-${step.color}/10 text-${step.color} rounded-full flex items-center justify-center font-semibold`}>
+            <div className={`flex-shrink-0 w-12 h-12 ${getStepStyles(step.color)} rounded-full flex items-center justify-center font-semibold`}>
               {step.number}
             </div>
             <div className="flex-1">
