@@ -31,6 +31,9 @@ export default function Ribbon() {
     }
   };
 
+  // Check if we're on the home page
+  const isHomePage = pathname === `/${locale}` || pathname === '/';
+
   return (
     <div className="w-full flex justify-center my-4 relative" aria-hidden>
       <motion.div
@@ -46,19 +49,21 @@ export default function Ribbon() {
       {/* Subtle gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
 
-      {/* Back button (top-left) */}
-      <div className="absolute left-6 top-[-6px]">
-        <button 
-          onClick={handleBackClick}
-          className="px-2 py-1 rounded-md border border-danube-mist bg-white text-sm hover:bg-danube-mist/10 focus:outline-none focus:ring-2 focus:ring-tricolor-blue focus:border-transparent transition-colors flex items-center gap-1"
-          aria-label="Go back to previous page"
-        >
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back
-        </button>
-      </div>
+      {/* Back button (top-left) - only show if not on home page */}
+      {!isHomePage && (
+        <div className="absolute left-6 top-[-6px]">
+          <button 
+            onClick={handleBackClick}
+            className="px-2 py-1 rounded-md border border-danube-mist bg-white text-sm hover:bg-danube-mist/10 focus:outline-none focus:ring-2 focus:ring-tricolor-blue focus:border-transparent transition-colors flex items-center gap-1"
+            aria-label="Go back to previous page"
+          >
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+        </div>
+      )}
 
       {/* Locale picker (top-right) */}
       <div className="absolute right-6 top-[-6px]">
