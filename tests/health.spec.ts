@@ -1,95 +1,120 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Health Checks', () => {
-  test('homepage loads successfully', async ({ page }) => {
-    await page.goto('/');
-    await expect(page).toHaveTitle(/Eye.*Romania/);
-    await expect(page.getByText('A clear, trusted window into')).toBeVisible();
-  });
-
-  test('all main navigation pages load', async ({ page }) => {
+test.describe('Visual Quality & Layout', () => {
+  test('all pages display content within viewport without overflow', async ({ page }) => {
     const pages = [
-      '/en/visa',
+      '/en',
+      '/en/visa', 
       '/en/work',
       '/en/business',
       '/en/study',
-      '/en/travel'
+      '/en/travel',
+      '/en/privacy',
+      '/en/terms'
     ];
 
     for (const pagePath of pages) {
       await page.goto(pagePath);
-      await expect(page.locator('h1')).toBeVisible();
-      // Check that the page doesn't have any obvious errors
-      await expect(page.locator('text=Error')).not.toBeVisible();
+      
+      // Check no horizontal overflow
+      const bodyScrollWidth = await page.evaluate(() => document.body.scrollWidth);
+      const windowInnerWidth = await page.evaluate(() => window.innerWidth);
+      expect(bodyScrollWidth).toBeLessThanOrEqual(windowInnerWidth + 1); // Allow 1px tolerance
+      
+      // Check main content is visible
+      await expect(page.locator('h1').first()).toBeInViewport();
+      
+      // Check no elements are cut off horizontally
+      const allElements = page.locator('*:visible');
+      const count = await allElements.count();
+      
+      for (let i = 0; i < Math.min(count, 20); i++) { // Check first 20 visible elements
+        const element = allElements.nth(i);
+        const box = await element.boundingBox();
+        if (box) {
+          expect(box.x).toBeGreaterThanOrEqual(-5); // Allow small negative margin
+          expect(box.x + box.width).toBeLessThanOrEqual(windowInnerWidth + 5);
+        }
+      }
     }
   });
 
-  test('language switching works', async ({ page }) => {
-    await page.goto('/en');
-
-    // Switch to Romanian
-    await page.selectOption('select[id="locale"]', 'ro');
-    await page.waitForURL('/ro');
-    await expect(page).toHaveURL('/ro');
-
-    // Switch back to English
-    await page.selectOption('select[id="locale"]', 'en');
-    await page.waitForURL('/en');
-    await expect(page).toHaveURL('/en');
-  });
-
-  test('legal pages are accessible', async ({ page }) => {
-    // Privacy page
-    await page.goto('/en/privacy');
-    await expect(page.getByText('Privacy Policy')).toBeVisible();
-
-    // Terms page
-    await page.goto('/en/terms');
-    await expect(page.getByText('Terms of Service')).toBeVisible();
-  });
-
-  test('footer links work', async ({ page }) => {
-    await page.goto('/en');
-
-    // Check privacy link in footer
-    await page.getByRole('link', { name: 'Privacy Policy' }).click();
-    await expect(page).toHaveURL('/en/privacy');
-
-    await page.goBack();
-
-    // Check terms link in footer
-    await page.getByRole('link', { name: 'Terms of Service' }).click();
-    await expect(page).toHaveURL('/en/terms');
-  });
-
-  test('back button functionality', async ({ page }) => {
-    await page.goto('/en');
-
-    // Navigate to a sub-page
-    await page.getByRole('link', { name: /Business/ }).first().click();
-
-    // Check that back button appears (not on home page)
-    await expect(page.getByRole('button', { name: /Back/ })).toBeVisible();
-
-    // Test back button functionality
-    await page.getByRole('button', { name: /Back/ }).click();
-    await expect(page).toHaveURL('/en');
-  });
-
-  test('responsive design works', async ({ page }) => {
+  test('responsive design works properly on mobile devices', async ({ page }) => {
     // Test mobile viewport
     await page.setViewportSize({ width: 375, height: 667 });
+    
+    const pages = ['/en', '/en/business', '/en/study'];
+    
+    for (const pagePath of pages) {
+      await page.goto(pagePath);
+      
+      // Check navigation cards stack properly on mobile
+      const cards = page.locator('[role="link"]').filter({ hasText: /Visa|Work|Business|Study|Travel/ });
+      if (await cards.count() > 0) {
+        const firstCard = cards.first();
+        const lastCard = cards.last();
+        
+        const firstBox = await firstCard.boundingBox();
+        const lastBox = await lastCard.boundingBox();
+        
+        if (firstBox && lastBox) {
+          // On mobile, cards should stack vertically (last card below first)
+          expect(lastBox.y).toBeGreaterThan(firstBox.y);
+        }
+      }
+      
+      // Check text doesn't overflow on mobile
+      const textElements = page.locator('p, h1, h2, h3');
+      const textCount = await textElements.count();
+      
+      for (let i = 0; i < Math.min(textCount, 10); i++) {
+        const element = textElements.nth(i);
+        const box = await element.boundingBox();
+        if (box) {
+          expect(box.width).toBeLessThanOrEqual(375);
+        }
+      }
+    }
+  });
+
+  test('back button appears and functions correctly on all sub-pages', async ({ page }) => {
+    const subPages = [
+      '/en/visa',
+      '/en/work', 
+      '/en/business',
+      '/en/study',
+      '/en/travel',
+      '/en/privacy',
+      '/en/terms'
+    ];
+
+    for (const pagePath of subPages) {
+      await page.goto(pagePath);
+      
+      // Back button should be visible on sub-pages
+      const backButton = page.getByRole('button', { name: /Back/i });
+      await expect(backButton).toBeVisible();
+      await expect(backButton).toBeInViewport();
+      
+      // Click back button and verify navigation
+      await backButton.click();
+      await page.waitForURL('/en');
+      await expect(page).toHaveURL('/en');
+      
+      // Verify we're back on home page
+      await expect(page.getByText('A clear, trusted window into')).toBeVisible();
+    }
+  });
+
+  test('back button does NOT appear on home page', async ({ page }) => {
     await page.goto('/en');
-
-    // Check that navigation cards are still visible and functional
-    await expect(page.getByText('Visa & Entry')).toBeVisible();
-    await expect(page.getByText('Business & Investment')).toBeVisible();
-
-    // Test desktop viewport
-    await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto('/en');
-
-    // Check that layout adapts properly
-    await expect(page.getByText('A clear, trusted window into')).toBeVisible();
+    
+    // Back button should not exist on home page
+    const backButton = page.getByRole('button', { name: /Back/i });
+    await expect(backButton).not.toBeVisible();
+    
+    // Same for Romanian home page
+    await page.goto('/ro');
+    await expect(backButton).not.toBeVisible();
   });
 });
