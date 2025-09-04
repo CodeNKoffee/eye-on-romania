@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+"use client";
+import { useTranslations } from 'next-intl';
 import Ribbon from '@/components/Ribbon';
 import InstitutionsHero from './components/InstitutionsHero';
 import PartnershipTypes from './components/PartnershipTypes';
@@ -8,27 +8,43 @@ import PartnershipBenefits from './components/PartnershipBenefits';
 import InstitutionContact from './components/InstitutionContact';
 import SuccessStories from './components/SuccessStories';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('institutionsPage');
-  
-  return {
-    title: `${t('titlePrefix')} ${t('titleHighlight')} | Eye on Romania`,
-    description: t('description'),
-  };
-}
-
 export default function InstitutionsPage() {
+  const t = useTranslations('institutionsPage');
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-b from-paper to-danube-mist">
       <Ribbon />
-      <main className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-6 py-12">
         <InstitutionsHero />
-        <PartnershipTypes />
-        <PartnershipServices />
-        <PartnershipBenefits />
-        <SuccessStories />
-        <InstitutionContact />
-      </main>
+
+        {/* Quick Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-blue mb-1">{t('stats.coverage')}</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.coverageLabel')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-carpathian-forest mb-1">{t('stats.sources')}</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.sourcesLabel')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-red mb-1">{t('stats.languages')}</div>
+            <div className="text-sm text-transylvanian-stone/70">{t('stats.languagesLabel')}</div>
+          </div>
+          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-2xl font-bold text-tricolor-yellow mb-1">48h</div>
+            <div className="text-sm text-transylvanian-stone/70">Response Time</div>
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <PartnershipTypes />
+          <PartnershipServices />
+          <PartnershipBenefits />
+          <SuccessStories />
+          <InstitutionContact />
+        </div>
+      </div>
     </div>
   );
 }
