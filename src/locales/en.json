@@ -338,6 +338,144 @@
       "visaInfo": "Get Student Visa Info"
     }
   },
+  "workPage": {
+    "title": "Work & Employment",
+    "subtitle": "Romania",
+    "description": "Complete guide to working in Romania including visa types, job markets, legal requirements, and step-by-step employment procedures.",
+    "stats": {
+      "avgSalary": "Avg. Salary",
+      "incomeTax": "Income Tax",
+      "workRights": "Work Rights", 
+      "processTime": "Process Days"
+    },
+    "hero": {
+      "title": "Work and Build Your Career in Romania",
+      "description": "Romania offers diverse employment opportunities, competitive salaries, EU work rights, and a growing economy across tech, manufacturing, healthcare, and finance sectors."
+    },
+    "visaTypes": {
+      "title": "Work Visa Types",
+      "description": "Choose the right work authorization based on your employment type and duration of stay.",
+      "temporary": {
+        "title": "Temporary Work Permit",
+        "description": "Short-term employment up to 12 months",
+        "duration": "Up to 12 months",
+        "requirements": "Job offer required"
+      },
+      "seasonal": {
+        "title": "Seasonal Work Permit", 
+        "description": "Agricultural and tourism seasonal work",
+        "duration": "3-9 months",
+        "requirements": "Specific sectors only"
+      },
+      "longTerm": {
+        "title": "Long-term Work Permit",
+        "description": "Extended employment with renewable permits",
+        "duration": "1-3 years",
+        "requirements": "Skilled employment"
+      },
+      "blueCard": {
+        "title": "EU Blue Card",
+        "description": "Highly skilled professionals with EU mobility",
+        "duration": "1-4 years",
+        "requirements": "University degree"
+      }
+    },
+    "jobMarkets": {
+      "title": "Key Job Markets & Opportunities",
+      "tech": {
+        "title": "Technology & IT",
+        "description": "Software development, cybersecurity, AI, and digital services with international companies",
+        "averageSalary": "€1,800",
+        "demand": "Very High"
+      },
+      "manufacturing": {
+        "title": "Manufacturing & Industry",
+        "description": "Automotive, machinery, textiles, and industrial production with EU market access",
+        "averageSalary": "€900",
+        "demand": "High"
+      },
+      "healthcare": {
+        "title": "Healthcare & Medicine",
+        "description": "Medical professionals, nursing, pharmaceutical, and healthcare administration",
+        "averageSalary": "€1,200",
+        "demand": "High"
+      },
+      "finance": {
+        "title": "Finance & Banking",
+        "description": "Banking, accounting, financial services, and business administration",
+        "averageSalary": "€1,400",
+        "demand": "Medium"
+      }
+    },
+    "steps": {
+      "title": "5-Step Employment Process",
+      "description": "Streamlined process from job search to legal employment in Romania.",
+      "step1": {
+        "title": "Find Employment Opportunity",
+        "description": "Search for jobs through official channels, recruitment agencies, or company websites. Ensure the employer can sponsor work permits.",
+        "timeframe": "2-8 weeks"
+      },
+      "step2": {
+        "title": "Secure Job Offer",
+        "description": "Obtain a formal job offer and employment contract from a Romanian employer willing to sponsor your work permit application.",
+        "timeframe": "1-2 weeks"
+      },
+      "step3": {
+        "title": "Apply for Work Permit",
+        "description": "Submit work permit application through employer or immigration authorities with required documentation and qualifications.",
+        "timeframe": "30-60 days"
+      },
+      "step4": {
+        "title": "Apply for Work Visa",
+        "description": "Once work permit is approved, apply for work visa at Romanian consulate in your home country with permit and supporting documents.",
+        "timeframe": "15-30 days"
+      },
+      "step5": {
+        "title": "Register in Romania",
+        "description": "Upon arrival, register with local authorities, obtain residence permit, social security number, and complete tax registration.",
+        "timeframe": "1-2 weeks"
+      }
+    },
+    "essentials": {
+      "title": "Work Essentials in Romania",
+      "description": "Key legal and administrative requirements for working legally in Romania.",
+      "workPermit": {
+        "title": "Work Permit & Visa",
+        "description": "Required for non-EU citizens. Employer must demonstrate no qualified EU candidate available for the position."
+      },
+      "taxation": {
+        "title": "Taxation & Income",
+        "description": "10% flat income tax rate, social security contributions required. Tax residency after 183 days in Romania."
+      },
+      "socialSecurity": {
+        "title": "Social Security Benefits",
+        "description": "Healthcare, unemployment benefits, pension contributions. Access to Romanian social security system."
+      },
+      "recognition": {
+        "title": "Qualification Recognition",
+        "description": "Professional qualifications may require recognition through CNRED or relevant professional bodies."
+      }
+    },
+    "resources": {
+      "title": "Official Employment Resources",
+      "description": "Government agencies and official platforms for job searching and work authorization.",
+      "ajofm": {
+        "title": "ANOFM - Employment Agency",
+        "description": "National Agency for Employment providing job search services, unemployment benefits, and labor market information.",
+        "link": "Visit ANOFM Portal"
+      },
+      "igi": {
+        "title": "IGI - Immigration Office", 
+        "description": "General Inspectorate for Immigration handling work permits, residence permits, and immigration procedures.",
+        "link": "Visit IGI Portal"
+      },
+      "eures": {
+        "title": "EURES Romania",
+        "description": "European job mobility portal connecting Romanian employers with EU workers and providing job placement services.",
+        "link": "Visit EURES Portal"
+      }
+    }
+  },
   "businessPage": {
     "title": "Business & Investment",
     "subtitle": "Romania",

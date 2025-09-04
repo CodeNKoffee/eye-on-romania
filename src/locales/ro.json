@@ -337,6 +337,144 @@
       "visaInfo": "Obține Informații Viză Student"
     }
   },
+  "workPage": {
+    "title": "Muncă & Angajare",
+    "subtitle": "România",
+    "description": "Ghid complet pentru munca în România incluzând tipuri de vize, piețe de muncă, cerințe legale și proceduri de angajare pas cu pas.",
+    "stats": {
+      "avgSalary": "Salar. Mediu",
+      "incomeTax": "Impozit Venit",
+      "workRights": "Drepturi Muncă",
+      "processTime": "Zile Proces"
+    },
+    "hero": {
+      "title": "Lucrează și Construiește-ți Cariera în România",
+      "description": "România oferă oportunități diverse de angajare, salarii competitive, drepturi de muncă UE și o economie în creștere în sectoarele tech, producție, sănătate și finanțe."
+    },
+    "visaTypes": {
+      "title": "Tipuri de Vize de Muncă",
+      "description": "Alege autorizația de muncă potrivită în funcție de tipul angajării și durata șederii.",
+      "temporary": {
+        "title": "Permis de Muncă Temporar",
+        "description": "Angajare pe termen scurt până la 12 luni",
+        "duration": "Până la 12 luni",
+        "requirements": "Ofertă de muncă necesară"
+      },
+      "seasonal": {
+        "title": "Permis de Muncă Sezonieră",
+        "description": "Muncă sezonieră în agricultură și turism",
+        "duration": "3-9 luni",
+        "requirements": "Doar sectoare specifice"
+      },
+      "longTerm": {
+        "title": "Permis de Muncă pe Termen Lung",
+        "description": "Angajare extinsă cu permise reînnoibile",
+        "duration": "1-3 ani",
+        "requirements": "Angajare calificată"
+      },
+      "blueCard": {
+        "title": "Cartea Albastră UE",
+        "description": "Profesioniști înalt calificați cu mobilitate UE",
+        "duration": "1-4 ani",
+        "requirements": "Diplomă universitară"
+      }
+    },
+    "jobMarkets": {
+      "title": "Piețe de Muncă Cheie & Oportunități",
+      "tech": {
+        "title": "Tehnologie & IT",
+        "description": "Dezvoltare software, securitate cibernetică, AI și servicii digitale cu companii internaționale",
+        "averageSalary": "€1.800",
+        "demand": "Foarte Mare"
+      },
+      "manufacturing": {
+        "title": "Producție & Industrie",
+        "description": "Automotive, mașini, textile și producție industrială cu acces la piața UE",
+        "averageSalary": "€900",
+        "demand": "Mare"
+      },
+      "healthcare": {
+        "title": "Sănătate & Medicină",
+        "description": "Profesioniști medicali, asistență medicală, farmaceutică și administrație în sănătate",
+        "averageSalary": "€1.200",
+        "demand": "Mare"
+      },
+      "finance": {
+        "title": "Finanțe & Banking",
+        "description": "Banking, contabilitate, servicii financiare și administrație de afaceri",
+        "averageSalary": "€1.400",
+        "demand": "Mediu"
+      }
+    },
+    "steps": {
+      "title": "Proces de Angajare în 5 Pași",
+      "description": "Proces simplificat de la căutarea unui loc de muncă la angajarea legală în România.",
+      "step1": {
+        "title": "Găsește Oportunitate de Angajare",
+        "description": "Caută locuri de muncă prin canale oficiale, agenții de recrutare sau site-uri de companii. Asigură-te că angajatorul poate sponsoriza permise de muncă.",
+        "timeframe": "2-8 săptămâni"
+      },
+      "step2": {
+        "title": "Obține Oferta de Muncă",
+        "description": "Obține o ofertă oficială de muncă și contract de angajare de la un angajator român dispus să sponsorizeze cererea ta de permis de muncă.",
+        "timeframe": "1-2 săptămâni"
+      },
+      "step3": {
+        "title": "Aplică pentru Permis de Muncă",
+        "description": "Depune cererea de permis de muncă prin angajator sau autoritățile de imigrație cu documentația necesară și calificările.",
+        "timeframe": "30-60 zile"
+      },
+      "step4": {
+        "title": "Aplică pentru Viză de Muncă",
+        "description": "Odată ce permisul de muncă este aprobat, aplică pentru viza de muncă la consulatul român din țara ta cu permisul și documentele de sprijin.",
+        "timeframe": "15-30 zile"
+      },
+      "step5": {
+        "title": "Înregistrează-te în România",
+        "description": "La sosire, înregistrează-te la autoritățile locale, obține permisul de ședere, numărul de securitate socială și completează înregistrarea fiscală.",
+        "timeframe": "1-2 săptămâni"
+      }
+    },
+    "essentials": {
+      "title": "Esențiale de Muncă în România",
+      "description": "Cerințe legale și administrative cheie pentru a lucra legal în România.",
+      "workPermit": {
+        "title": "Permis de Muncă & Viză",
+        "description": "Necesar pentru cetățenii non-UE. Angajatorul trebuie să demonstreze că nu există candidat UE calificat disponibil pentru poziție."
+      },
+      "taxation": {
+        "title": "Fiscalitate & Venit",
+        "description": "Rată de impozit pe venit plat de 10%, contribuții la securitatea socială necesare. Rezidența fiscală după 183 de zile în România."
+      },
+      "socialSecurity": {
+        "title": "Beneficii Securitate Socială",
+        "description": "Asistență medicală, beneficii de șomaj, contribuții la pensie. Acces la sistemul de securitate socială român."
+      },
+      "recognition": {
+        "title": "Recunoașterea Calificărilor",
+        "description": "Calificările profesionale pot necesita recunoaștere prin CNRED sau organisme profesionale relevante."
+      }
+    },
+    "resources": {
+      "title": "Resurse Oficiale de Angajare",
+      "description": "Agenții guvernamentale și platforme oficiale pentru căutarea locurilor de muncă și autorizarea de muncă.",
+      "ajofm": {
+        "title": "ANOFM - Agenția pentru Ocuparea Forței de Muncă",
+        "description": "Agenția Națională pentru Ocuparea Forței de Muncă care oferă servicii de căutare a locurilor de muncă, beneficii de șomaj și informații despre piața muncii.",
+        "link": "Vizitează Portalul ANOFM"
+      },
+      "igi": {
+        "title": "IGI - Oficiul pentru Imigrări",
+        "description": "Inspectoratul General pentru Imigrări care gestionează permisele de muncă, permisele de ședere și procedurile de imigrare.",
+        "link": "Vizitează Portalul IGI"
+      },
+      "eures": {
+        "title": "EURES România",
+        "description": "Portal european de mobilitate pentru locuri de muncă care conectează angajatorii români cu lucrătorii UE și oferă servicii de plasare în muncă.",
+        "link": "Vizitează Portalul EURES"
+      }
+    }
+  },
   "businessPage": {
     "title": "Afaceri & Investiții",
     "subtitle": "România",
