@@ -48,7 +48,7 @@ export default function StudyEssentials() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8 mt-12">
       <h2 className="text-2xl font-semibold text-transylvanian-stone mb-6 text-center">
         {t('essentials.title')}
       </h2>

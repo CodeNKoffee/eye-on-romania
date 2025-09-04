@@ -229,6 +229,7 @@
       "details": { "title": "Detailed Itinerary" },
       "stopPlaceholder": "Details and tips for this stop will be added soon.",
       "practical": {
+        "whereToStay": "Where to Stay",
         "gettingThere": "Getting There",
         "byTrain": { "label": "By Train:", "example": "3-4 hours from Bucharest" },
         "byCar": { "label": "By Car:", "example": "2.5 hours via A1" },

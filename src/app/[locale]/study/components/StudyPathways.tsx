@@ -49,13 +49,13 @@ export default function StudyPathways() {
       
       <div className="grid md:grid-cols-3 gap-6">
         {pathways.map((pathway, index) => (
-          <div key={index} className="text-center p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow">
-            <div className={`inline-flex items-center justify-center w-16 h-16 bg-${pathway.color}/10 text-${pathway.color} rounded-lg mb-4`}>
+          <div key={index} className="text-center p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className={`inline-flex items-center justify-center w-16 h-16 bg-${pathway.color}/10 text-${pathway.color} rounded-lg mb-4 mx-auto`}>
               {pathway.icon}
             </div>
             <h3 className="font-semibold text-transylvanian-stone mb-2">{pathway.title}</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-3">{pathway.description}</p>
-            <div className="text-xs text-tricolor-blue font-medium bg-tricolor-blue/10 px-3 py-1 rounded-full inline-block">
+            <p className="text-sm text-transylvanian-stone/70 mb-3 flex-grow">{pathway.description}</p>
+            <div className="text-xs text-tricolor-blue font-medium bg-tricolor-blue/10 px-3 py-1 rounded-full inline-block mt-auto">
               {pathway.duration}
             </div>
           </div>

@@ -228,6 +228,7 @@
     "details": { "title": "Itinerariu detaliat" },
     "stopPlaceholder": "Detalii și sfaturi pentru această oprire vor fi adăugate în curând.",
     "practical": {
+      "whereToStay": "Unde să stai",
       "gettingThere": "Cum ajungi",
       "byTrain": { "label": "Cu trenul:", "example": "3-4 ore din București" },
       "byCar": { "label": "Cu mașina:", "example": "2.5 ore via A1" },
