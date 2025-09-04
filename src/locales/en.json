@@ -242,6 +242,96 @@
         "packTitle": "What to Pack",
         "packDesc": "Comfortable walking shoes, camera, and layers for changing weather in the mountains."
       },
-      "backToAll": "Back to all itineraries"
+          "backToAll": "Back to all itineraries"
+  },
+  "studyPage": {
+    "titlePrefix": "Study &",
+    "titleHighlight": "Universities",
+    "description": "Comprehensive guide to Romanian universities, degree programs, and academic pathways for international students.",
+    "filters": {
+      "title": "Filter Universities",
+      "degreeType": "Degree Type",
+      "city": "City",
+      "degrees": {
+        "all": "All Degrees",
+        "bachelor": "Bachelor's",
+        "master": "Master's",
+        "doctorate": "Doctorate/PhD",
+        "diploma": "Diploma Programs"
+      },
+      "cities": {
+        "all": "All Cities",
+        "bucharest": "Bucharest",
+        "cluj-napoca": "Cluj-Napoca",
+        "iasi": "Iași",
+        "timisoara": "Timișoara",
+        "constanta": "Constanța"
+      }
+    },
+    "cities": {
+      "bucharest": "Bucharest",
+      "cluj-napoca": "Cluj-Napoca",
+      "iasi": "Iași",
+      "timisoara": "Timișoara",
+      "constanta": "Constanța"
+    },
+    "founded": "Founded",
+    "publicUniversity": "Public",
+    "privateUniversity": "Private",
+    "topSpecialties": "Top Specialties",
+    "more": "more",
+    "degreesOffered": "Degrees Offered",
+    "degreeTypes": {
+      "bachelor": "Bachelor's",
+      "master": "Master's",
+      "doctorate": "PhD",
+      "diploma": "Diploma"
+    },
+    "tuitionRange": "Tuition Range (per year)",
+    "year": "year",
+    "visitWebsite": "Visit Website",
+    "resultsCount": "Showing {count} universities",
+    "noResults": {
+      "title": "No universities found",
+      "description": "Try adjusting your filters to see more results."
+    },
+    "essentials": {
+      "title": "Study Essentials",
+      "tuition": {
+        "title": "Tuition & Costs",
+        "desc": "Public universities: €1,800-5,500/year. Living costs: €300-600/month depending on city."
+      },
+      "language": {
+        "title": "Language Requirements",
+        "desc": "Romanian or English programs available. IELTS/TOEFL required for English programs."
+      },
+      "visa": {
+        "title": "Student Visa",
+        "desc": "Long-stay visa (D) required for studies. Apply 3 months before start date."
+      },
+      "housing": {
+        "title": "Student Housing",
+        "desc": "University dorms available. Private housing: €150-400/month depending on location."
+      }
+    },
+    "pathways": {
+      "title": "Academic Pathways",
+      "undergraduate": {
+        "title": "Undergraduate",
+        "desc": "Bachelor's degree programs across diverse fields with strong academic foundation.",
+        "duration": "3-4 years"
+      },
+      "graduate": {
+        "title": "Graduate",
+        "desc": "Master's programs for specialization and advanced knowledge in your field.",
+        "duration": "1-2 years"
+      },
+      "doctorate": {
+        "title": "Doctorate",
+        "desc": "PhD programs for research and academic careers with international recognition.",
+        "duration": "3-4 years"
+      },
+      "visaInfo": "Get Student Visa Info"
     }
+  }
 }

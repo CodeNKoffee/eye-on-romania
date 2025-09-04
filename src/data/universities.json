@@ -1,0 +1,154 @@
+{
+  "universities": [
+    {
+      "id": "utcn",
+      "name": "Technical University of Cluj-Napoca",
+      "city": "cluj-napoca",
+      "type": "Leading technical university with excellence in engineering, computer science, and applied sciences",
+      "founded": 1948,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Computer Science", "Mechanical Engineering", "Electronics", "Architecture", "Automation"],
+      "tuitionRange": {
+        "min": 2500,
+        "max": 4500
+      },
+      "isPublic": true,
+      "website": "https://www.utcluj.ro"
+    },
+    {
+      "id": "ubb",
+      "name": "Babeș-Bolyai University",
+      "city": "cluj-napoca",
+      "type": "Comprehensive university offering programs in humanities, sciences, and social studies",
+      "founded": 1959,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Psychology", "Business Administration", "Mathematics", "History", "Physics"],
+      "tuitionRange": {
+        "min": 2000,
+        "max": 4000
+      },
+      "isPublic": true,
+      "website": "https://www.ubbcluj.ro"
+    },
+    {
+      "id": "ub",
+      "name": "University of Bucharest",
+      "city": "bucharest",
+      "type": "Romania's oldest and most prestigious university with strong research focus",
+      "founded": 1864,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Medicine", "Law", "Philosophy", "Biology", "Chemistry"],
+      "tuitionRange": {
+        "min": 2200,
+        "max": 5000
+      },
+      "isPublic": true,
+      "website": "https://unibuc.ro"
+    },
+    {
+      "id": "upb",
+      "name": "University Politehnica of Bucharest",
+      "city": "bucharest",
+      "type": "Premier technical university specializing in engineering and technology",
+      "founded": 1818,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Aerospace Engineering", "Computer Engineering", "Civil Engineering", "Electrical Engineering", "Industrial Engineering"],
+      "tuitionRange": {
+        "min": 2800,
+        "max": 5500
+      },
+      "isPublic": true,
+      "website": "https://upb.ro"
+    },
+    {
+      "id": "uaic",
+      "name": "Alexandru Ioan Cuza University",
+      "city": "iasi",
+      "type": "Historic university known for research excellence and academic tradition",
+      "founded": 1860,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Computer Science", "Economics", "Literature", "Geography", "Political Science"],
+      "tuitionRange": {
+        "min": 1800,
+        "max": 3500
+      },
+      "isPublic": true,
+      "website": "https://www.uaic.ro"
+    },
+    {
+      "id": "tuiasi",
+      "name": "Technical University Gheorghe Asachi of Iași",
+      "city": "iasi",
+      "type": "Leading technical institution in Eastern Romania with strong industry connections",
+      "founded": 1937,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Information Technology", "Textile Engineering", "Chemical Engineering", "Construction", "Machine Manufacturing"],
+      "tuitionRange": {
+        "min": 2300,
+        "max": 4200
+      },
+      "isPublic": true,
+      "website": "https://www.tuiasi.ro"
+    },
+    {
+      "id": "uvt",
+      "name": "West University of Timișoara",
+      "city": "timisoara",
+      "type": "Comprehensive university with strong programs in sciences and humanities",
+      "founded": 1962,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Mathematics", "Physics", "Chemistry", "Letters", "Sociology"],
+      "tuitionRange": {
+        "min": 2000,
+        "max": 3800
+      },
+      "isPublic": true,
+      "website": "https://www.uvt.ro"
+    },
+    {
+      "id": "upt",
+      "name": "Politehnica University Timișoara",
+      "city": "timisoara",
+      "type": "Technical university renowned for engineering and applied sciences programs",
+      "founded": 1920,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Automation", "Communications", "Hydrotechnics", "Mechanical Engineering", "Architecture"],
+      "tuitionRange": {
+        "min": 2500,
+        "max": 4300
+      },
+      "isPublic": true,
+      "website": "https://www.upt.ro"
+    },
+    {
+      "id": "omu",
+      "name": "Ovidius University of Constanța",
+      "city": "constanta",
+      "type": "Coastal university offering diverse programs with maritime specializations",
+      "founded": 1961,
+      "degrees": ["bachelor", "master", "doctorate"],
+      "specialties": ["Naval Engineering", "Medicine", "Dentistry", "Pharmacy", "Economics"],
+      "tuitionRange": {
+        "min": 1900,
+        "max": 4500
+      },
+      "isPublic": true,
+      "website": "https://www.univ-ovidius.ro"
+    },
+    {
+      "id": "ase",
+      "name": "Bucharest University of Economic Studies",
+      "city": "bucharest",
+      "type": "Premier economics and business university in Romania",
+      "founded": 1913,
+      "degrees": ["bachelor", "master", "doctorate", "diploma"],
+      "specialties": ["Business Administration", "Finance", "Marketing", "International Business", "Accounting"],
+      "tuitionRange": {
+        "min": 2400,
+        "max": 4800
+      },
+      "isPublic": true,
+      "website": "https://www.ase.ro"
+    }
+  ]
+}

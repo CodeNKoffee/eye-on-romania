@@ -242,5 +242,95 @@
       "packDesc": "Încălțăminte confortabilă, aparat foto și haine în straturi pentru vreme schimbătoare în munți."
     },
     "backToAll": "Înapoi la toate itinerariile"
+  },
+  "studyPage": {
+    "titlePrefix": "Studii &",
+    "titleHighlight": "Universități",
+    "description": "Ghid complet pentru universitățile românești, programele de studii și căile academice pentru studenții internaționali.",
+    "filters": {
+      "title": "Filtrează Universitățile",
+      "degreeType": "Tipul Diplomei",
+      "city": "Orașul",
+      "degrees": {
+        "all": "Toate Diplomele",
+        "bachelor": "Licență",
+        "master": "Master",
+        "doctorate": "Doctorat/PhD",
+        "diploma": "Programe de Diplomă"
+      },
+      "cities": {
+        "all": "Toate Orașele",
+        "bucharest": "București",
+        "cluj-napoca": "Cluj-Napoca",
+        "iasi": "Iași",
+        "timisoara": "Timișoara",
+        "constanta": "Constanța"
+      }
+    },
+    "cities": {
+      "bucharest": "București",
+      "cluj-napoca": "Cluj-Napoca",
+      "iasi": "Iași",
+      "timisoara": "Timișoara",
+      "constanta": "Constanța"
+    },
+    "founded": "Fondată",
+    "publicUniversity": "Publică",
+    "privateUniversity": "Privată",
+    "topSpecialties": "Specializări Principale",
+    "more": "mai multe",
+    "degreesOffered": "Diplome Oferite",
+    "degreeTypes": {
+      "bachelor": "Licență",
+      "master": "Master",
+      "doctorate": "Doctorat",
+      "diploma": "Diplomă"
+    },
+    "tuitionRange": "Taxe de Studiu (pe an)",
+    "year": "an",
+    "visitWebsite": "Vizitează Website-ul",
+    "resultsCount": "Se afișează {count} universități",
+    "noResults": {
+      "title": "Nu s-au găsit universități",
+      "description": "Încearcă să ajustezi filtrele pentru a vedea mai multe rezultate."
+    },
+    "essentials": {
+      "title": "Esențiale pentru Studii",
+      "tuition": {
+        "title": "Taxe & Costuri",
+        "desc": "Universități publice: €1.800-5.500/an. Costuri de trai: €300-600/lună în funcție de oraș."
+      },
+      "language": {
+        "title": "Cerințe de Limbă",
+        "desc": "Programe disponibile în română sau engleză. IELTS/TOEFL necesar pentru programele în engleză."
+      },
+      "visa": {
+        "title": "Viză de Student",
+        "desc": "Viză de ședere lungă (D) necesară pentru studii. Aplică cu 3 luni înainte de data de început."
+      },
+      "housing": {
+        "title": "Cazare Studențească",
+        "desc": "Cămine universitare disponibile. Cazare privată: €150-400/lună în funcție de locație."
+      }
+    },
+    "pathways": {
+      "title": "Căi Academice",
+      "undergraduate": {
+        "title": "Licență",
+        "desc": "Programe de licență în diverse domenii cu fundație academică solidă.",
+        "duration": "3-4 ani"
+      },
+      "graduate": {
+        "title": "Master",
+        "desc": "Programe de master pentru specializare și cunoștințe avansate în domeniul tău.",
+        "duration": "1-2 ani"
+      },
+      "doctorate": {
+        "title": "Doctorat",
+        "desc": "Programe de PhD pentru cercetare și cariere academice cu recunoaștere internațională.",
+        "duration": "3-4 ani"
+      },
+      "visaInfo": "Obține Informații Viză Student"
+    }
   }
 }
