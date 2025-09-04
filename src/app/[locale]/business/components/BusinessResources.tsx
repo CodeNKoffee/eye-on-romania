@@ -49,17 +49,17 @@ export default function BusinessResources() {
       
       <div className="grid md:grid-cols-3 gap-6">
         {resources.map((resource, index) => (
-          <div key={index} className="p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow">
+          <div key={index} className="flex flex-col h-full p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow">
             <div className="w-12 h-12 text-tricolor-blue bg-tricolor-blue/10 rounded-lg flex items-center justify-center mb-4">
               {resource.icon}
             </div>
             <h3 className="font-semibold text-transylvanian-stone mb-2">{resource.title}</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-4">{resource.description}</p>
+            <p className="text-sm text-transylvanian-stone/70 mb-4 flex-grow">{resource.description}</p>
             <Link 
               href={resource.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-tricolor-blue hover:text-tricolor-blue/80 font-medium text-sm group"
+              className="inline-flex items-center text-tricolor-blue hover:text-tricolor-blue/80 font-medium text-sm group mt-auto"
             >
               {resource.linkText}
               <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
