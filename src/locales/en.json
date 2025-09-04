@@ -685,5 +685,143 @@
     "disclaimer": "All information is for reference only. Please verify with official sources.",
     "copyright": "All rights reserved.",
     "lastUpdated": "Last updated"
+  },
+  "institutionsPage": {
+    "titlePrefix": "Partnership-Ready Information",
+    "titleHighlight": "For Institutions",
+    "description": "Comprehensive, verified information designed for government entities, educational institutions, and strategic partners seeking reliable data about Romania.",
+    "stats": {
+      "coverage": "100%",
+      "coverageLabel": "Official Sources",
+      "sources": "20+",
+      "sourcesLabel": "Government Agencies",
+      "languages": "2",
+      "languagesLabel": "Languages Available"
+    },
+    "partnershipTypes": {
+      "title": "Partnership Opportunities",
+      "description": "Multiple pathways for institutional collaboration and knowledge sharing.",
+      "types": {
+        "government": {
+          "title": "Government Agencies",
+          "description": "Bilateral cooperation on tourism, education, and economic development.",
+          "benefits": [
+            "Policy alignment support",
+            "Data sharing agreements",
+            "Joint promotional initiatives"
+          ]
+        },
+        "education": {
+          "title": "Educational Institutions",
+          "description": "University partnerships and student exchange programs.",
+          "benefits": [
+            "Student mobility programs",
+            "Research collaborations",
+            "Academic quality assurance"
+          ]
+        },
+        "tourism": {
+          "title": "Tourism Boards",
+          "description": "Destination marketing and visitor experience enhancement.",
+          "benefits": [
+            "Joint marketing campaigns",
+            "Visitor data insights",
+            "Cultural exchange programs"
+          ]
+        }
+      }
+    },
+    "services": {
+      "title": "Partnership Services",
+      "description": "Tailored solutions for institutional needs and collaboration goals.",
+      "offerings": {
+        "consulting": {
+          "title": "Strategic Consulting",
+          "description": "Policy analysis and implementation guidance for Romania-focused initiatives.",
+          "features": [
+            "Market research and analysis",
+            "Regulatory compliance guidance",
+            "Cultural integration strategies"
+          ]
+        },
+        "translation": {
+          "title": "Professional Translation",
+          "description": "Certified translation services for official documents and communications.",
+          "features": [
+            "Legal document translation",
+            "Technical content localization",
+            "Cultural adaptation services"
+          ]
+        },
+        "data": {
+          "title": "Data & Research",
+          "description": "Comprehensive datasets and research reports for informed decision-making.",
+          "features": [
+            "Statistical analysis reports",
+            "Trend monitoring dashboards",
+            "Custom research projects"
+          ]
+        }
+      }
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "description": "Ready to explore partnership opportunities? Let's discuss how we can collaborate.",
+      "form": {
+        "institution": "Institution Name",
+        "institutionPlaceholder": "Your organization name",
+        "contact": "Primary Contact",
+        "contactPlaceholder": "Contact person name",
+        "email": "Email Address",
+        "emailPlaceholder": "official@institution.org",
+        "partnership": "Partnership Interest",
+        "partnershipPlaceholder": "Describe your collaboration goals",
+        "submit": "Submit Partnership Inquiry"
+      },
+      "response": "We typically respond to partnership inquiries within 48 hours."
+    },
+    "benefits": {
+      "title": "Partnership Benefits",
+      "description": "Why institutions choose to collaborate with Eye on Romania.",
+      "items": {
+        "credibility": {
+          "title": "Enhanced Credibility",
+          "description": "Association with verified, high-quality information sources."
+        },
+        "reach": {
+          "title": "Extended Reach",
+          "description": "Access to diverse international audiences and stakeholders."
+        },
+        "expertise": {
+          "title": "Local Expertise",
+          "description": "Deep understanding of Romanian culture, regulations, and opportunities."
+        },
+        "efficiency": {
+          "title": "Operational Efficiency",
+          "description": "Streamlined processes and reduced administrative overhead."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Success Stories",
+      "description": "Partnerships that have created meaningful impact and mutual value.",
+      "stories": {
+        "tourism": {
+          "quote": "The comprehensive travel information has significantly improved our visitor satisfaction rates.",
+          "author": "Regional Tourism Authority",
+          "role": "Partnership Director"
+        },
+        "education": {
+          "quote": "Students now have clear pathways to Romanian universities through this platform.",
+          "author": "International Education Consortium",
+          "role": "Program Coordinator"
+        },
+        "investment": {
+          "quote": "Reliable business information has helped streamline our investment promotion efforts.",
+          "author": "Economic Development Agency",
+          "role": "Investment Manager"
+        }
+      }
+    }
   }
 }

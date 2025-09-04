@@ -684,5 +684,143 @@
     "disclaimer": "Toate informațiile sunt doar pentru referință. Vă rugăm să verificați cu sursele oficiale.",
     "copyright": "Toate drepturile rezervate.",
     "lastUpdated": "Ultima actualizare"
+  },
+  "institutionsPage": {
+    "titlePrefix": "Informații pentru Parteneriate",
+    "titleHighlight": "Pentru Instituții",
+    "description": "Informații complete și verificate, concepute pentru entități guvernamentale, instituții educaționale și parteneri strategici care caută date fiabile despre România.",
+    "stats": {
+      "coverage": "100%",
+      "coverageLabel": "Surse Oficiale",
+      "sources": "20+",
+      "sourcesLabel": "Agenții Guvernamentale",
+      "languages": "2",
+      "languagesLabel": "Limbi Disponibile"
+    },
+    "partnershipTypes": {
+      "title": "Oportunități de Parteneriat",
+      "description": "Multiple căi pentru colaborarea instituțională și schimbul de cunoștințe.",
+      "types": {
+        "government": {
+          "title": "Agenții Guvernamentale",
+          "description": "Cooperare bilaterală în turism, educație și dezvoltare economică.",
+          "benefits": [
+            "Suport pentru alinierea politicilor",
+            "Acorduri de partajare a datelor",
+            "Inițiative promoționale comune"
+          ]
+        },
+        "education": {
+          "title": "Instituții Educaționale",
+          "description": "Parteneriate universitare și programe de schimb studențesc.",
+          "benefits": [
+            "Programe de mobilitate studențească",
+            "Colaborări de cercetare",
+            "Asigurarea calității academice"
+          ]
+        },
+        "tourism": {
+          "title": "Oficii de Turism",
+          "description": "Marketing destinații și îmbunătățirea experienței vizitatorilor.",
+          "benefits": [
+            "Campanii de marketing comune",
+            "Perspective asupra datelor vizitatorilor",
+            "Programe de schimb cultural"
+          ]
+        }
+      }
+    },
+    "services": {
+      "title": "Servicii de Parteneriat",
+      "description": "Soluții personalizate pentru nevoile instituționale și obiectivele de colaborare.",
+      "offerings": {
+        "consulting": {
+          "title": "Consultanță Strategică",
+          "description": "Analiză de politici și orientare pentru implementarea inițiativelor axate pe România.",
+          "features": [
+            "Cercetare și analiză de piață",
+            "Orientare pentru conformitatea reglementară",
+            "Strategii de integrare culturală"
+          ]
+        },
+        "translation": {
+          "title": "Traducere Profesională",
+          "description": "Servicii de traducere certificate pentru documente și comunicări oficiale.",
+          "features": [
+            "Traducerea documentelor legale",
+            "Localizarea conținutului tehnic",
+            "Servicii de adaptare culturală"
+          ]
+        },
+        "data": {
+          "title": "Date și Cercetare",
+          "description": "Seturi de date complete și rapoarte de cercetare pentru luarea deciziilor informate.",
+          "features": [
+            "Rapoarte de analiză statistică",
+            "Tablouri de bord pentru monitorizarea tendințelor",
+            "Proiecte de cercetare personalizate"
+          ]
+        }
+      }
+    },
+    "contact": {
+      "title": "Intră în Legătură",
+      "description": "Gata să explorezi oportunități de parteneriat? Să discutăm despre cum putem colabora.",
+      "form": {
+        "institution": "Numele Instituției",
+        "institutionPlaceholder": "Numele organizației tale",
+        "contact": "Contact Principal",
+        "contactPlaceholder": "Numele persoanei de contact",
+        "email": "Adresa de Email",
+        "emailPlaceholder": "oficial@institutie.ro",
+        "partnership": "Interesul pentru Parteneriat",
+        "partnershipPlaceholder": "Descrie obiectivele tale de colaborare",
+        "submit": "Trimite Cererea de Parteneriat"
+      },
+      "response": "De obicei răspundem la cererile de parteneriat în 48 de ore."
+    },
+    "benefits": {
+      "title": "Beneficiile Parteneriatului",
+      "description": "De ce instituțiile aleg să colaboreze cu Eye on Romania.",
+      "items": {
+        "credibility": {
+          "title": "Credibilitate Sporită",
+          "description": "Asocierea cu surse de informații verificate și de înaltă calitate."
+        },
+        "reach": {
+          "title": "Atingere Extinsă",
+          "description": "Acces la audiențe internaționale diverse și părți interesate."
+        },
+        "expertise": {
+          "title": "Expertiză Locală",
+          "description": "Înțelegere profundă a culturii, reglementărilor și oportunităților românești."
+        },
+        "efficiency": {
+          "title": "Eficiență Operațională",
+          "description": "Procese simplificate și cheltuieli administrative reduse."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Povești de Succes",
+      "description": "Parteneriate care au creat impact semnificativ și valoare reciprocă.",
+      "stories": {
+        "tourism": {
+          "quote": "Informațiile complete de călătorie au îmbunătățit semnificativ ratele noastre de satisfacție ale vizitatorilor.",
+          "author": "Autoritatea Regională de Turism",
+          "role": "Director Parteneriate"
+        },
+        "education": {
+          "quote": "Studenții au acum căi clare către universitățile românești prin această platformă.",
+          "author": "Consorțiul Internațional de Educație",
+          "role": "Coordonator Program"
+        },
+        "investment": {
+          "quote": "Informațiile fiabile despre afaceri au ajutat la eficientizarea eforturilor noastre de promovare a investițiilor.",
+          "author": "Agenția de Dezvoltare Economică",
+          "role": "Manager Investiții"
+        }
+      }
+    }
   }
 }
