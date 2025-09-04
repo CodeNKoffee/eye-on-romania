@@ -775,7 +775,17 @@
         "emailPlaceholder": "oficial@institutie.ro",
         "partnership": "Interesul pentru Parteneriat",
         "partnershipPlaceholder": "Descrie obiectivele tale de colaborare",
-        "submit": "Trimite Cererea de Parteneriat"
+        "submit": "Trimite Cererea de Parteneriat",
+        "submitting": "Se trimite...",
+        "success": "Mulțumim! Cererea ta de parteneriat a fost trimisă cu succes.",
+        "error": "A apărut o eroare la trimiterea cererii. Te rugăm să încerci din nou."
+      },
+      "validation": {
+        "institutionRequired": "Numele instituției este obligatoriu",
+        "contactRequired": "Numele persoanei de contact este obligatoriu",
+        "emailRequired": "Adresa de email este obligatorie",
+        "emailInvalid": "Te rugăm să introduci o adresă de email validă",
+        "partnershipRequired": "Te rugăm să descrii interesul tău pentru parteneriat"
       },
       "response": "De obicei răspundem la cererile de parteneriat în 48 de ore."
     },

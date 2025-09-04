@@ -776,7 +776,17 @@
         "emailPlaceholder": "official@institution.org",
         "partnership": "Partnership Interest",
         "partnershipPlaceholder": "Describe your collaboration goals",
-        "submit": "Submit Partnership Inquiry"
+        "submit": "Submit Partnership Inquiry",
+        "submitting": "Submitting...",
+        "success": "Thank you! Your partnership inquiry has been submitted successfully.",
+        "error": "There was an error submitting your inquiry. Please try again."
+      },
+      "validation": {
+        "institutionRequired": "Institution name is required",
+        "contactRequired": "Contact person name is required",
+        "emailRequired": "Email address is required",
+        "emailInvalid": "Please enter a valid email address",
+        "partnershipRequired": "Please describe your partnership interest"
       },
       "response": "We typically respond to partnership inquiries within 48 hours."
     },

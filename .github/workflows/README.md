@@ -33,6 +33,7 @@ This directory contains the CI/CD workflows for the Eye on Romania project.
 **Triggers:** Daily schedule, Push to `main`, Pull requests, Manual trigger
 
 **Jobs:**
+
 - **Security Audit:** npm audit and Snyk security scanning
 - **Dependency Review:** Review dependencies in pull requests
 - **CodeQL Analysis:** Static code analysis for security vulnerabilities
