@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Inter } from "next/font/google"; 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const notoSans = Noto_Sans({
@@ -82,6 +83,7 @@ export default function RootLayout({
         className={`${notoSans.variable} ${inter.variable} antialiased overflow-x-hidden`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
