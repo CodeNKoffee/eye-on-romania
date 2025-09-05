@@ -9,24 +9,48 @@ export default function ChecklistDownload() {
   const t = useTranslations("visaPage");
   const { selectedCountry, setSelectedCountry, requirements, isVisaFree, countryData } = useVisaData();
 
-  // Load Egyptian requirements from translations when available; fallback to a hard-coded list
-  // next-intl may return a string for t(...) by default; coerce via unknown and validate with Array.isArray
-  const rawTranslated: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
-  const translatedEgyptRequirements = Array.isArray(rawTranslated) ? (rawTranslated as string[]) : undefined;
-  const fallbackEgyptRequirements = [
-    "Passport scan (valid 6+ months beyond intended stay)",
-    "EU visa application form (filled automatically after completing online form on Romanian Embassy eVisa portal in Cairo)",
-    "2 personal photos (35x45mm, color, white background)",
-    "Proof of 2-way go and return ticket (roundtrip flight reservation)",
-    "Travel insurance (minimum €30,000 coverage for Schengen area)",
-    "Proof of accommodation (hotel bookings, invitation letter, or host arrangements)",
-    "Bank account statement (or of parent/guardian if student) - last 3-6 months",
-    "University registration certificate (if student) OR employment letter (if employed)",
-    "Individual registration certificate",
-    "Letter of invitation and reimbursement (if available) for cultural visits",
-    "Movements certificate of your last 7 years in and out of your country (required if haven't had Schengen visa before)",
-    "Purpose of visit documentation (cultural activities, business meetings, tourism)"
-  ];
+  // Function to translate requirement keys
+  const translateRequirement = (key: string): string => {
+    // If it's already a translated string (not a key), return as-is
+    if (!key.startsWith('requirements.')) {
+      return key;
+    }
+    
+    // Try to get translation for the key
+    const translated = t(`requirements.${key.replace('requirements.', '')}`, { defaultValue: key });
+    
+    // If translation key doesn't exist, return a fallback
+    if (translated === key) {
+      // Map common keys to fallback English text
+      const fallbacks: Record<string, string> = {
+        'requirements.passport': 'Passport (valid 6+ months beyond intended stay)',
+        'requirements.application': 'Completed visa application form (signed and dated)',
+        'requirements.photos': '2 recent passport photos (35x45mm, color, white background)',
+        'requirements.flight': 'Roundtrip flight reservation or travel itinerary',
+        'requirements.insurance': 'Travel insurance (minimum €30,000 coverage)',
+        'requirements.accommodation': 'Proof of accommodation (hotel bookings, invitation letter)',
+        'requirements.financial': 'Financial means evidence (bank statements, employment letter)',
+        'requirements.purpose': 'Purpose of visit documentation',
+        'requirements.invitation': 'Official invitation letter from Romanian cultural institution/event organizer',
+        'requirements.certificate': 'Certificate of individual background/professional status',
+        'requirements.program': 'Detailed program/schedule of cultural activities',
+        'requirements.achievements': 'Proof of previous cultural/professional achievements (portfolio, CV)',
+        'requirements.employment': 'Letter from employer (if employed) or university enrollment certificate (if student)',
+        'requirements.appointment': 'Consular appointment required',
+        'requirements.biometric': 'Biometric data collection required',
+        'requirements.background': 'Additional background verification may apply',
+        'requirements.appointmentMay': 'Consular appointment may be required',
+        'requirements.police': 'Police clearance certificate (if stay > 90 days)',
+        'requirements.biometricMay': 'Biometric data may be requested at application',
+        'requirements.security': 'Additional security clearance may be required',
+        'requirements.yellowFever': 'Yellow fever vaccination certificate required',
+        'requirements.yellowFeverMay': 'Yellow fever vaccination certificate may be required'
+      };
+      return fallbacks[key] || key;
+    }
+    
+    return translated;
+  };
 
   // Determine which requirements to use
   const getRequirementsForDownload = () => {
@@ -39,14 +63,58 @@ export default function ChecklistDownload() {
       ];
     }
     
-    // Use translated Egyptian requirements if present, otherwise fallback to the English hard-coded array,
-    // otherwise default to the original requirements from country data
+    // For Egyptian citizens, use the translated Egyptian requirements if available
     if (countryData?.code === 'EG') {
-      return translatedEgyptRequirements && translatedEgyptRequirements.length > 0
-        ? translatedEgyptRequirements
-        : fallbackEgyptRequirements;
+      const rawEgypt: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
+      let translatedEgyptian: string[] | undefined;
+
+      if (Array.isArray(rawEgypt)) {
+        translatedEgyptian = rawEgypt as string[];
+      } else if (typeof rawEgypt === 'string') {
+        try {
+          const parsed = JSON.parse(rawEgypt);
+          if (Array.isArray(parsed)) translatedEgyptian = parsed as string[];
+        } catch (e) {
+          // not JSON, keep undefined
+        }
+      }
+
+      let fallbackFromKeys: string[] = [];
+      if (!translatedEgyptian) {
+        fallbackFromKeys = [
+          t('egypt.requirements.item1'),
+          t('egypt.requirements.item2'),
+          t('egypt.requirements.item3'),
+          t('egypt.requirements.item4'),
+          t('egypt.requirements.item5'),
+          t('egypt.requirements.item6'),
+          t('egypt.requirements.item7'),
+          t('egypt.requirements.item8'),
+          t('egypt.requirements.item9'),
+          t('egypt.requirements.item10'),
+          t('egypt.requirements.item11'),
+          t('egypt.requirements.item12')
+        ];
+      }
+
+      let egyptianRequirements: string[] = translatedEgyptian ?? fallbackFromKeys;
+      const looksLikeUntranslatedKey = (str: string): boolean => {
+        return str.startsWith('egypt.requirements.item') && !str.includes(' ');
+      };
+
+      const allKeysUntranslated = egyptianRequirements.length > 0 &&
+        egyptianRequirements.every(item => looksLikeUntranslatedKey(item));
+
+      if (allKeysUntranslated) {
+        // Fall back to translating the generic requirements
+        return requirements.items.map(translateRequirement);
+      } else {
+        return egyptianRequirements;
+      }
     }
-    return requirements.items;
+    
+    // For all other countries, translate the requirement keys
+    return requirements.items.map(translateRequirement);
   };
 
   const items = getRequirementsForDownload();

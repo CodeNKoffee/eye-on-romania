@@ -1,11 +1,75 @@
 "use client";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import CheckListItem from "../ui/CheckListItem";
 import { useVisaData } from "../../hooks/useVisaData";
+
+type VisaType = 'shortStay' | 'longStay' | 'transit';
 
 export default function VisaChecklist() {
   const t = useTranslations("visaPage");
   const { requirements, isVisaFree, countryData } = useVisaData();
+  const [activeTab, setActiveTab] = useState<VisaType>('shortStay');
+
+  // Define requirements for different visa types
+  const visaTypeRequirements = {
+    shortStay: [
+      'requirements.passport',
+      'requirements.application',
+      'requirements.photos',
+      'requirements.flight',
+      'requirements.insurance',
+      'requirements.accommodation',
+      'requirements.financial',
+      'requirements.purpose',
+      'requirements.invitation',
+      'requirements.certificate',
+      'requirements.program',
+      'requirements.achievements',
+      'requirements.employment'
+    ],
+    longStay: [
+      'requirements.passport',
+      'requirements.application',
+      'requirements.photos',
+      'requirements.insurance',
+      'requirements.accommodation',
+      'requirements.financial',
+      'requirements.employment',
+      'requirements.police',
+      'requirements.appointment',
+      'requirements.biometric'
+    ],
+    transit: [
+      'requirements.passport',
+      'requirements.application',
+      'requirements.photos',
+      'requirements.flight',
+      'requirements.financial'
+    ]
+  };
+
+  // Tab configuration
+  const tabs = [
+    {
+      id: 'shortStay' as VisaType,
+      label: t('visaTypes.shortStay.type'),
+      duration: t('visaTypes.shortStay.duration'),
+      color: 'tricolor-blue'
+    },
+    {
+      id: 'longStay' as VisaType,
+      label: t('visaTypes.longStay.type'),
+      duration: t('visaTypes.longStay.duration'),
+      color: 'tricolor-red'
+    },
+    {
+      id: 'transit' as VisaType,
+      label: t('visaTypes.transit.type'),
+      duration: t('visaTypes.transit.duration'),
+      color: 'carpathian-forest'
+    }
+  ];
 
   // Function to translate requirement keys
   const translateRequirement = (key: string): string => {
@@ -50,61 +114,6 @@ export default function VisaChecklist() {
     return translated;
   };
 
-  // Try to load Egyptian requirements from the requirementsList array first
-  const rawEgypt: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
-  let translatedEgyptian: string[] | undefined;
-
-  if (Array.isArray(rawEgypt)) {
-    translatedEgyptian = rawEgypt as string[];
-  } else if (typeof rawEgypt === 'string') {
-    // Sometimes the serializer stores arrays as JSON strings - attempt to parse
-    try {
-      const parsed = JSON.parse(rawEgypt);
-      if (Array.isArray(parsed)) translatedEgyptian = parsed as string[];
-    } catch (e) {
-      // not JSON, keep undefined
-    }
-  }
-
-  // If requirementsList didn't work, try individual items
-  let fallbackFromKeys: string[] = [];
-  if (!translatedEgyptian) {
-    fallbackFromKeys = [
-      t('egypt.requirements.item1'),
-      t('egypt.requirements.item2'),
-      t('egypt.requirements.item3'),
-      t('egypt.requirements.item4'),
-      t('egypt.requirements.item5'),
-      t('egypt.requirements.item6'),
-      t('egypt.requirements.item7'),
-      t('egypt.requirements.item8'),
-      t('egypt.requirements.item9'),
-      t('egypt.requirements.item10'),
-      t('egypt.requirements.item11'),
-      t('egypt.requirements.item12')
-    ];
-  }
-
-  let egyptianRequirements: string[] = translatedEgyptian ?? fallbackFromKeys;
-
-  // Better detection of untranslated keys - only fallback if we get literal translation keys back
-  const looksLikeUntranslatedKey = (str: string): boolean => {
-    // Must match exact pattern: "egypt.requirements.item1" etc. AND have no spaces
-    return str.startsWith('egypt.requirements.item') && !str.includes(' ');
-  };
-
-  const allKeysUntranslated = egyptianRequirements.length > 0 &&
-    egyptianRequirements.every(item => looksLikeUntranslatedKey(item));
-
-  // Only use fallback if ALL items look like untranslated keys
-  if (allKeysUntranslated) {
-    console.log('All Egyptian requirements look untranslated, falling back to generic requirements');
-    // Translate the generic requirements
-    egyptianRequirements = requirements.items.map(translateRequirement);
-  } else {
-    console.log('Using translated Egyptian requirements:', egyptianRequirements.slice(0, 2));
-  }
-
   if (isVisaFree) {
     return (
       <section className="container mx-auto px-6 py-8">
@@ -138,28 +147,114 @@ export default function VisaChecklist() {
     );
   }
 
-  // Use Egyptian requirements if the selected country is Egypt, otherwise translate generic requirements
-  const currentRequirements = countryData?.code === 'EG' 
-    ? egyptianRequirements 
-    : requirements.items.map(translateRequirement);
+  // Get current requirements based on active tab
+  const getCurrentRequirements = () => {
+    if (countryData?.code === 'EG' && activeTab === 'shortStay') {
+      // Use existing Egyptian logic for short stay
+      const rawEgypt: unknown = t('egypt.requirementsList', { returnObjects: true } as any);
+      let translatedEgyptian: string[] | undefined;
+
+      if (Array.isArray(rawEgypt)) {
+        translatedEgyptian = rawEgypt as string[];
+      } else if (typeof rawEgypt === 'string') {
+        try {
+          const parsed = JSON.parse(rawEgypt);
+          if (Array.isArray(parsed)) translatedEgyptian = parsed as string[];
+        } catch (e) {
+          // not JSON, keep undefined
+        }
+      }
+
+      let fallbackFromKeys: string[] = [];
+      if (!translatedEgyptian) {
+        fallbackFromKeys = [
+          t('egypt.requirements.item1'),
+          t('egypt.requirements.item2'),
+          t('egypt.requirements.item3'),
+          t('egypt.requirements.item4'),
+          t('egypt.requirements.item5'),
+          t('egypt.requirements.item6'),
+          t('egypt.requirements.item7'),
+          t('egypt.requirements.item8'),
+          t('egypt.requirements.item9'),
+          t('egypt.requirements.item10'),
+          t('egypt.requirements.item11'),
+          t('egypt.requirements.item12')
+        ];
+      }
+
+      let egyptianRequirements: string[] = translatedEgyptian ?? fallbackFromKeys;
+      const looksLikeUntranslatedKey = (str: string): boolean => {
+        return str.startsWith('egypt.requirements.item') && !str.includes(' ');
+      };
+
+      const allKeysUntranslated = egyptianRequirements.length > 0 &&
+        egyptianRequirements.every(item => looksLikeUntranslatedKey(item));
+
+      if (allKeysUntranslated) {
+        return visaTypeRequirements[activeTab].map(translateRequirement);
+      } else {
+        return egyptianRequirements;
+      }
+    }
+
+    // For all other cases, use visa type specific requirements
+    return visaTypeRequirements[activeTab].map(translateRequirement);
+  };
+
+  const currentRequirements = getCurrentRequirements();
 
   return (
     <section className="container mx-auto px-6 py-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8">
-          <div className="flex items-center mb-6">
-            <div className="w-8 h-8 bg-tricolor-blue/10 rounded-lg flex items-center justify-center mr-3">
-              <svg className="w-5 h-5 text-tricolor-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
+          {/* Visa Type Tabs */}
+          <div className="mb-8">
+            <div className="flex items-center mb-6">
+              <div className="w-8 h-8 bg-tricolor-blue/10 rounded-lg flex items-center justify-center mr-3">
+                <svg className="w-5 h-5 text-tricolor-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-transylvanian-stone">
+                {t('checklist.title')}
+              </h3>
             </div>
-            <h3 className="text-xl font-semibold text-transylvanian-stone">
-              {t('checklist.title')}
-            </h3>
+
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                let tabClasses = `px-4 py-2 rounded-lg transition-all duration-200 flex flex-col items-center text-center min-w-[120px] border-2 `;
+                
+                if (isActive) {
+                  if (tab.color === 'tricolor-blue') {
+                    tabClasses += 'bg-tricolor-blue/10 text-tricolor-blue border-tricolor-blue/30';
+                  } else if (tab.color === 'tricolor-red') {
+                    tabClasses += 'bg-tricolor-red/10 text-tricolor-red border-tricolor-red/30';
+                  } else if (tab.color === 'carpathian-forest') {
+                    tabClasses += 'bg-carpathian-forest/10 text-carpathian-forest border-carpathian-forest/30';
+                  }
+                } else {
+                  tabClasses += 'bg-gray-50 text-transylvanian-stone/70 border-transparent hover:bg-gray-100';
+                }
+
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={tabClasses}
+                  >
+                    <span className="font-medium text-sm">{tab.label}</span>
+                    <span className="text-xs opacity-75 mt-1">{tab.duration}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Special notice for Egyptian citizens */}
-          {countryData?.code === 'EG' && (
+          {/* Special notice for Egyptian citizens on short stay */}
+          {countryData?.code === 'EG' && activeTab === 'shortStay' && (
             <div className="mb-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -175,14 +270,15 @@ export default function VisaChecklist() {
             </div>
           )}
 
+          {/* Requirements List */}
           <div className="grid md:grid-cols-1 gap-3">
             {currentRequirements.map((item, index) => (
               <CheckListItem key={index} text={item} />
             ))}
           </div>
 
-          {/* Important notes for Egyptian citizens */}
-          {countryData?.code === 'EG' && (
+          {/* Important notes for Egyptian citizens on short stay */}
+          {countryData?.code === 'EG' && activeTab === 'shortStay' && (
             <div className="mt-6 space-y-4">
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="flex items-start gap-3">
@@ -203,6 +299,7 @@ export default function VisaChecklist() {
             </div>
           )}
 
+          {/* Consulate information */}
           {requirements.consulateUrl && (
             <div className="mt-6 p-4 bg-tricolor-blue/5 rounded-lg border border-tricolor-blue/20">
               <div className="flex items-start gap-3">
@@ -230,6 +327,7 @@ export default function VisaChecklist() {
             </div>
           )}
 
+          {/* General note */}
           <div className="mt-8 p-4 bg-danube-mist/50 rounded-lg border border-danube-mist">
             <div className="flex items-start gap-3">
               <svg className="w-5 h-5 text-tricolor-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

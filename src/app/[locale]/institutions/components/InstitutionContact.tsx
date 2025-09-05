@@ -23,7 +23,21 @@ export default function InstitutionContact() {
       .required(tValidation('contactRequired')),
     email: Yup.string()
       .email(tValidation('emailInvalid'))
-      .required(tValidation('emailRequired')),
+      .required(tValidation('emailRequired'))
+      .test('business-email', tValidation('emailNotBusiness'), function(value) {
+        if (!value) return false;
+        
+        const freeEmailDomains = [
+          'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'live.com',
+          'icloud.com', 'me.com', 'mac.com', 'aol.com', 'msn.com',
+          'ymail.com', 'rocketmail.com', 'mail.com', 'gmx.com',
+          'protonmail.com', 'tutanota.com', 'tempmail.org', '10minutemail.com',
+          'guerrillamail.com', 'mailinator.com', 'dispostable.com'
+        ];
+        
+        const domain = value.split('@')[1]?.toLowerCase();
+        return !freeEmailDomains.includes(domain);
+      }),
     partnership: Yup.string()
       .required(tValidation('partnershipRequired'))
   });

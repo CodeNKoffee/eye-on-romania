@@ -772,8 +772,8 @@
         "institutionPlaceholder": "Your organization name",
         "contact": "Primary Contact",
         "contactPlaceholder": "Contact person name",
-        "email": "Email Address",
-        "emailPlaceholder": "official@institution.org",
+        "email": "Business Email Address",
+        "emailPlaceholder": "contact@yourorganization.org",
         "partnership": "Partnership Interest",
         "partnershipPlaceholder": "Describe your collaboration goals",
         "submit": "Submit Partnership Inquiry",
@@ -786,6 +786,7 @@
         "contactRequired": "Contact person name is required",
         "emailRequired": "Email address is required",
         "emailInvalid": "Please enter a valid email address",
+        "emailNotBusiness": "Please use a professional/business email address (no Gmail, Yahoo, etc.)",
         "partnershipRequired": "Please describe your partnership interest"
       },
       "response": "We typically respond to partnership inquiries within 48 hours."
