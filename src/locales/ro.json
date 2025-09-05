@@ -108,6 +108,9 @@
     },
     "checklist": {
       "title": "Listă comună pentru ședere scurtă (C)",
+      "titleShortStay": "Listă comună pentru ședere scurtă (C)",
+      "titleLongStay": "Listă comună pentru ședere lungă (D)",
+      "titleTransit": "Listă comună pentru tranzit (A)",
       "noVisaRequired": "Nu este necesară viză pentru șederi scurte — verifică ghidurile oficiale pentru cerințe de intrare.",
       "note": {
         "title": "Notă importantă",

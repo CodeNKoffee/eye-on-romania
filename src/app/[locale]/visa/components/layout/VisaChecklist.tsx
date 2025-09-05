@@ -217,7 +217,9 @@ export default function VisaChecklist() {
                 </svg>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-transylvanian-stone">
-                {t('checklist.title')}
+                {activeTab === 'shortStay' ? t('checklist.titleShortStay') : 
+                 activeTab === 'longStay' ? t('checklist.titleLongStay') : 
+                 t('checklist.titleTransit')}
               </h3>
             </div>
 
