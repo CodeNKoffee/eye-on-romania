@@ -813,24 +813,24 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Success Stories",
-      "description": "Partnerships that have created meaningful impact and mutual value.",
-      "stories": {
+    "partnerships": {
+      "title": "Partnership Opportunities",
+      "description": "Potential collaborations that could create mutual value and meaningful impact.",
+      "potential": {
         "tourism": {
-          "quote": "The comprehensive travel information has significantly improved our visitor satisfaction rates.",
-          "author": "Regional Tourism Authority",
-          "role": "Partnership Director"
+          "partner": "Tourism Board Partnership",
+          "type": "Government Tourism Agency",
+          "opportunity": "Could provide comprehensive tourism data and promote Romania as a premier destination through our platform"
         },
         "education": {
-          "quote": "Students now have clear pathways to Romanian universities through this platform.",
-          "author": "International Education Consortium",
-          "role": "Program Coordinator"
+          "partner": "University Collaboration",
+          "type": "Higher Education Institution",
+          "opportunity": "Could offer streamlined study abroad information and attract international students to Romanian universities"
         },
         "investment": {
-          "quote": "Reliable business information has helped streamline our investment promotion efforts.",
-          "author": "Economic Development Agency",
-          "role": "Investment Manager"
+          "partner": "Investment Promotion Agency",
+          "type": "Economic Development Body",
+          "opportunity": "Could facilitate business partnerships and promote investment opportunities throughout Romania"
         }
       }
     }

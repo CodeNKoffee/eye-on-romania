@@ -812,24 +812,24 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Povești de Succes",
-      "description": "Parteneriate care au creat impact semnificativ și valoare reciprocă.",
-      "stories": {
+    "partnerships": {
+      "title": "Oportunități de Parteneriat",
+      "description": "Colaborări potențiale care ar putea crea valoare reciprocă și impact semnificativ.",
+      "potential": {
         "tourism": {
-          "quote": "Informațiile complete de călătorie au îmbunătățit semnificativ ratele noastre de satisfacție ale vizitatorilor.",
-          "author": "Autoritatea Regională de Turism",
-          "role": "Director Parteneriate"
+          "partner": "Parteneriat cu Consiliul de Turism",
+          "type": "Agenție Guvernamentală de Turism",
+          "opportunity": "Ar putea furniza date complete de turism și promova România ca destinație premium prin platforma noastră"
         },
         "education": {
-          "quote": "Studenții au acum căi clare către universitățile românești prin această platformă.",
-          "author": "Consorțiul Internațional de Educație",
-          "role": "Coordonator Program"
+          "partner": "Colaborare Universitară",
+          "type": "Instituție de Învățământ Superior",
+          "opportunity": "Ar putea oferi informații simplificate pentru studii în străinătate și atrage studenți internaționali în universitățile românești"
         },
         "investment": {
-          "quote": "Informațiile fiabile despre afaceri au ajutat la eficientizarea eforturilor noastre de promovare a investițiilor.",
-          "author": "Agenția de Dezvoltare Economică",
-          "role": "Manager Investiții"
+          "partner": "Agenția de Promovare a Investițiilor",
+          "type": "Organism de Dezvoltare Economică",
+          "opportunity": "Ar putea facilita parteneriate de afaceri și promova oportunități de investiții în toată România"
         }
       }
     }

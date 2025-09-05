@@ -35,40 +35,40 @@ export default function PartnershipTypes() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-transylvanian-stone mb-4">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-transylvanian-stone mb-3 sm:mb-4">
           {t('title')}
         </h2>
-        <p className="text-lg text-transylvanian-stone/80 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base lg:text-lg text-transylvanian-stone/80 max-w-3xl mx-auto leading-relaxed">
           {t('description')}
         </p>
       </div>
       
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {partnershipTypes.map((partnership) => (
-          <div key={partnership.key} className="flex flex-col h-full p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow bg-gray-50">
-            <div className="flex items-center mb-4">
-              <div className={`inline-flex items-center justify-center w-12 h-12 bg-${partnership.color}/10 text-${partnership.color} rounded-lg mr-4`}>
+          <div key={partnership.key} className="flex flex-col h-full p-4 sm:p-6 rounded-lg border border-danube-mist hover:shadow-md transition-all duration-300 bg-gray-50 touch-manipulation">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-${partnership.color}/10 text-${partnership.color} rounded-lg mr-3 sm:mr-4`}>
                 {partnership.icon}
               </div>
-              <h3 className="font-semibold text-transylvanian-stone">
+              <h3 className="text-sm sm:text-base font-semibold text-transylvanian-stone leading-tight">
                 {t(`types.${partnership.key}.title`)}
               </h3>
             </div>
             
-            <p className="text-sm text-transylvanian-stone/70 mb-4 leading-relaxed">
+            <p className="text-xs sm:text-sm text-transylvanian-stone/70 mb-3 sm:mb-4 leading-relaxed">
               {t(`types.${partnership.key}.description`)}
             </p>
             
             <div className="flex-grow">
-              <ul className="space-y-2">
+              <ul className="space-y-1 sm:space-y-2">
                 {[0, 1, 2].map((index) => (
                   <li key={index} className="flex items-start">
-                    <svg className="w-4 h-4 text-carpathian-forest mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-carpathian-forest mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-transylvanian-stone/70">
+                    <span className="text-xs sm:text-sm text-transylvanian-stone/70 leading-relaxed">
                       {t(`types.${partnership.key}.benefits.${index}`)}
                     </span>
                   </li>
