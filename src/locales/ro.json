@@ -694,10 +694,10 @@
     "titleHighlight": "Pentru Instituții",
     "description": "Informații complete și verificate, concepute pentru entități guvernamentale, instituții educaționale și parteneri strategici care caută date fiabile despre România.",
     "stats": {
-      "coverage": "100%",
+      "coverage": "5+",
       "coverageLabel": "Surse Oficiale",
-      "sources": "20+",
-      "sourcesLabel": "Agenții Guvernamentale",
+      "sources": "10+",
+      "sourcesLabel": "Resurse Verificate",
       "languages": "2",
       "languagesLabel": "Limbi Disponibile"
     },
@@ -792,7 +792,7 @@
         "emailNotBusiness": "Te rugăm să folosești o adresă de email profesională/de afaceri (nu Gmail, Yahoo, etc.)",
         "partnershipRequired": "Te rugăm să descrii interesul tău pentru parteneriat"
       },
-      "response": "De obicei răspundem la cererile de parteneriat în 48 de ore."
+      "response": "Ne propunem să răspundem la cererile de parteneriat în 1-2 zile lucrătoare."
     },
     "benefits": {
       "title": "Beneficiile Parteneriatului",

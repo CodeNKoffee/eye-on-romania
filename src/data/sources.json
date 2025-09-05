@@ -3,13 +3,37 @@
     {
       "id": "gov-immigration",
       "title": "Romanian Immigration Office",
-      "url": "https://immigration.gov.ro/",
+      "url": "https://igi.mai.gov.ro/",
       "category": "visa"
     },
     {
       "id": "gov-justice",
       "title": "Romanian Ministry of Justice",
       "url": "https://www.just.ro/",
+      "category": "business"
+    },
+    {
+      "id": "gov-finance",
+      "title": "Romanian Ministry of Finance",
+      "url": "https://www.mfinante.gov.ro/",
+      "category": "business"
+    },
+    {
+      "id": "gov-education",
+      "title": "Romanian Ministry of Education",
+      "url": "https://www.edu.ro/",
+      "category": "study"
+    },
+    {
+      "id": "gov-foreign",
+      "title": "Romanian Ministry of Foreign Affairs",
+      "url": "https://www.mae.ro/",
+      "category": "visa"
+    },
+    {
+      "id": "anaf",
+      "title": "ANAF - National Agency for Fiscal Administration",
+      "url": "https://www.anaf.ro/",
       "category": "business"
     }
   ],
@@ -19,6 +43,26 @@
       "title": "Romania Tourism Official",
       "url": "https://www.romania.travel/",
       "category": "travel"
+    },
+    {
+      "id": "bucharest-tourism",
+      "title": "Bucharest Tourism",
+      "url": "https://www.bucharest.travel/",
+      "category": "travel"
+    }
+  ],
+  "education": [
+    {
+      "id": "cnfis",
+      "title": "National Council for Higher Education Funding",
+      "url": "https://www.cnfis.ro/",
+      "category": "study"
+    },
+    {
+      "id": "aracis",
+      "title": "Romanian Agency for Quality Assurance in Higher Education",
+      "url": "https://www.aracis.ro/",
+      "category": "study"
     }
   ]
 }
