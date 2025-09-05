@@ -36,7 +36,7 @@ export default function BusinessResources() {
       ),
       title: t('resources.investRomania.title'),
       description: t('resources.investRomania.description'),
-      link: "https://www.investromania.gov.ro",
+      link: "https://investromania.gov.ro/web/",
       linkText: t('resources.investRomania.link')
     }
   ];

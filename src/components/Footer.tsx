@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">Eye on Romania</h3>
+            <Link href="/" className="text-xl font-bold mb-4">Eye on Romania</Link>
             <p className="text-white/80 mb-4 max-w-md">
               {t('description')}
             </p>

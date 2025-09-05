@@ -108,6 +108,9 @@
     },
     "checklist": {
       "title": "Common Short-stay (C) Checklist",
+      "titleShortStay": "Common Short-stay (C) Checklist",
+      "titleLongStay": "Common Long-stay (D) Checklist",
+      "titleTransit": "Common Transit (A) Checklist",
       "noVisaRequired": "No visa required for short stays — check official guidance for entry requirements.",
       "note": {
         "title": "Important Note",
