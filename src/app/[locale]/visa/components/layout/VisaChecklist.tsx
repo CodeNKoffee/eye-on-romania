@@ -205,27 +205,27 @@ export default function VisaChecklist() {
   const currentRequirements = getCurrentRequirements();
 
   return (
-    <section className="container mx-auto px-6 py-8">
+    <section className="container mx-auto px-4 sm:px-6 py-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8">
+        <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8">
           {/* Visa Type Tabs */}
-          <div className="mb-8">
-            <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-tricolor-blue/10 rounded-lg flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-tricolor-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-tricolor-blue/10 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-tricolor-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-transylvanian-stone">
+              <h3 className="text-lg sm:text-xl font-semibold text-transylvanian-stone">
                 {t('checklist.title')}
               </h3>
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6">
               {tabs.map((tab) => {
                 const isActive = activeTab === tab.id;
-                let tabClasses = `px-4 py-2 rounded-lg transition-all duration-200 flex flex-col items-center text-center min-w-[120px] border-2 `;
+                let tabClasses = `w-full sm:w-auto px-3 sm:px-4 py-3 sm:py-2 rounded-lg transition-all duration-200 flex flex-col items-center text-center border-2 touch-manipulation `;
                 
                 if (isActive) {
                   if (tab.color === 'tricolor-blue') {
@@ -236,7 +236,7 @@ export default function VisaChecklist() {
                     tabClasses += 'bg-carpathian-forest/10 text-carpathian-forest border-carpathian-forest/30';
                   }
                 } else {
-                  tabClasses += 'bg-gray-50 text-transylvanian-stone/70 border-transparent hover:bg-gray-100';
+                  tabClasses += 'bg-gray-50 text-transylvanian-stone/70 border-transparent hover:bg-gray-100 active:bg-gray-200';
                 }
 
                 return (
@@ -245,8 +245,8 @@ export default function VisaChecklist() {
                     onClick={() => setActiveTab(tab.id)}
                     className={tabClasses}
                   >
-                    <span className="font-medium text-sm">{tab.label}</span>
-                    <span className="text-xs opacity-75 mt-1">{tab.duration}</span>
+                    <span className="font-medium text-sm sm:text-base">{tab.label}</span>
+                    <span className="text-xs sm:text-sm opacity-75 mt-1">{tab.duration}</span>
                   </button>
                 );
               })}

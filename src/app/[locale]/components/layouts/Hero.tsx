@@ -52,15 +52,15 @@ export default function Hero() {
   ];
 
   return (
-    <section className="container mx-auto px-6 py-16">
+    <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-light text-transylvanian-stone mb-6 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-transylvanian-stone mb-4 sm:mb-6 tracking-tight leading-tight">
           {t("title")}{" "}
           <span className="font-semibold bg-gradient-to-r from-tricolor-blue via-tricolor-yellow to-tricolor-red bg-clip-text text-transparent">
             {t("romania")}
           </span>
         </h1>
-        <p className="text-xl md:text-2xl text-transylvanian-stone/70 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-transylvanian-stone/70 leading-relaxed max-w-3xl mx-auto px-2">
           {t("description")}
         </p>
       </div>
@@ -69,9 +69,9 @@ export default function Hero() {
       <ValuePillars pillars={pillars} />
 
       {/* Main Navigation Cards */}
-      <div className="mt-20 flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
+      <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
         {navigationCards.map((n, i) => (
-          <div key={n.title} className="flex w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(20%-1.2rem)] min-w-[280px] max-w-[320px]">
+          <div key={n.title} className="w-full">
             <NavigationCards title={n.title} description={n.description} href={n.href} variant={i} />
           </div>
         ))}

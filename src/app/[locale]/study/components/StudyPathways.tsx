@@ -42,33 +42,35 @@ export default function StudyPathways() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8">
-      <h2 className="text-2xl font-semibold text-transylvanian-stone mb-6 text-center">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+      <h2 className="text-xl sm:text-2xl font-semibold text-transylvanian-stone mb-4 sm:mb-6 text-center">
         {t('pathways.title')}
       </h2>
       
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {pathways.map((pathway, index) => (
-          <div key={index} className="text-center p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow flex flex-col h-full">
-            <div className={`inline-flex items-center justify-center w-16 h-16 bg-${pathway.color}/10 text-${pathway.color} rounded-lg mb-4 mx-auto`}>
-              {pathway.icon}
+          <div key={index} className="text-center p-4 sm:p-6 rounded-lg border border-danube-mist hover:shadow-md transition-all duration-200 flex flex-col h-full touch-manipulation active:scale-[0.98]">
+            <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-${pathway.color}/10 text-${pathway.color} rounded-lg mb-3 sm:mb-4 mx-auto`}>
+              <div className="w-6 h-6 sm:w-8 sm:h-8">
+                {pathway.icon}
+              </div>
             </div>
-            <h3 className="font-semibold text-transylvanian-stone mb-2">{pathway.title}</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-3 flex-grow">{pathway.description}</p>
-            <div className="text-xs text-tricolor-blue font-medium bg-tricolor-blue/10 px-3 py-1 rounded-full inline-block mt-auto">
+            <h3 className="font-semibold text-transylvanian-stone mb-2 text-sm sm:text-base">{pathway.title}</h3>
+            <p className="text-xs sm:text-sm text-transylvanian-stone/70 mb-3 flex-grow leading-relaxed">{pathway.description}</p>
+            <div className="text-xs text-tricolor-blue font-medium bg-tricolor-blue/10 px-2 sm:px-3 py-1 rounded-full inline-block mt-auto">
               {pathway.duration}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-6 sm:mt-8 text-center">
         <Link 
           href="/visa" 
-          className="inline-flex items-center px-6 py-3 bg-tricolor-blue text-white rounded-lg hover:bg-tricolor-blue/90 transition-colors font-medium"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-tricolor-blue text-white rounded-lg hover:bg-tricolor-blue/90 active:bg-tricolor-blue/95 transition-all duration-200 font-medium text-sm sm:text-base touch-manipulation"
         >
-          {t('pathways.visaInfo')}
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span>{t('pathways.visaInfo')}</span>
+          <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>

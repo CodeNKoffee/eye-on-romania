@@ -14,26 +14,26 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-paper to-danube-mist">
       <Ribbon />
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <WorkHero />
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
-          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
-            <div className="text-2xl font-bold text-tricolor-blue mb-1">€1,200</div>
-            <div className="text-sm text-transylvanian-stone/70">{t('stats.avgSalary')}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12 max-w-4xl mx-auto">
+          <div className="text-center p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-xl sm:text-2xl font-bold text-tricolor-blue mb-1">€1,200</div>
+            <div className="text-xs sm:text-sm text-transylvanian-stone/70">{t('stats.avgSalary')}</div>
           </div>
-          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
-            <div className="text-2xl font-bold text-carpathian-forest mb-1">10%</div>
-            <div className="text-sm text-transylvanian-stone/70">{t('stats.incomeTax')}</div>
+          <div className="text-center p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-xl sm:text-2xl font-bold text-carpathian-forest mb-1">10%</div>
+            <div className="text-xs sm:text-sm text-transylvanian-stone/70">{t('stats.incomeTax')}</div>
           </div>
-          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
-            <div className="text-2xl font-bold text-tricolor-red mb-1">EU</div>
-            <div className="text-sm text-transylvanian-stone/70">{t('stats.workRights')}</div>
+          <div className="text-center p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-xl sm:text-2xl font-bold text-tricolor-red mb-1">EU</div>
+            <div className="text-xs sm:text-sm text-transylvanian-stone/70">{t('stats.workRights')}</div>
           </div>
-          <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
-            <div className="text-2xl font-bold text-tricolor-yellow mb-1">30-90</div>
-            <div className="text-sm text-transylvanian-stone/70">{t('stats.processTime')}</div>
+          <div className="text-center p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-danube-mist">
+            <div className="text-xl sm:text-2xl font-bold text-tricolor-yellow mb-1">30-90</div>
+            <div className="text-xs sm:text-sm text-transylvanian-stone/70">{t('stats.processTime')}</div>
           </div>
         </div>
 

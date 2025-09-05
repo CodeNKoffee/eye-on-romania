@@ -14,8 +14,17 @@ export default function ChecklistItem({ text }: ChecklistItemProps) {
 
   return (
     <div 
-      className="flex items-start gap-3 p-3 rounded-lg hover:bg-danube-mist/30 transition-colors cursor-pointer select-none"
+      className="flex items-start gap-3 p-3 sm:p-4 rounded-lg hover:bg-danube-mist/30 active:bg-danube-mist/40 transition-colors cursor-pointer select-none touch-manipulation"
       onClick={toggleCheck}
+      role="checkbox"
+      aria-checked={isChecked}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCheck();
+        }
+      }}
     >
       <div 
         className={`w-5 h-5 border-2 rounded flex-shrink-0 mt-0.5 transition-all duration-200 flex items-center justify-center ${
@@ -39,7 +48,7 @@ export default function ChecklistItem({ text }: ChecklistItemProps) {
         )}
       </div>
       <span 
-        className={`transition-colors duration-200 ${
+        className={`transition-colors duration-200 text-sm sm:text-base leading-relaxed ${
           isChecked 
             ? 'text-transylvanian-stone/60 line-through' 
             : 'text-transylvanian-stone'

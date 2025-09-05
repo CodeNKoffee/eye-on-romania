@@ -52,23 +52,23 @@ export default function InvestmentGuide() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8">
-      <h2 className="text-2xl font-semibold text-transylvanian-stone mb-6 text-center">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+      <h2 className="text-xl sm:text-2xl font-semibold text-transylvanian-stone mb-4 sm:mb-6 text-center">
         {t('investment.title')}
       </h2>
       
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {investmentOpportunities.map((opportunity, index) => (
-          <div key={index} className="flex gap-4 p-4 rounded-lg border border-danube-mist hover:shadow-sm transition-shadow h-full">
-            <div className={`flex-shrink-0 w-12 h-12 ${opportunity.color} bg-current/10 rounded-lg flex items-center justify-center`}>
-              <div className={opportunity.color}>
+          <div key={index} className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-danube-mist hover:shadow-sm transition-all duration-200 h-full touch-manipulation active:scale-[0.98]">
+            <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 ${opportunity.color} bg-current/10 rounded-lg flex items-center justify-center self-start sm:self-auto`}>
+              <div className={`${opportunity.color} w-5 h-5 sm:w-6 sm:h-6`}>
                 {opportunity.icon}
               </div>
             </div>
-            <div className="flex-1 flex flex-col h-full">
-              <h3 className="font-semibold text-transylvanian-stone mb-2">{opportunity.title}</h3>
-              <p className="text-sm text-transylvanian-stone/70 mb-2 flex-grow">{opportunity.description}</p>
-              <div className="text-xs text-tricolor-blue bg-tricolor-blue/10 px-2 py-1 rounded inline-block mt-auto">
+            <div className="flex-1 flex flex-col h-full min-w-0">
+              <h3 className="font-semibold text-transylvanian-stone mb-2 text-sm sm:text-base leading-tight">{opportunity.title}</h3>
+              <p className="text-xs sm:text-sm text-transylvanian-stone/70 mb-3 flex-grow leading-relaxed">{opportunity.description}</p>
+              <div className="text-xs text-tricolor-blue bg-tricolor-blue/10 px-2 py-1 rounded inline-block mt-auto self-start">
                 {opportunity.incentives}
               </div>
             </div>

@@ -625,11 +625,15 @@
       },
       "dataCollection": {
         "title": "Informațiile pe care le Colectăm",
-        "description": "Nu colectăm, stocăm sau procesăm date personale. Site-ul nostru web este pur informativ și nu necesită înregistrarea utilizatorului, cookie-uri sau urmărire."
+        "description": "Colectăm date analitice minimale și anonime pentru a îmbunătăți performanța site-ului prin Vercel Speed Insights. Acestea includ timpii de încărcare a paginilor, măsurători de performanță și modele generale de utilizare. Nu se colectează sau stochează date personale, adrese IP sau informații identificatoare."
       },
       "cookies": {
-        "title": "Cookie-uri și Urmărire",
-        "description": "Site-ul nostru web nu folosește cookie-uri, analize sau tehnologii de urmărire. Nu monitorizăm comportamentul dvs. de navigare și nu colectăm statistici de utilizare."
+        "title": "Analize și Performanță",
+        "description": "Folosim Vercel Speed Insights pentru a monitoriza performanța site-ului și experiența utilizatorului. Acest serviciu colectează date anonime de performanță cum ar fi vitezele de încărcare a paginilor și măsurători tehnice. Nu se folosesc cookie-uri pentru urmărirea informațiilor personale sau comportamentului de navigare."
+      },
+      "dataProcessing": {
+        "title": "Procesarea și Stocarea Datelor",
+        "description": "Toate datele analitice sunt procesate de Vercel și stocate conform politicii lor de confidențialitate. Datele sunt anonimizate și nu pot fi folosite pentru identificarea utilizatorilor individuali. Nu partajăm, vindem sau transferăm date către terți în afara acestui serviciu de monitorizare a performanței."
       },
       "thirdParty": {
         "title": "Linkuri către Terți",
@@ -649,7 +653,7 @@
       },
       "purpose": {
         "title": "Scopul Serviciului",
-        "description": "Eye on Romania oferă conținut informativ despre România în scopuri educaționale și de referință. Toate informațiile sunt compilate din surse disponibile public."
+        "description": "Eye on Romania oferă conținut informativ despre România în scopuri educaționale și de referință. Toate informațiile sunt compilate din surse disponibile public. Folosim analize anonime pentru a monitoriza și îmbunătăți performanța site-ului."
       },
       "disclaimer": {
         "title": "Clauza de Exonerare",
@@ -812,24 +816,24 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Povești de Succes",
-      "description": "Parteneriate care au creat impact semnificativ și valoare reciprocă.",
-      "stories": {
+    "partnerships": {
+      "title": "Oportunități de Parteneriat",
+      "description": "Colaborări potențiale care ar putea crea valoare reciprocă și impact semnificativ.",
+      "potential": {
         "tourism": {
-          "quote": "Informațiile complete de călătorie au îmbunătățit semnificativ ratele noastre de satisfacție ale vizitatorilor.",
-          "author": "Autoritatea Regională de Turism",
-          "role": "Director Parteneriate"
+          "partner": "Parteneriat cu Consiliul de Turism",
+          "type": "Agenție Guvernamentală de Turism",
+          "opportunity": "Ar putea furniza date complete de turism și promova România ca destinație premium prin platforma noastră"
         },
         "education": {
-          "quote": "Studenții au acum căi clare către universitățile românești prin această platformă.",
-          "author": "Consorțiul Internațional de Educație",
-          "role": "Coordonator Program"
+          "partner": "Colaborare Universitară",
+          "type": "Instituție de Învățământ Superior",
+          "opportunity": "Ar putea oferi informații simplificate pentru studii în străinătate și atrage studenți internaționali în universitățile românești"
         },
         "investment": {
-          "quote": "Informațiile fiabile despre afaceri au ajutat la eficientizarea eforturilor noastre de promovare a investițiilor.",
-          "author": "Agenția de Dezvoltare Economică",
-          "role": "Manager Investiții"
+          "partner": "Agenția de Promovare a Investițiilor",
+          "type": "Organism de Dezvoltare Economică",
+          "opportunity": "Ar putea facilita parteneriate de afaceri și promova oportunități de investiții în toată România"
         }
       }
     }

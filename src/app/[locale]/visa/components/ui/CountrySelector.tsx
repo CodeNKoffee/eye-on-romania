@@ -35,15 +35,12 @@ export default function CountrySelector({ value, onChange }: CountrySelectorProp
   }, {} as Record<string, typeof countries>);
 
   return (
-    <div className="flex items-center gap-3">
-      <label htmlFor="country" className="text-sm text-transylvanian-stone/80 mr-2">
-        {t("download.countryLabel")}
-      </label>
+    <div className="w-full">
       <select
         id="country"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="px-3 py-2 border border-danube-mist rounded-lg focus:ring-2 focus:ring-tricolor-blue/20 focus:border-tricolor-blue min-w-[200px]"
+        className="w-full px-3 py-3 border border-danube-mist rounded-lg focus:ring-2 focus:ring-tricolor-blue/20 focus:border-tricolor-blue text-sm sm:text-base"
         aria-label="Select your country to tailor checklist"
       >
         <option value="OTHER">{t("download.countryOther")}</option>

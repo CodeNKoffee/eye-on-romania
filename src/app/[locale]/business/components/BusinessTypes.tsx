@@ -44,28 +44,30 @@ export default function BusinessTypes() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8">
-      <h2 className="text-2xl font-semibold text-transylvanian-stone mb-6 text-center">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
+      <h2 className="text-xl sm:text-2xl font-semibold text-transylvanian-stone mb-4 sm:mb-6 text-center">
         {t('types.title')}
       </h2>
       
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {businessTypes.map((type, index) => (
-          <div key={index} className="p-6 rounded-lg border border-danube-mist hover:shadow-md transition-shadow">
-            <div className={`inline-flex items-center justify-center w-16 h-16 bg-${type.color}/10 text-${type.color} rounded-lg mb-4`}>
-              {type.icon}
-            </div>
-            <h3 className="font-semibold text-transylvanian-stone mb-2">{type.title}</h3>
-            <p className="text-sm text-transylvanian-stone/70 mb-4">{type.description}</p>
-            
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-transylvanian-stone/60">Min. Capital:</span>
-                <span className="font-medium text-transylvanian-stone text-right">{type.minCapital}</span>
+          <div key={index} className="p-4 sm:p-6 rounded-lg border border-danube-mist hover:shadow-md transition-all duration-200 touch-manipulation active:scale-[0.98]">
+            <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-${type.color}/10 text-${type.color} rounded-lg mb-3 sm:mb-4`}>
+              <div className="w-6 h-6 sm:w-8 sm:h-8">
+                {type.icon}
               </div>
-              <div className="flex justify-between">
-                <span className="text-transylvanian-stone/60">Setup Time:</span>
-                <span className="font-medium text-transylvanian-stone text-right">{type.timeframe}</span>
+            </div>
+            <h3 className="font-semibold text-transylvanian-stone mb-2 text-sm sm:text-base">{type.title}</h3>
+            <p className="text-xs sm:text-sm text-transylvanian-stone/70 mb-3 sm:mb-4 leading-relaxed">{type.description}</p>
+            
+            <div className="space-y-2 text-xs sm:text-sm">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
+                <span className="text-transylvanian-stone/60 font-medium">Min. Capital:</span>
+                <span className="font-semibold text-transylvanian-stone sm:text-right">{type.minCapital}</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
+                <span className="text-transylvanian-stone/60 font-medium">Setup Time:</span>
+                <span className="font-semibold text-transylvanian-stone sm:text-right">{type.timeframe}</span>
               </div>
             </div>
           </div>
