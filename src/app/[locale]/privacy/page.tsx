@@ -44,6 +44,15 @@ export default function PrivacyPage() {
 
             <section className="mb-6 sm:mb-8">
               <h2 className="text-lg sm:text-xl font-semibold text-transylvanian-stone mb-3 sm:mb-4 leading-tight">
+                {t('privacy.dataProcessing.title')}
+              </h2>
+              <p className="text-sm sm:text-base text-transylvanian-stone/80 leading-relaxed mb-3 sm:mb-4">
+                {t('privacy.dataProcessing.description')}
+              </p>
+            </section>
+
+            <section className="mb-6 sm:mb-8">
+              <h2 className="text-lg sm:text-xl font-semibold text-transylvanian-stone mb-3 sm:mb-4 leading-tight">
                 {t('privacy.thirdParty.title')}
               </h2>
               <p className="text-sm sm:text-base text-transylvanian-stone/80 leading-relaxed mb-3 sm:mb-4">

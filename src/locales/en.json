@@ -626,11 +626,15 @@
       },
       "dataCollection": {
         "title": "Information We Collect",
-        "description": "We do not collect, store, or process any personal data. Our website is purely informational and does not require user registration, cookies, or tracking."
+        "description": "We collect minimal, anonymous analytics data to improve website performance through Vercel Speed Insights. This includes page load times, performance metrics, and general usage patterns. No personal data, IP addresses, or identifying information is collected or stored."
       },
       "cookies": {
-        "title": "Cookies and Tracking",
-        "description": "Our website does not use cookies, analytics, or any tracking technologies. We do not monitor your browsing behavior or collect usage statistics."
+        "title": "Analytics and Performance",
+        "description": "We use Vercel Speed Insights to monitor website performance and user experience. This service collects anonymous performance data such as page load speeds and technical metrics. No cookies are used for tracking personal information or browsing behavior."
+      },
+      "dataProcessing": {
+        "title": "Data Processing and Storage",
+        "description": "All analytics data is processed by Vercel and stored in accordance with their privacy policy. Data is anonymized and cannot be used to identify individual users. We do not share, sell, or transfer any data to third parties beyond this performance monitoring service."
       },
       "thirdParty": {
         "title": "Third-Party Links",
@@ -650,7 +654,7 @@
       },
       "purpose": {
         "title": "Purpose of Service",
-        "description": "Eye on Romania provides informational content about Romania for educational and reference purposes. All information is compiled from publicly available sources."
+        "description": "Eye on Romania provides informational content about Romania for educational and reference purposes. All information is compiled from publicly available sources. We use anonymous analytics to monitor and improve website performance."
       },
       "disclaimer": {
         "title": "Disclaimer",
