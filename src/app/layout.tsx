@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     siteName: "EyeOnRomania",
     images: [
       {
-        url: "/QMaster-512.svg",
-        width: 512,
-        height: 512,
+        url: "/EyeOnRomania.png",
+        width: 1200,
+        height: 630,
         alt: "EyeOnRomania Logo - A clear window into Romania",
       },
     ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "EyeOnRomania - A clear window into Romania",
     description:
       "Discover the beauty and culture of Romania with EyeOnRomania. Your trusted source for travel, study, and business guidance.",
-    images: ["/QMaster-512.svg"],
+    images: ["/EyeOnRomania.png"],
   },
   robots: {
     index: true,
