@@ -48,22 +48,22 @@ export default function StudyEssentials() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-8 mb-8 mt-12">
-      <h2 className="text-2xl font-semibold text-transylvanian-stone mb-6 text-center">
+    <div className="bg-white rounded-xl shadow-sm border border-danube-mist p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 mt-8 sm:mt-12">
+      <h2 className="text-xl sm:text-2xl font-semibold text-transylvanian-stone mb-4 sm:mb-6 text-center">
         {t('essentials.title')}
       </h2>
       
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {essentials.map((essential, index) => (
-          <div key={index} className="flex gap-4">
-            <div className={`flex-shrink-0 w-12 h-12 ${essential.color} bg-current/10 rounded-lg flex items-center justify-center`}>
-              <div className={essential.color}>
+          <div key={index} className="flex flex-col sm:flex-row gap-3 sm:gap-4 touch-manipulation">
+            <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 ${essential.color} bg-current/10 rounded-lg flex items-center justify-center self-start sm:self-auto`}>
+              <div className={`${essential.color} w-5 h-5 sm:w-6 sm:h-6`}>
                 {essential.icon}
               </div>
             </div>
-            <div>
-              <h3 className="font-semibold text-transylvanian-stone mb-2">{essential.title}</h3>
-              <p className="text-sm text-transylvanian-stone/70 leading-relaxed">{essential.description}</p>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-semibold text-transylvanian-stone mb-2 text-sm sm:text-base leading-tight">{essential.title}</h3>
+              <p className="text-xs sm:text-sm text-transylvanian-stone/70 leading-relaxed">{essential.description}</p>
             </div>
           </div>
         ))}
