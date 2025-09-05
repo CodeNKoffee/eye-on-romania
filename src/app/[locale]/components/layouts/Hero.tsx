@@ -28,26 +28,31 @@ export default function Hero() {
       title: t("navigation.visa.title"),
       description: t("navigation.visa.description"),
       href: "/visa",
+      variant: 0,
     },
     {
       title: t("navigation.work.title"),
       description: t("navigation.work.description"),
       href: "/work",
+      variant: 1,
     },
     {
       title: t("navigation.business.title"),
       description: t("navigation.business.description"),
       href: "/business",
+      variant: 2,
     },
     {
       title: t("navigation.study.title"),
       description: t("navigation.study.description"),
       href: "/study",
+      variant: 3,
     },
     {
       title: t("navigation.travel.title"),
       description: t("navigation.travel.description"),
       href: "/travel",
+      variant: 4,
     },
   ];
 
@@ -69,12 +74,20 @@ export default function Hero() {
       <ValuePillars pillars={pillars} />
 
       {/* Main Navigation Cards */}
-      <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
-        {navigationCards.map((n, i) => (
-          <div key={n.title} className="w-full">
-            <NavigationCards title={n.title} description={n.description} href={n.href} variant={i} />
-          </div>
-        ))}
+      <div className="mt-12 sm:mt-16 lg:mt-20 max-w-7xl mx-auto">
+        {/* All Cards - Max 3 per row on large screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {navigationCards.map((card) => (
+            <div key={card.title} className="w-full">
+              <NavigationCards 
+                title={card.title} 
+                description={card.description} 
+                href={card.href} 
+                variant={card.variant} 
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
