@@ -695,10 +695,10 @@
     "titleHighlight": "For Institutions",
     "description": "Comprehensive, verified information designed for government entities, educational institutions, and strategic partners seeking reliable data about Romania.",
     "stats": {
-      "coverage": "100%",
+      "coverage": "5+",
       "coverageLabel": "Official Sources",
-      "sources": "20+",
-      "sourcesLabel": "Government Agencies",
+      "sources": "10+",
+      "sourcesLabel": "Verified Resources",
       "languages": "2",
       "languagesLabel": "Languages Available"
     },
@@ -793,7 +793,7 @@
         "emailNotBusiness": "Please use a professional/business email address (no Gmail, Yahoo, etc.)",
         "partnershipRequired": "Please describe your partnership interest"
       },
-      "response": "We typically respond to partnership inquiries within 48 hours."
+      "response": "We aim to respond to partnership inquiries within 1-2 business days."
     },
     "benefits": {
       "title": "Partnership Benefits",
