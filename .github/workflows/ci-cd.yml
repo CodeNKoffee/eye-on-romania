@@ -36,7 +36,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18, 20]
     
     steps:
     - name: Checkout code
@@ -73,7 +73,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20.x'
+        node-version: 20
         cache: 'npm'
         
     - name: Install dependencies
@@ -82,7 +82,7 @@ jobs:
     - name: Download build artifacts
       uses: actions/download-artifact@v4
       with:
-        name: nextjs-build-20.x
+        name: nextjs-build-20
         path: .next/
         
     - name: Install Playwright Browsers
