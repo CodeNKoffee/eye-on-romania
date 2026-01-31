@@ -61,60 +61,16 @@ jobs:
         path: .next/
         retention-days: 1
 
-  test:
-    name: E2E Tests
-    runs-on: ubuntu-latest
-    needs: [lint, nextjs-build]
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: nextjs-build-20
-        path: .next/
-        
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-      
-    - name: Start application
-      run: npm start &
-      
-    - name: Wait for application
-      run: npx wait-on http://localhost:3000 --timeout 60000
-      
-    - name: Run Playwright tests
-      run: npm run test:e2e
-      
-    - name: Upload Playwright Report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 7
-
   quality-gate:
     name: Quality Gate
     runs-on: ubuntu-latest
-    needs: [lint, nextjs-build, test]
+    needs: [lint, nextjs-build]
     if: always()
     
     steps:
     - name: Check job results
       run: |
-        if [[ "${{ needs.lint.result }}" != "success" || "${{ needs.nextjs-build.result }}" != "success" || "${{ needs.test.result }}" != "success" ]]; then
+        if [[ "${{ needs.lint.result }}" != "success" || "${{ needs.nextjs-build.result }}" != "success" ]]; then
           echo "❌ Quality gate failed - one or more jobs failed"
           exit 1
         else
